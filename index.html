@@ -201,6 +201,77 @@
     letter-spacing: 1.5px;
   }
 
+  /* ===== Countdown timer ===== */
+  #countdown {
+    position: fixed;
+    top: 158px;
+    left: 60px;
+    z-index: 21;
+    pointer-events: none;
+    border: 1px solid var(--laser-faint);
+    background: rgba(8,2,8,0.65);
+    backdrop-filter: blur(3px);
+    padding: 10px 18px 12px;
+    min-width: 250px;
+    overflow: hidden;
+  }
+  #countdown::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--laser), transparent);
+    animation: sweep 4s infinite;
+  }
+  #countdown .cd-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--laser);
+    margin-bottom: 6px;
+    text-shadow: 0 0 6px var(--laser-glow);
+  }
+  #countdown .cd-value {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: var(--bone);
+    text-shadow: 0 0 10px var(--laser-glow);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  #countdown .cd-status {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(243,233,216,0.5);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  #countdown.live .cd-value {
+    color: var(--bone);
+    text-shadow: 0 0 12px var(--laser-glow);
+  }
+  #countdown.live .cd-status {
+    color: #66ff99;
+    text-shadow: 0 0 6px rgba(102,255,153,0.4);
+  }
+  #countdown.refreshing .cd-value {
+    color: #66ff99;
+    text-shadow: 0 0 18px rgba(102,255,153,0.7);
+    animation: cd-flash 0.6s ease;
+  }
+  #countdown.embedded .cd-value {
+    color: rgba(243,233,216,0.35);
+    text-shadow: none;
+  }
+  #countdown.embedded .cd-status {
+    color: var(--amber);
+  }
+  @keyframes cd-flash {
+    0%, 100% { background: transparent; }
+    50% { background: rgba(102,255,153,0.18); }
+  }
+
   /* ===== Stats panel (left) ===== */
   #stats {
     position: fixed;
@@ -593,6 +664,8 @@
     #title { left: 30px; }
     #ticker { left: 16px; right: 16px; }
     #coords { display: none; }
+    #countdown { left: 30px; min-width: 0; padding: 8px 14px 10px; top: 140px; }
+    #countdown .cd-value { font-size: 24px; letter-spacing: 3px; }
   }
 </style>
 </head>
@@ -626,6 +699,12 @@
   <div class="eyebrow">// REAL-TIME SURVEILLANCE</div>
   <h1>HANTAVIRUS</h1>
   <div class="sub">ANDES STRAIN — GLOBAL PROPAGATION TRACE — VESSEL: M/V HONDIUS</div>
+</div>
+
+<div id="countdown">
+  <div class="cd-label">// NEXT DATA SYNC IN</div>
+  <div class="cd-value" id="cd-time">—:—:—</div>
+  <div class="cd-status" id="cd-status">— SYSTEM IDLE —</div>
 </div>
 
 <div id="coords">
@@ -1169,6 +1248,11 @@ canvas.addEventListener('touchmove', e => {
 canvas.addEventListener('touchend', () => state.dragging = false);
 
 // ---- RAYCAST: hover & click ---------------------------------
+// Countdown state — agent runs every 2h, page wakes when timer hits zero
+const AGENT_INTERVAL_MS = 2 * 60 * 60 * 1000;
+let nextRefreshAt = null;     // ms timestamp when we expect new data
+let lastSyncAt    = null;     // ms timestamp of the data we currently show
+
 const ray = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 const tooltip = document.getElementById('tooltip');
@@ -1253,8 +1337,9 @@ document.querySelector('#detail .close').addEventListener('click', () => {
 
 // ---- FLY TO SITE ---------------------------------------------
 function flyToSite(site) {
-  // Calculate target rotation that puts site at front-center
-  const targetRotY = -((site.lng + 180) * Math.PI/180) - Math.PI;
+  // For globeRoot Euler order 'XYZ' with rZ=0, a point at (lat,lng) lands
+  // at world (0,0,R) when rX = lat·π/180 and rY = -π/2 - lng·π/180.
+  const targetRotY = -Math.PI/2 - site.lng * Math.PI/180;
   const targetRotX = site.lat * Math.PI/180;
 
   state.flyFromRX = state.rotX;
@@ -1364,12 +1449,62 @@ function recompute() {
 }
 recompute();
 
-// ---- CLOCK ---------------------------------------------------
+// ---- CLOCK + COUNTDOWN ---------------------------------------
 function tickClock() {
   const d = new Date();
-  const t = d.toISOString().slice(11,19);
-  document.getElementById('clock').textContent = t + ' UTC';
+  document.getElementById('clock').textContent = d.toISOString().slice(11,19) + ' UTC';
+  tickCountdown();
 }
+
+function tickCountdown() {
+  const cdRoot   = document.getElementById('countdown');
+  const cdTime   = document.getElementById('cd-time');
+  const cdStatus = document.getElementById('cd-status');
+
+  // No live URL configured — agent isn't running anywhere
+  if (!CONFIG.liveDataUrl) {
+    cdTime.textContent = '—:—:—';
+    cdStatus.textContent = 'EMBEDDED MODE · DEPLOY AGENT TO ENABLE';
+    cdRoot.className = 'embedded';
+    return;
+  }
+
+  // Live URL set but no data received yet
+  if (!nextRefreshAt) {
+    cdTime.textContent = '—:—:—';
+    cdStatus.textContent = 'AWAITING FIRST SYNC...';
+    cdRoot.className = '';
+    return;
+  }
+
+  const remaining = nextRefreshAt - Date.now();
+
+  // Timer expired → request fresh data
+  if (remaining <= 0) {
+    cdTime.textContent = '00:00:00';
+    cdStatus.textContent = 'POLLING FOR UPDATE...';
+    cdRoot.className = 'refreshing';
+    // Push the timer 60s forward so we don't spam-fetch if the agent is late
+    nextRefreshAt = Date.now() + 60 * 1000;
+    fetchLatest();
+    return;
+  }
+
+  const h = Math.floor(remaining / 3600000);
+  const m = Math.floor((remaining % 3600000) / 60000);
+  const s = Math.floor((remaining % 60000)   / 1000);
+  cdTime.textContent =
+    `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+
+  if (lastSyncAt) {
+    const ago = formatAgo(new Date(lastSyncAt));
+    cdStatus.textContent = `SYNCED ${ago} · NEXT AGENT RUN T-${h}H ${m}M`;
+  } else {
+    cdStatus.textContent = `NEXT AGENT RUN`;
+  }
+  cdRoot.className = 'live';
+}
+
 setInterval(tickClock, 1000); tickClock();
 
 // ---- ANIMATION LOOP -----------------------------------------
@@ -1511,12 +1646,14 @@ function applyData(data) {
     }).join('');
   }
 
-  // Update timestamp pill
+  // Update timestamp pill + countdown anchor
   const upd = document.getElementById('updated');
   if (data.updated_at) {
     const d = new Date(data.updated_at);
     upd.textContent = `LIVE · ${formatAgo(d)}`;
     upd.className = 'live';
+    lastSyncAt = d.getTime();
+    nextRefreshAt = lastSyncAt + AGENT_INTERVAL_MS;
   }
   return true;
 }
