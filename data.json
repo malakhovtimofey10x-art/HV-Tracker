@@ -1,40 +1,40 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-09T07:25:37+00:00",
+  "updated_at": "2026-05-09T11:16:37+00:00",
   "totals": {
     "confirmed": 11,
     "suspected": 9,
     "deaths": 5,
-    "monitored": 335,
+    "monitored": 336,
     "countries_affected": 16,
-    "sites": 27
+    "sites": 28
   },
   "ticker": [
-    "▲ HONDIUS ETA GRANADILLA EARLY HOURS SUNDAY 10 MAY — ANCHOR OFFSHORE; PAX TRANSFER BY TENDER/INFLATABLE BOATS",
-    "▲ ECDC: ONE NEW SUSPECTED CASE REPORTED SINCE 07 MAY — TOTAL NOW 6 CONFIRMED · 9 SUSPECTED · 3 DEATHS",
-    "▲ CANARY ISLANDS DOCKWORKERS THREATENED PORT BLOCKADE — VESSEL WILL NOT PIER-DOCK; OFFSHORE ANCHOR CONFIRMED",
-    "► WHO 08 MAY: 6 CONFIRMED · 2 PROBABLE (ANDES VIRUS) · 3 DEATHS — WORKING HYPOTHESIS: EXPOSURE PRE-CRUISE IN ARGENTINA/CHILE",
-    "► KLM FLIGHT ATTENDANT ADMITTED AMSTERDAM UMC 07 MAY WITH MILD SYMPTOMS — TESTED NEGATIVE FOR HANTAVIRUS",
-    "► CANARY ISLANDS GOVT REQUESTS HONDIUS PROCEED TO NETHERLANDS FOR DECONTAMINATION AFTER PASSENGER DISEMBARKATION",
-    "► 17 AMERICANS AWAIT CDC-ESCORTED CHARTER TENERIFE→NEBRASKA NQU; UK FLIGHT ALSO ARRANGED FOR 19 PAX + 4 CREW",
-    "► SPAIN PROTOCOL: PCR ARRIVAL + DAY 7; TWICE-DAILY TEMP CHECKS; 14 SPANISH PAX → GÓMEZ ULLA MILITARY HOSPITAL",
-    "// ARGENTINA: MALBRAN TEAM STILL NOT DISPATCHED TO USHUAIA AS OF 07 MAY — DEPARTING 'COMING DAYS'; DUTCH COUPLE CROSSED CHILE BORDER MULTIPLE TIMES",
-    "// DISEMBARKATION MUST COMPLETE BEFORE TUESDAY — WEATHER DETERIORATES; WIND/WAVES EXPECTED TO PREVENT TENDER OPS FROM MON EVENING"
+    "▲ HONDIUS ARRIVES GRANADILLA EARLY HOURS 10 MAY — DISEMBARKATION BY NATIONALITY IN INFLATABLE BOATS BEGINS IMMINENTLY",
+    "▲ WHO 08 MAY: 6 CONFIRMED · 2 PROBABLE (ANDES VIRUS) · 3 DEATHS — FURTHER CASES POSSIBLE WITHIN INCUBATION WINDOW",
+    "▲ CDC ALERTS ALL US DOCTORS: CONSIDER HANTAVIRUS DX IF PATIENT HAS SYMPTOMS + KNOWN HONDIUS CONTACT",
+    "► UTAH RESIDENT IDENTIFIED AMONG 17 AMERICANS STILL ABOARD — ALL 17 TO QUARANTINE AT NEBRASKA NQU VIA CDC CHARTER",
+    "► US MONITORING NOW SPANS 6 STATES: AZ · CA · GA · TX · VA · NJ — AT LEAST 9 RESIDENTS UNDER OBSERVATION, NONE ILL",
+    "► MALBRÁN INSTITUTE NOW ACTIVELY TRAPPING/TESTING RODENTS ALONG DUTCH INDEX COUPLE'S ARGENTINA/CHILE ROUTE",
+    "► DISEMBARKATION WINDOW CLOSES TUESDAY — WEATHER WORSENS FROM MON EVENING; ALL PAX MUST BOARD REPATRIATION FLIGHTS BEFORE LEAVING VESSEL",
+    "► SPAIN PROTOCOL: 14 SPANISH PAX → GÓMEZ ULLA MILITARY HOSPITAL; PCR ARRIVAL + DAY 7; TWICE-DAILY TEMP CHECKS",
+    "// KLM FLIGHT ATTENDANT CONFIRMED NEGATIVE FOR HANTAVIRUS — NOT A SECONDARY TRANSMISSION CASE",
+    "// CANARY ISLANDS GOVT: SHIP TO SAIL ON TO NETHERLANDS AFTER DISEMBARKATION FOR FULL DECONTAMINATION"
   ],
   "sites": [
     {
       "id": "hondius",
       "name": "M/V HONDIUS",
-      "country": "EN ROUTE — CANARY ISLANDS",
-      "lat": 30.2,
-      "lng": -16.0,
+      "country": "EN ROUTE — TENERIFE / CANARY ISLANDS",
+      "lat": 29.5,
+      "lng": -16.5,
       "status": "confirmed",
       "confirmed": 2,
       "suspected": 1,
       "deaths": 1,
       "monitored": 147,
-      "desc": "Dutch-flagged polar vessel en route to Granadilla cargo port, Tenerife; ETA early hours Sunday 10 May. Will NOT pier-dock — passengers transferred by inflatable/tender boats to isolated cordoned quayside after repatriation flights confirmed ready. All 147 aboard (87 passengers, 60 crew, 24 nationalities) asymptomatic as of 09 May per Oceanwide. German woman's body remains aboard; WHO coordinating safe storage and transport. Disembarkation window closes Tuesday due to worsening weather. Canary Islands govt has requested ship proceed to Netherlands for decontamination after pax disembark."
+      "desc": "Dutch-flagged polar vessel arriving Granadilla cargo port, Tenerife, early hours 10 May. Will NOT pier-dock — passengers transferred by inflatable boats to isolated cordoned quayside, then guarded buses to airport, departing by nationality. Disembarkation only begins once repatriation flights confirmed ready at runway. German woman's body remains aboard. Oceanwide confirmed as of 08 May all remaining 147 aboard are asymptomatic and PCR-negative. Weather window closes Tuesday; Canary Islands govt requests ship proceed to Netherlands for decontamination post-disembarkation."
     },
     {
       "id": "ushuaia",
@@ -47,7 +47,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Confirmed source investigation zone. Dutch index couple (Cases 1 & 2) conducted 4-month birdwatching road trip (27 Nov 2025–01 Apr 2026) spanning Chile, Uruguay, and Argentina, crossing the Chile-Argentina border multiple times. WHO working hypothesis is exposure occurred during Argentina/Chile leg pre-cruise. Malbrán Institute team had not yet departed for Ushuaia as of 07 May; rodent trapping to begin 'coming days.' Argentina confirmed no cruise-linked cases domestically; no Ushuaia hantavirus cases in recent decades. National tally: 101 infections since Jun 2025, roughly double prior year."
+      "desc": "Confirmed source investigation zone. Argentine Health Ministry published 06 May report: Dutch index couple (Cases 1 & 2) conducted 4-month birdwatching road trip (27 Nov 2025–01 Apr 2026) spanning Chile, Uruguay, and Argentina; index case returned from Uruguay only 4 days before departure. Malbrán Institute now actively capturing and testing rodents along the Dutch couple's travel route. WHO working hypothesis: index case infected during activities in Argentina/Chile. No cruise-linked domestic cases confirmed; no Ushuaia hantavirus cases in recent decades. Argentine national tally: 101 infections since Jun 2025."
     },
     {
       "id": "sthelena",
@@ -60,7 +60,7 @@
       "suspected": 1,
       "deaths": 1,
       "monitored": 30,
-      "desc": "30 passengers disembarked 24 Apr (includes Dutch index male body and Dutch widow who later died in Johannesburg). Swiss confirmed male case also disembarked here. NICD and UKHSA contact-tracing 82 passengers + 6 crew from 25 Apr Airlink St Helena–Johannesburg flight ongoing. 7 UK nationals from St Helena disembarkation traced by UKHSA; 2 self-isolating in UK. Disembarkees from 12 countries departed before hantavirus was confirmed (02 May)."
+      "desc": "30 passengers disembarked 24 Apr (includes Dutch index male body and Dutch widow who later died in Johannesburg). Swiss confirmed male case also disembarked here. UKHSA contact-tracing 82 passengers + 6 crew from 25 Apr Airlink St Helena–Johannesburg flight ongoing. Disembarkees from 12 countries departed before hantavirus was confirmed (02 May). 7 UK nationals from St Helena disembarkation traced by UKHSA; 2 self-isolating in UK."
     },
     {
       "id": "sa",
@@ -73,7 +73,7 @@
       "suspected": 0,
       "deaths": 1,
       "monitored": 65,
-      "desc": "Case 2 (Dutch widow, 69, PCR+) died at Johannesburg hospital 26 Apr — sole PCR-confirmed Andes virus death. Case 3 (British guide Martin Anstee, 56, PCR+) treated at Johannesburg ICU, condition improved and subsequently redirected to Netherlands. NICD contact-traced 65+ contacts from 25 Apr Airlink St Helena–Johannesburg flight (82 pax + 6 crew). Asymptomatic South African woman (briefly in Barcelona) confirmed located and monitored in South Africa."
+      "desc": "Case 2 (Dutch widow, 69, PCR+) died at Johannesburg hospital 26 Apr — sole WHO-confirmed Andes virus death as of 08 May. Case 3 (British guide Martin Anstee, 56, PCR+) treated at Johannesburg ICU; condition improved and transferred to Netherlands. NICD contact-traced 65+ contacts from 25 Apr Airlink St Helena–Johannesburg flight (82 pax + 6 crew). Asymptomatic South African woman (briefly in Barcelona) confirmed located and monitored in South Africa."
     },
     {
       "id": "nl",
@@ -86,7 +86,7 @@
       "suspected": 1,
       "deaths": 1,
       "monitored": 3,
-      "desc": "British Case 3 (Anstee, 56) redirected to Netherlands after condition improved en route to Tenerife. Dutch crew member (41, confirmed) being treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed postmortem that German woman died of Andes virus. KLM flight attendant admitted Amsterdam UMC 07 May with mild symptoms — tested NEGATIVE 08 May. RIVM: 3 people with symptoms tested after KL592 contact — 2 NEGATIVE, 1 result pending. GGD tracing KL592 passengers. Four medical staff (1 Italian, 3 Dutch) remain aboard Hondius."
+      "desc": "British Case 3 (Anstee, 56) transferred to Netherlands after condition improved. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed postmortem that German woman died of Andes virus. KLM flight attendant admitted Amsterdam UMC 07 May with mild symptoms — tested NEGATIVE 08 May; not a secondary transmission case. RIVM: 2 of 3 symptomatic KL592 contacts tested negative; 1 result pending. GGD continuing contact tracing of KL592 passengers. Four medical staff remain aboard Hondius."
     },
     {
       "id": "uk",
@@ -99,7 +99,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 10,
-      "desc": "UKHSA confirmed 2 British nationals PCR+ (one transferred to Netherlands, one originally treated South Africa) and flagged a 3rd suspected case on Tristan da Cunha. UK repatriation flight arranged for 19 passengers and 4 crew from Tenerife; FCDO/UKHSA RDT pre-positioned. Asymptomatic returning Britons to isolate up to 45 days per UKHSA guidance."
+      "desc": "UKHSA confirmed 2 British nationals PCR+ (one transferred to Netherlands, one treated South Africa) and flagged a 3rd suspected case on Tristan da Cunha (08 May). UK repatriation flight arranged for 19 passengers and 4 crew from Tenerife; FCDO/UKHSA RDT pre-positioned. Returning asymptomatic Britons to isolate up to 45 days per UKHSA guidance. US and UK both confirmed repatriation flights to Tenerife."
     },
     {
       "id": "fr",
@@ -112,7 +112,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 8,
-      "desc": "Eight French nationals identified as close contacts of confirmed case on 25 Apr Airlink St Helena–Johannesburg flight. One reporting mild symptoms, isolated pending PCR results. French health ministry coordinating diagnostics and quarantine measures."
+      "desc": "Eight French nationals identified as close contacts of confirmed case on 25 Apr Airlink St Helena–Johannesburg flight — none were on the cruise. One reporting mild symptoms, isolated pending PCR results. French health ministry coordinating diagnostics and quarantine measures."
     },
     {
       "id": "ch",
@@ -125,7 +125,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "PCR-confirmed male passenger (one of 30 who disembarked St Helena 24 Apr) self-presented to doctor after symptom onset; confirmed Andes virus at University Hospital Zurich — confirmed 06 May. Wife (also on trip) asymptomatic and isolating. Swiss authorities conducting additional contact tracing."
+      "desc": "PCR-confirmed male passenger (one of 30 who disembarked St Helena 24 Apr) self-presented after symptom onset; confirmed Andes virus at University Hospital Zurich — confirmed 06 May. Wife (also on trip) asymptomatic and isolating. Swiss authorities conducting additional contact tracing for anyone who came into contact with the patient after he returned to Switzerland."
     },
     {
       "id": "de",
@@ -138,7 +138,7 @@
       "suspected": 0,
       "deaths": 1,
       "monitored": 1,
-      "desc": "German woman died on board 02 May (fever/malaise onset 28 Apr, developed pneumonia). Netherlands laboratory postmortem PCR returned Andes virus positive; WHO notes cause of death still officially under investigation. Asymptomatic 65-year-old German contact evacuated 06 May to Netherlands, subsequently returned to Germany (Düsseldorf) for monitoring. RKI contact tracing active."
+      "desc": "German woman died on board 02 May (fever/malaise onset 28 Apr, developed pneumonia). Netherlands laboratory postmortem PCR returned Andes virus positive; WHO notes cause of death still officially under investigation as of 08 May. Asymptomatic 65-year-old German contact evacuated 06 May to Netherlands, subsequently returned to Germany (Düsseldorf) for monitoring. RKI contact tracing active."
     },
     {
       "id": "es-alicante",
@@ -164,7 +164,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Hondius to anchor offshore Granadilla cargo port early Sunday 10 May — will NOT dock pier-side. Dockworkers threatened blockade; final plan confirms offshore anchor, inflatable boats to isolated cordoned quayside, then guarded buses to airport. Disembarkation window closes Tuesday; weather worsens from Monday. WHO/CDC/UKHSA/ECDC/RIVM teams pre-positioned. Canary Islands government requested ship sail on to Netherlands for decontamination post-disembarkation."
+      "desc": "Hondius arriving Granadilla cargo port early 10 May — will NOT pier-dock. Passengers evacuated in inflatable boats to isolated cordoned quayside; guarded buses via TF1 route to airport (~15 min). Disembarkation only begins once repatriation aircraft confirmed ready at runway. Weather window closes Tuesday. WHO/CDC/UKHSA/ECDC/RIVM teams pre-positioned. Canary Islands govt requests ship sail to Netherlands for decontamination post-disembarkation."
     },
     {
       "id": "es-madrid",
@@ -177,7 +177,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 14,
-      "desc": "Gómez Ulla Military Hospital fully activated to receive 14 Spanish Hondius passengers under quarantine protocol. PCR on arrival + Day 7; twice-daily temperature checks; single rooms, no visitors. Biosecurity equivalent to Ebola/COVID-19 protocols; 60–80 additional staff recruited. High-Level Isolation Unit (UAAN, 22nd floor) on standby for any passenger developing symptoms."
+      "desc": "Gómez Ulla Military Hospital fully activated to receive 14 Spanish Hondius passengers. PCR on arrival + Day 7; twice-daily temperature checks; single rooms, no visitors. Protocol covers all aboard between 01 Apr–10 May or in close contact with confirmed case. Biosecurity equivalent to Ebola/COVID-19 protocols; 60–80 additional staff recruited. High-Level Isolation Unit (UAAN, 22nd floor) on standby."
     },
     {
       "id": "es-barcelona",
@@ -203,7 +203,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 1,
-      "desc": "UKHSA confirmed suspected hantavirus case (08 May): British passenger who disembarked Hondius during 13–15 Apr stop; developed symptoms and sought medical advice. Spouse isolating. 6 additional guests joined Hondius at Tristan da Cunha per Oceanwide, expanding contact tracing scope. Patient currently on island; UKHSA assessing remotely. Ship stopped here before outbreak was identified."
+      "desc": "UKHSA confirmed suspected hantavirus case (08 May): British male passenger who likely disembarked Hondius during 13–15 Apr stop; developed symptoms and sought medical advice. Spouse isolating as precaution. 6 additional guests joined Hondius at Tristan da Cunha per Oceanwide, expanding contact tracing scope. Patient currently on island; UKHSA assessing remotely. Island population approximately 220 permanent residents."
     },
     {
       "id": "sg",
@@ -229,7 +229,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Two Ontario residents self-isolating — Hondius passengers who returned home. Four Canadians total remain aboard vessel awaiting Tenerife evacuation. PHAC coordinating monitoring per 07 May government statement."
+      "desc": "Two Ontario residents self-isolating — Hondius passengers who returned home early. Four Canadians total remain aboard vessel awaiting Tenerife evacuation. PHAC coordinating monitoring per 07 May government statement."
     },
     {
       "id": "ca-qc",
@@ -255,7 +255,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 09 May. Part of domestic US monitoring cohort across 5–6 states per CDC. CDC notified ADHS 05 May; public risk assessed as very low."
+      "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 09 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
     },
     {
       "id": "us-ca",
@@ -281,7 +281,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Georgia DPH monitoring two residents who returned from Hondius. Both in good health with no signs of infection as of 08 May per GDPH statement to Live Science. Following CDC recommendations."
+      "desc": "Georgia DPH monitoring two residents who returned from Hondius. Both in good health with no signs of infection as of 08 May per GDPH statement. Following CDC recommendations. Part of domestic US monitoring cohort."
     },
     {
       "id": "us-tx",
@@ -294,7 +294,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic. Part of domestic US monitoring cohort across 5–6 states."
+      "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic. Part of domestic US monitoring cohort across 6 states; none of the monitored US residents exhibiting signs of illness as of 09 May."
     },
     {
       "id": "us-va",
@@ -307,7 +307,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "VDH monitoring one returning Hondius passenger. Asymptomatic. President Trump stated 08 May the US situation is 'very much, we hope, under control.' CDC classified response as Level-3 (lowest emergency activation tier). Five states — AZ, CA, GA, TX, VA — monitoring at least 7 early-disembarkees per CNN 08 May."
+      "desc": "VDH monitoring one returning Hondius passenger. Asymptomatic. CDC classified response as Level-3 (lowest emergency activation tier); Emergency Operations Center activated. Six states — AZ, CA, GA, TX, VA, NJ — monitoring at least 9 early-disembarkees or contacts per CDC/ABC 08–09 May reporting."
     },
     {
       "id": "us-nj",
@@ -320,7 +320,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "NJ health authorities monitoring two individuals with potential post-disembarkation exposure to a Hondius passenger. Neither symptomatic as of 09 May. Part of the broader US monitoring cohort per ABC News reporting."
+      "desc": "NJ health authorities monitoring two individuals with potential post-disembarkation exposure to a Hondius passenger. Neither symptomatic as of 09 May. Part of the broader US monitoring cohort per CNN 08 May reporting."
     },
     {
       "id": "us-ne",
@@ -333,7 +333,20 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) fully staffed and activated. CDC team pre-deployed to Offutt AFB, Bellevue. 17 American Hondius passengers to arrive via CDC-escorted State Dept biocontainment charter from Tenerife after Sunday docking. NQU medical director Dr. Wadman confirmed all 17 are asymptomatic; anyone developing symptoms to be moved to Biocontainment Unit. Dr. Michael Ash (Nebraska Medicine CEO): 'We are prepared for situations exactly like this.'"
+      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) fully staffed and activated. CDC team pre-deployed to Offutt AFB, Bellevue. 17 American Hondius passengers (including one Utah resident) to arrive via CDC-escorted State Dept biocontainment charter from Tenerife after Sunday docking. NQU medical director Dr. Wadman confirmed all 17 are asymptomatic; anyone developing symptoms to be moved to Biocontainment Unit."
+    },
+    {
+      "id": "us-ut",
+      "name": "UTAH",
+      "country": "UNITED STATES",
+      "lat": 40.76,
+      "lng": -111.89,
+      "status": "monitor",
+      "confirmed": 0,
+      "suspected": 0,
+      "deaths": 0,
+      "monitored": 1,
+      "desc": "Utah DHHS confirmed 08 May that at least one Utah resident is among the 17 Americans still aboard MV Hondius. Person is asymptomatic and will disembark in Tenerife, then travel with federal escort to Nebraska NQU for quarantine. No Utah residents monitored at home as of 09 May."
     },
     {
       "id": "ph",
@@ -372,7 +385,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Hondius anchored off Praia 03–06 May; departed 19:15 local 06 May for Tenerife. Three medevac patients evacuated here 06 May — two flew to Amsterdam (received by specialist teams at Schiphol), third plane made unscheduled refueling stop at Gran Canaria after Morocco refused permission. Cape Verde assessed unable to handle full passenger evacuation — basis for WHO requesting Tenerife docking. 2,500 Argentine diagnostic kits dispatched to five countries."
+      "desc": "Hondius anchored off Praia 03–06 May; departed 19:15 local 06 May for Tenerife. Three medevac patients evacuated here 06 May — two flew to Amsterdam (received by specialist teams at Schiphol), third plane made unscheduled refueling stop at Gran Canaria after Morocco refused permission and a medical equipment malfunction caused further delays. Cape Verde assessed unable to handle full passenger evacuation — basis for WHO requesting Tenerife docking. 2,500 Argentine diagnostic kits dispatched to five countries."
     }
   ]
 }
