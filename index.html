@@ -1925,6 +1925,11 @@ const WORLD_RINGS = [[[31.3,-22.4],[29.4,-22.2],[29.0,-21.8],[28.0,-21.6],[27.7,
 const CONFIG = {
   liveDataUrl: 'https://thehantavirustracker.com/data.json',
   refreshIntervalMs: 5 * 60 * 1000,  // re-poll every 5 min while open
+
+  // ── AIS live vessel tracking (aisstream.io — free tier) ──────────
+  // Sign up at https://aisstream.io to get a free API key, then paste it here.
+  aisApiKey: '3e720fce584667514dac3f7d9774a4db730aef7e',   // ← paste your key here
+  aisMMSI:   '244327000',                // M/V Hondius MMSI
 };
 
 // ---- DATA ----------------------------------------------------
@@ -3303,15 +3308,24 @@ function updateSplitMode() {
 // Format: [lat, lng] — consistent with latLngToXYZ().
 // The ship is off Cape Verde (~14.9°N, 23.5°W); pattern spans about
 // 2° square so motion is visible when zoomed in.
-const HOLDING_PATTERN = [
-  [15.20, -23.10], [15.40, -22.70], [15.10, -22.40], [14.70, -22.20],
-  [14.20, -22.30], [13.80, -22.70], [13.50, -23.20], [13.40, -23.80],
-  [13.50, -24.40], [13.90, -24.70], [14.50, -24.80], [15.00, -24.50],
-  [15.30, -24.00], [15.40, -23.50],
-];
-const HOLDING_CYCLE_S = 720; // seconds per full cycle (12 min)
+// ════════════════════════════════════════════════════════════════════
+//  M/V HONDIUS — REAL-TIME AIS VESSEL TRACKING (aisstream.io)
+// ════════════════════════════════════════════════════════════════════
+//
+// aisstream.io streams live AIS position reports via WebSocket.
+// We filter to MMSI 244327000 (M/V Hondius) only.
+// The ship marker updates in real-time as new AIS frames arrive.
+// If the socket drops or the ship is out of terrestrial AIS range
+// (deep ocean), we hold the last known position and show AIS·LOST.
+//
+// Free tier: unlimited connections, no rate limit for single-vessel.
 
-// Incident timeline (chronological)
+const HONDIUS_MMSI = CONFIG.aisMMSI;  // '244327000'
+
+// Last known good position — seeded to Tenerife anchorage per latest
+// AIS reports. Updated in real-time by the WebSocket feed.
+const AIS_FALLBACK = { lat: 28.02, lng: -16.55 };  // Granadilla, Tenerife
+
 const HONDIUS_TIMELINE = [
   { d: "01 APR", t: "Departed Ushuaia · expedition vessel" },
   { d: "07 APR", t: "Tristan da Cunha — passed without docking" },
@@ -3323,12 +3337,11 @@ const HONDIUS_TIMELINE = [
   { d: "04 MAY", t: "Tenerife docking request · REJECTED" },
   { d: "06 MAY", t: "Cape Verde anchorage · port entry DENIED" },
   { d: "07 MAY", t: "Holding pattern · fuel reserves below 40%" },
-  { d: "07 MAY", t: "MEDEVAC coordination · awaiting nation acceptance" },
+  { d: "10 MAY", t: "Anchored off Granadilla, Tenerife · evacuation imminent" },
 ];
 
-// Radio intercept log
 const RADIO_LOGS = [
-  { time:"20:47", lvl:"info",  msg:"VESSEL POSITION 14.93°N 23.51°W · ANCHORED" },
+  { time:"20:47", lvl:"info",  msg:"VESSEL POSITION 28.02°N 16.55°W · ANCHORED" },
   { time:"21:14", lvl:"alert", msg:"CAPE VERDE PORT AUTHORITY — ENTRY DENIED" },
   { time:"21:32", lvl:"warn",  msg:"WIND BACKING NNE 12KN · DRIFT INCREASING" },
   { time:"21:42", lvl:"alert", msg:"THERMAL ANOMALY — DECK 3 STERN QUARTER" },
@@ -3346,24 +3359,27 @@ const RADIO_LOGS = [
   { time:"01:48", lvl:"warn",  msg:"CASE 6 SUSPECTED · ISOLATING DECK 4" },
 ];
 
-// Live ship state
+// ── Live ship state ───────────────────────────────────────────────
 const ship = {
-  group:   null,
-  bloom:   null,
-  dot:     null,
-  rings:   [],
-  hitZone: null,
-  wake:    null,
-  wakePoints: [],   // most recent positions (Vector3, newest first)
-  lat:    HOLDING_PATTERN[0][0],
-  lng:    HOLDING_PATTERN[0][1],
-  heading: 0,
-  speed:   0.7,
-  lastPos: null,    // truthy after first frame; gates bearing calc
+  group:      null,
+  bloom:      null,
+  dot:        null,
+  rings:      [],
+  hitZone:    null,
+  wake:       null,
+  wakePoints: [],
+  lat:        AIS_FALLBACK.lat,
+  lng:        AIS_FALLBACK.lng,
+  heading:    0,
+  sog:        0,       // speed over ground (knots)
+  navStatus:  'ANCHORED',
+  lastAIS:    null,    // timestamp of last real AIS frame
+  aisSocket:  null,
+  aisOk:      false,
 };
 const WAKE_LEN = 70;
 
-// Great-circle bearing between two lat/lng points, degrees from north
+// Great-circle bearing, degrees from north
 function bearing(lat1, lng1, lat2, lng2) {
   const f1 = lat1 * Math.PI/180, f2 = lat2 * Math.PI/180;
   const dl = (lng2 - lng1) * Math.PI/180;
@@ -3377,10 +3393,94 @@ function compassPoint(deg) {
   return dirs[Math.round(deg / 22.5) % 16];
 }
 
+// ── AIS WebSocket connection ──────────────────────────────────────
+function connectAIS() {
+  if (!CONFIG.aisApiKey || CONFIG.aisApiKey === 'YOUR_AISSTREAM_API_KEY') {
+    console.log('[AIS] No API key set — using last-known position only.');
+    return;
+  }
+
+  function open() {
+    console.log('[AIS] Connecting to aisstream.io…');
+    const ws = new WebSocket('wss://stream.aisstream.io/v0/stream');
+    ship.aisSocket = ws;
+
+    ws.onopen = () => {
+      ws.send(JSON.stringify({
+        Apikey:          CONFIG.aisApiKey,
+        FiltersShipMMSI: [HONDIUS_MMSI],
+        FilterMessageTypes: ['PositionReport'],
+      }));
+      console.log('[AIS] Subscribed to MMSI', HONDIUS_MMSI);
+    };
+
+    ws.onmessage = (evt) => {
+      try {
+        const msg = JSON.parse(evt.data);
+        const pr  = msg?.Message?.PositionReport;
+        if (!pr) return;
+
+        const newLat = pr.Latitude;
+        const newLng = pr.Longitude;
+        if (!Number.isFinite(newLat) || !Number.isFinite(newLng)) return;
+        if (newLat === 0 && newLng === 0) return; // bad frame
+
+        // Compute heading from movement if AIS doesn't supply a valid one
+        const rawHdg = pr.TrueHeading ?? pr.Cog ?? null;
+        if (rawHdg !== null && rawHdg < 360) {
+          ship.heading = rawHdg;
+        } else if (ship.lastAIS) {
+          ship.heading = bearing(ship.lat, ship.lng, newLat, newLng);
+        }
+
+        ship.lat       = newLat;
+        ship.lng       = newLng;
+        ship.sog       = pr.Sog ?? 0;
+        ship.navStatus = navStatusLabel(pr.NavigationalStatus ?? 0);
+        ship.lastAIS   = Date.now();
+        ship.aisOk     = true;
+
+        // Move the 3D marker immediately
+        applyShipLatLng(ship.lat, ship.lng);
+
+        // Keep the SITES entry in sync so flyToSite works
+        const s = SITES.find(x => x.id === 'hondius');
+        if (s) { s.lat = ship.lat; s.lng = ship.lng; }
+
+        if (vesselPanel.open) updateVesselPanelLive();
+      } catch (e) {
+        // Malformed frame — ignore
+      }
+    };
+
+    ws.onerror = () => {
+      ship.aisOk = false;
+      console.warn('[AIS] WebSocket error');
+    };
+
+    ws.onclose = (evt) => {
+      ship.aisOk = false;
+      console.warn('[AIS] Socket closed (code', evt.code, ') — reconnecting in 15s');
+      setTimeout(open, 15000);  // auto-reconnect
+    };
+  }
+
+  open();
+}
+
+// AIS navigational status codes → human label
+function navStatusLabel(code) {
+  const MAP = {
+    0:'UNDERWAY', 1:'ANCHORED', 2:'NOT UNDER COMMAND', 3:'RESTRICTED',
+    5:'MOORED', 6:'AGROUND', 7:'FISHING', 15:'UNDEFINED'
+  };
+  return MAP[code] ?? 'UNDERWAY';
+}
+
+// ── 3D ship entity ────────────────────────────────────────────────
 function makeShipEntity() {
   ship.group = new THREE.Group();
 
-  // Thermal bloom — large soft halo (sprite, always camera-facing)
   const bloomTex = makeGlowTexture(0xff2030);
   ship.bloom = new THREE.Sprite(new THREE.SpriteMaterial({
     map: bloomTex, transparent: true, depthWrite: false,
@@ -3389,14 +3489,12 @@ function makeShipEntity() {
   ship.bloom.scale.set(0.55, 0.55, 0.55);
   ship.group.add(ship.bloom);
 
-  // Inner hot dot (on the surface)
   ship.dot = new THREE.Mesh(
     new THREE.SphereGeometry(0.03, 12, 12),
     new THREE.MeshBasicMaterial({ color: 0xfff0e0 })
   );
   ship.group.add(ship.dot);
 
-  // Transmission rings — periodic outward pulses
   for (let i = 0; i < 3; i++) {
     const r = new THREE.Mesh(
       new THREE.RingGeometry(0.04, 0.06, 40),
@@ -3411,7 +3509,6 @@ function makeShipEntity() {
     ship.rings.push(r);
   }
 
-  // Click hit zone (invisible, larger than visible marker)
   ship.hitZone = new THREE.Mesh(
     new THREE.SphereGeometry(0.18, 8, 8),
     new THREE.MeshBasicMaterial({ visible: false })
@@ -3421,12 +3518,12 @@ function makeShipEntity() {
 
   globeRoot.add(ship.group);
 
-  // Wake trail — vertex-colored line, fades from bright (newest) to dark
+  // Wake trail
   const wakeGeo = new THREE.BufferGeometry();
   const wakePos = new Float32Array(WAKE_LEN * 3);
   const wakeCol = new Float32Array(WAKE_LEN * 3);
   for (let i = 0; i < WAKE_LEN; i++) {
-    const t = 1 - (i / WAKE_LEN);   // newest = 1, oldest = 0
+    const t = 1 - (i / WAKE_LEN);
     wakeCol[i*3]   = 1.0 * t;
     wakeCol[i*3+1] = 0.18 * t;
     wakeCol[i*3+2] = 0.22 * t;
@@ -3434,48 +3531,20 @@ function makeShipEntity() {
   wakeGeo.setAttribute('position', new THREE.BufferAttribute(wakePos, 3));
   wakeGeo.setAttribute('color',    new THREE.BufferAttribute(wakeCol, 3));
   ship.wake = new THREE.Line(wakeGeo, new THREE.LineBasicMaterial({
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.85,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
+    vertexColors: true, transparent: true, opacity: 0.85,
+    blending: THREE.AdditiveBlending, depthWrite: false,
   }));
   globeRoot.add(ship.wake);
+
+  // Place at last-known position immediately, then start live feed
+  applyShipLatLng(ship.lat, ship.lng);
+  connectAIS();
 }
 
-function updateShipPosition(t) {
-  // Defensive: guard against NaN/Infinity/negative t (some browsers pass
-  // odd timestamps to RAF on the very first frame, which would make `i`
-  // resolve to NaN and HOLDING_PATTERN[NaN] be undefined).
-  if (!Number.isFinite(t) || t < 0) t = 0;
-
-  // Walk the holding pattern as a closed loop with smooth easing
-  const cyclePos = (t / HOLDING_CYCLE_S) % 1;
-  const segCount = HOLDING_PATTERN.length;
-  const segPos   = cyclePos * segCount;
-  let   i        = Math.floor(segPos) % segCount;
-  // Floating-point can land i exactly at segCount; clamp just in case.
-  if (i < 0 || i >= segCount) i = 0;
-  const j        = (i + 1) % segCount;
-  const local    = segPos - Math.floor(segPos);
-  const k        = local * local * (3 - 2 * local);  // smoothstep — heavy/cinematic feel
-
-  const a = HOLDING_PATTERN[i];   // [lat, lng]
-  const b = HOLDING_PATTERN[j];
-  if (!a || !b) return;           // ultimate safety — should never fire
-  const newLat = a[0] + (b[0] - a[0]) * k;
-  const newLng = a[1] + (b[1] - a[1]) * k;
-
-  // Heading from previous to new position
-  if (ship.lastPos) {
-    ship.heading = bearing(ship.lat, ship.lng, newLat, newLng);
-  }
-  ship.lat = newLat;
-  ship.lng = newLng;
-
-  const pos = latLngToXYZ(ship.lat, ship.lng, RADIUS * 1.005);
+// Move the 3D marker to a new lat/lng and update the wake trail
+function applyShipLatLng(lat, lng) {
+  const pos = latLngToXYZ(lat, lng, RADIUS * 1.005);
   ship.group.position.copy(pos);
-  ship.lastPos = pos.clone();
 
   // Orient rings tangent to surface
   const up = pos.clone().normalize();
@@ -3484,11 +3553,10 @@ function updateShipPosition(t) {
   );
   for (const r of ship.rings) r.quaternion.copy(targetQ);
 
-  // Push into wake ring buffer
+  // Wake ring buffer
   ship.wakePoints.unshift(pos.clone());
   if (ship.wakePoints.length > WAKE_LEN) ship.wakePoints.pop();
 
-  // Update wake geometry positions
   const posAttr = ship.wake.geometry.attributes.position;
   for (let n = 0; n < WAKE_LEN; n++) {
     const p = (n < ship.wakePoints.length)
@@ -3502,26 +3570,26 @@ function updateShipPosition(t) {
 }
 
 function animateShipFx(t) {
-  // Pulse rings: each expands from base size to ~6× then resets
   for (const r of ship.rings) {
     const ph = (t * 0.30 + r.userData.phase) % 1;
     const s = 1 + ph * 5.0;
     r.scale.set(s, s, 1);
     r.material.opacity = (1 - ph) * 0.6;
   }
-  // Bloom breathing
   ship.bloom.scale.setScalar(0.45 + Math.sin(t * 2.0) * 0.10);
   ship.bloom.material.opacity = 0.85 + Math.sin(t * 2.5) * 0.10;
 }
 
 function updateShip(t) {
   if (!ship.group) return;
-  updateShipPosition(t);
+  // No fake movement — position only changes on real AIS frames.
+  // Just animate the visual FX every frame.
   animateShipFx(t);
-  // Keep SITES entry coords current so flyToSite uses live position
+
+  // Keep SITES entry current so flyToSite uses live position
   const s = SITES.find(x => x.id === 'hondius');
   if (s) { s.lat = ship.lat; s.lng = ship.lng; }
-  // Refresh panel readings if it's open
+
   if (vesselPanel.open) updateVesselPanelLive();
 }
 
@@ -3641,24 +3709,39 @@ function buildVesselPanel() {
 function updateVesselPanelLive() {
   if (!vesselPanel.el) return;
   const headDir = compassPoint(ship.heading);
-  const latStr = `${Math.abs(ship.lat).toFixed(3)}°${ship.lat >= 0 ? 'N' : 'S'}`;
-  const lngStr = `${Math.abs(ship.lng).toFixed(3)}°${ship.lng >= 0 ? 'E' : 'W'}`;
+  const latStr = `${Math.abs(ship.lat).toFixed(4)}°${ship.lat >= 0 ? 'N' : 'S'}`;
+  const lngStr = `${Math.abs(ship.lng).toFixed(4)}°${ship.lng >= 0 ? 'E' : 'W'}`;
+
+  // AIS signal freshness
+  let aisLabel, aisCls;
+  if (!CONFIG.aisApiKey || CONFIG.aisApiKey === 'YOUR_AISSTREAM_API_KEY') {
+    aisLabel = 'NO KEY SET'; aisCls = 'warn';
+  } else if (!ship.lastAIS) {
+    aisLabel = 'ACQUIRING…'; aisCls = 'warn';
+  } else {
+    const ageSec = Math.round((Date.now() - ship.lastAIS) / 1000);
+    aisLabel = ageSec < 60 ? `LIVE · ${ageSec}s AGO`
+             : ageSec < 300 ? `${Math.round(ageSec/60)}m AGO`
+             : 'AIS·LOST';
+    aisCls = ageSec < 300 ? 'live' : 'warn';
+  }
+
   const rows = [
     ["Vessel name",  "M/V HONDIUS"],
     ["Flag",         "NETHERLANDS"],
-    ["Class",        "POLAR EXPEDITION"],
-    ["IMO",          "9817060"],
+    ["MMSI",         "244327000"],
+    ["IMO",          "9818709"],
+    ["Class",        "POLAR PC6 EXPEDITION"],
     ["Length",       "107.6 m"],
-    ["Position",     `${latStr}  ${lngStr}`,                 "live"],
+    ["Position",     `${latStr}  ${lngStr}`, "live"],
     ["Heading",      `${String(Math.round(ship.heading)).padStart(3,'0')}° ${headDir}`, "live"],
-    ["Speed",        `${ship.speed.toFixed(1)} kn (HOLDING)`, "live"],
-    ["Sea state",    "MODERATE · 2.1m SWELL"],
-    ["Wind",         "ENE 14 kn"],
-    ["Quarantine",   "ENFORCED · LEVEL 4",                   "danger"],
-    ["Risk class",   "ALPHA · ANDES",                        "danger"],
-    ["Next port",    "UNDETERMINED",                         "warn"],
-    ["ETA",          "—"],
-    ["Transmission", "DEGRADED",                             "warn"],
+    ["Speed",        `${ship.sog.toFixed(1)} kn`, "live"],
+    ["Nav status",   ship.navStatus, "live"],
+    ["AIS feed",     aisLabel, aisCls],
+    ["Quarantine",   "ENFORCED · LEVEL 4", "danger"],
+    ["Risk class",   "ALPHA · ANDES", "danger"],
+    ["Next port",    "GRANADILLA, TENERIFE", "warn"],
+    ["ETA",          "IMMINENT · EVACUATION"],
   ];
   vesselPanel.el.querySelector('#vp-status').innerHTML = rows.map(r =>
     `<div class="vp-row"><span class="vp-k">${r[0]}</span>` +
