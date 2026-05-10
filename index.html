@@ -115,8 +115,8 @@
   #bg {
     position: fixed; inset: 0;
     background:
-      radial-gradient(ellipse at 70% 20%, rgba(255,31,61,0.10), transparent 55%),
-      radial-gradient(ellipse at 20% 80%, rgba(120,20,40,0.18), transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(255,31,61,0.04), transparent 45%),
+      radial-gradient(ellipse at 20% 80%, rgba(120,20,40,0.07), transparent 50%),
       radial-gradient(ellipse at 50% 50%, var(--void-2) 0%, var(--void) 70%);
     z-index: 0;
   }
@@ -1044,6 +1044,55 @@
     max-width: none;
   }
 
+  /* Topbar: constrain right edge so it doesn't bleed into the info panel */
+  body.split #topbar {
+    right: calc(var(--panel-w) + 16px);
+  }
+  /* Clock and feed pill move into panel-live chip; hide from topbar in split */
+  body.split #topbar .right {
+    display: none;
+  }
+
+  /* In split mode, hide the updated pill from the topbar — it moves into
+     the panel header instead (see #panel-live below). */
+  body.split #updated {
+    display: none;
+  }
+
+  /* Live status chip anchored inside the info panel, top-right corner */
+  #panel-live {
+    position: fixed;
+    top: max(14px, env(safe-area-inset-top));
+    right: var(--panel-pad);
+    z-index: 22;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,31,61,0.18);
+    background: rgba(8,2,8,0.45);
+    backdrop-filter: blur(8px);
+    color: rgba(243,233,216,0.45);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  #panel-live.live {
+    color: #66ff99;
+    border-color: rgba(102,255,153,0.35);
+    text-shadow: 0 0 6px rgba(102,255,153,0.4);
+  }
+  #panel-live.offline {
+    color: var(--amber);
+    border-color: rgba(255,179,71,0.35);
+  }
+  #panel-live.embedded {
+    color: rgba(243,233,216,0.4);
+  }
+  body.split #panel-live {
+    opacity: 1;
+  }
+
   /* Coords stay near top-right but offset so they don't sit under the
      info panel. */
   body.split #coords {
@@ -1746,6 +1795,7 @@
 <div id="bg"></div>
 <canvas id="globe"></canvas>
 <div id="info-panel"></div>
+<div id="panel-live">— FEED IDLE —</div>
 <div id="vignette"></div>
 <div id="scanlines"></div>
 <div id="flicker"></div>
@@ -3094,53 +3144,22 @@ function makeClouds() {
   globeRoot.add(cloudMesh);
 }
 
-// ─── Improved atmosphere: triple-band fresnel glow ───────────────────
+// ─── Atmosphere: single razor-thin limb glow only ────────────────────
 function makeBetterAtmosphere() {
-  // Inner band — sharp red glow at the limb
+  // One tight band right at the globe edge — just enough to give depth
+  // without the heavy red halo that dominates the background.
   const inner = new THREE.Mesh(
-    new THREE.SphereGeometry(RADIUS * 1.04, IS_MOBILE ? 32 : 64, IS_MOBILE ? 24 : 48),
+    new THREE.SphereGeometry(RADIUS * 1.015, IS_MOBILE ? 32 : 64, IS_MOBILE ? 24 : 48),
     new THREE.ShaderMaterial({
-      uniforms: { c: { value: 0.3 }, p: { value: 6.0 } },
+      uniforms: { c: { value: 0.25 }, p: { value: 9.0 } },
       vertexShader: `varying vec3 vN; void main(){ vN=normalize(normalMatrix*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-      fragmentShader: `uniform float c; uniform float p; varying vec3 vN; void main(){ float i=pow(c-dot(vN,vec3(0,0,1)),p); gl_FragColor=vec4(1.0,0.18,0.28,1.0)*i; }`,
+      fragmentShader: `uniform float c; uniform float p; varying vec3 vN; void main(){ float i=pow(max(c-dot(vN,vec3(0,0,1)),0.0),p)*0.55; gl_FragColor=vec4(1.0,0.22,0.32,1.0)*i; }`,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       transparent: true,
     })
   );
   scene.add(inner);
-
-  // Middle band — softer warm halo (skipped on mobile)
-  if (!IS_MOBILE) {
-    const middle = new THREE.Mesh(
-      new THREE.SphereGeometry(RADIUS * 1.18, 48, 32),
-      new THREE.ShaderMaterial({
-        uniforms: { c: { value: 0.7 }, p: { value: 3.0 } },
-        vertexShader: `varying vec3 vN; void main(){ vN=normalize(normalMatrix*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-        fragmentShader: `uniform float c; uniform float p; varying vec3 vN; void main(){ float i=pow(c-dot(vN,vec3(0,0,1)),p)*0.65; gl_FragColor=vec4(1.0,0.30,0.20,1.0)*i; }`,
-        side: THREE.BackSide,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-      })
-    );
-    scene.add(middle);
-  }
-
-  // Outer band — wide, faint reach (skipped on mobile to save fill rate)
-  if (!IS_MOBILE) {
-    const outer = new THREE.Mesh(
-      new THREE.SphereGeometry(RADIUS * 1.42, 32, 24),
-      new THREE.ShaderMaterial({
-        uniforms: { c: { value: 1.2 }, p: { value: 1.6 } },
-        vertexShader: `varying vec3 vN; void main(){ vN=normalize(normalMatrix*normal); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-        fragmentShader: `uniform float c; uniform float p; varying vec3 vN; void main(){ float i=pow(max(c-dot(vN,vec3(0,0,1)),0.0),p)*0.25; gl_FragColor=vec4(0.85,0.18,0.30,1.0)*i; }`,
-        side: THREE.BackSide,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-      })
-    );
-    scene.add(outer);
-  }
 }
 
 // ─── Cities layer: surface points, tiered visibility ─────────────────
@@ -3244,12 +3263,7 @@ function makeFlightCorridors() {
 function updateLOD(t) {
   const z = state.zoom;
 
-  // Cloud layer: more visible when zoomed out (zoom >= 12 fully visible)
-  if (cloudMesh) {
-    cloudMesh.material.uniforms.u_alpha.value = lodFade(z, 22, 9) * 0.55;
-    cloudMesh.material.uniforms.u_time.value = t;
-    cloudMesh.rotation.y = t * 0.008;  // very slow drift
-  }
+  // Cloud layer disabled — no update needed
 
   // Cities by tier
   if (cityLayers.tier0) cityLayers.tier0.material.opacity = lodFade(z, 20, 6) * 0.95;
@@ -3929,10 +3943,14 @@ function applyData(data) {
 
   // Update timestamp pill + countdown anchor
   const upd = document.getElementById('updated');
+  const panelLive = document.getElementById('panel-live');
   if (data.updated_at) {
     const d = new Date(data.updated_at);
-    upd.textContent = `LIVE · ${formatAgo(d)}`;
+    const txt = `LIVE · ${formatAgo(d)}`;
+    upd.textContent = txt;
     upd.className = 'live';
+    panelLive.textContent = txt;
+    panelLive.className = 'live';
     lastSyncAt = d.getTime();
     nextRefreshAt = lastSyncAt + AGENT_INTERVAL_MS;
   }
@@ -3942,9 +3960,12 @@ function applyData(data) {
 let liveInterval = null;
 async function fetchLatest() {
   const upd = document.getElementById('updated');
+  const panelLive = document.getElementById('panel-live');
   if (!CONFIG.liveDataUrl) {
     upd.textContent = 'EMBEDDED · v1';
     upd.className = 'embedded';
+    panelLive.textContent = 'EMBEDDED · v1';
+    panelLive.className = 'embedded';
     return;
   }
   try {
@@ -3956,13 +3977,15 @@ async function fetchLatest() {
     console.warn('Live data fetch failed:', err);
     upd.textContent = 'OFFLINE · CACHED';
     upd.className = 'offline';
+    panelLive.textContent = 'OFFLINE · CACHED';
+    panelLive.className = 'offline';
   }
 }
 
 // ---- BOOT ----------------------------------------------------
 buildCountries();
 makeBetterAtmosphere();
-if (!IS_MOBILE) makeClouds();      // cloud shader is expensive on iOS GPUs
+// makeClouds() disabled — clouds + outer atmosphere halo obscure the clean wireframe look
 makeMaritimeRoutes();
 makeFlightCorridors();
 makeCities();
