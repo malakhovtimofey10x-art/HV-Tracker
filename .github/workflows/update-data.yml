@@ -1,7 +1,7 @@
 name: Update outbreak data
 
-# Runs the agent on a 2-hour cadence. The cron uses UTC.
-# You can also trigger it manually from the Actions tab.
+# Runs the dual-LLM agent on a 2-hour cadence (UTC).
+# Trigger manually from the Actions tab any time.
 on:
   workflow_dispatch:
   schedule:
@@ -22,11 +22,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install --quiet anthropic
+        run: pip install --quiet anthropic openai
 
       - name: Run agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY:    ${{ secrets.OPENAI_API_KEY }}
         run: python agent.py
 
       - name: Commit data.json if changed
