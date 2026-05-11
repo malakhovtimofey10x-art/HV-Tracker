@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-05-11T23:31:49+00:00",
+  "prevTime": "2026-05-11T23:16:43+00:00",
+  "newSites": [],
+  "caseDeltas": [
+    {
+      "site": {
+        "id": "hondius",
+        "name": "M/V HONDIUS",
+        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "confirmed",
+        "confirmed": 10,
+        "suspected": 0,
+        "deaths": 3,
+        "monitored": 53,
+        "desc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination."
+      },
+      "field": "confirmed",
+      "prev": 8,
+      "next": 10,
+      "delta": 2
+    }
+  ],
+  "statusChanges": [],
+  "descChanges": [
+    {
+      "site": {
+        "id": "hondius",
+        "name": "M/V HONDIUS",
+        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "confirmed",
+        "confirmed": 10,
+        "suspected": 0,
+        "deaths": 3,
+        "monitored": 53,
+        "desc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination."
+      },
+      "prevDesc": "WHO confirms 8 cases and 3 deaths aboard vessel as of 11 May; fatalities include Dutch couple and German passenger. Vessel docked Granadilla de Abona port 10 May after 40 days at sea; 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination. No new infections reported since isolation measures implemented.",
+      "nextDesc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination."
+    },
+    {
+      "site": {
+        "id": "ch",
+        "name": "ZURICH / GENEVA",
+        "country": "SWITZERLAND",
+        "lat": 47.38,
+        "lng": 8.54,
+        "status": "confirmed",
+        "confirmed": 1,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no new mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing."
+      },
+      "prevDesc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing.",
+      "nextDesc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no new mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing."
+    }
+  ],
+  "totalDeltas": {
+    "confirmed": 2,
+    "suspected": 0,
+    "deaths": 0
+  },
+  "newTicker": [
+    "▲ ANDES VARIANT CONFIRMED BY EL PAÍS GENETIC ANALYSIS; NO NEW MUTATIONS DETECTED IN SEQUENCING",
+    "▲ HONDIUS VESSEL CONFIRMED CASES RISE TO 10 WITH 3 DEATHS; OUTBREAK STABLE PER EL PAÍS 11 MAY",
+    "► FRANCE RECORDS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+    "► TWO AMERICANS FLOWN TO NEBRASKA NQU IN BIOCONTAINMENT UNITS; ONE SYMPTOMATIC ONE PCR-MILD",
+    "► ANDES VIRUS ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; SEQUENCING ONGOING",
+    "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
+    "// NO NEW INFECTIONS REPORTED SINCE CONTAINMENT MEASURES IMPLEMENTED ABOARD HONDIUS"
+  ],
+  "totalChanges": 3
+}

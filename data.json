@@ -1,9 +1,9 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-11T23:16:43+00:00",
+  "updated_at": "2026-05-11T23:31:49+00:00",
   "totals": {
-    "confirmed": 20,
+    "confirmed": 22,
     "suspected": 4,
     "deaths": 7,
     "monitored": 432,
@@ -11,16 +11,16 @@
     "sites": 38
   },
   "ticker": [
+    "▲ ANDES VARIANT CONFIRMED BY EL PAÍS GENETIC ANALYSIS; NO NEW MUTATIONS DETECTED IN SEQUENCING",
+    "▲ HONDIUS VESSEL CONFIRMED CASES RISE TO 10 WITH 3 DEATHS; OUTBREAK STABLE PER EL PAÍS 11 MAY",
     "▲ WHO CONFIRMS 8 CASES 3 DEATHS ON HONDIUS; DUTCH COUPLE AND GERMAN PASSENGER AMONG FATALITIES",
-    "▲ FRANCE RECORDS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
-    "▲ TWO AMERICANS FLOWN TO NEBRASKA NQU IN BIOCONTAINMENT UNITS; ONE SYMPTOMATIC ONE PCR-MILD",
-    "► ANDES VIRUS CONFIRMED HONDIUS OUTBREAK STRAIN; HUMAN-TO-HUMAN TRANSMISSION CAPABILITY FLAGGED",
+    "► FRANCE RECORDS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+    "► TWO AMERICANS FLOWN TO NEBRASKA NQU IN BIOCONTAINMENT UNITS; ONE SYMPTOMATIC ONE PCR-MILD",
+    "► ANDES VIRUS ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; SEQUENCING ONGOING",
     "► 17 AMERICANS REPATRIATED VIA STATE DEPT AIRLIFT; CDC SAYS US WIDESPREAD TRANSMISSION UNLIKELY",
-    "► FRANCE ISOLATES 5 HIGH-RISK PAX AT BICHAT HOSPITAL; CONTACT TRACING SPANS INTERNATIONAL FLIGHTS",
     "► HONDIUS DOCKS TENERIFE AFTER 40 DAYS; 23-NATION EVACUATION DECLARED SUCCESSFUL BY WHO/SPAIN",
-    "► TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
-    "// ANDES ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; MULTI-SAMPLE SEQUENCING ONGOING",
-    "// ACTING CDC DIR CRITICISED ON CNN FOR VAGUE RESPONSES ON PAX MONITORING PROTOCOLS"
+    "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
+    "// NO NEW INFECTIONS REPORTED SINCE CONTAINMENT MEASURES IMPLEMENTED ABOARD HONDIUS"
   ],
   "sites": [
     {
@@ -30,11 +30,11 @@
       "lat": 28.17,
       "lng": -16.45,
       "status": "confirmed",
-      "confirmed": 8,
+      "confirmed": 10,
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "WHO confirms 8 cases and 3 deaths aboard vessel as of 11 May; fatalities include Dutch couple and German passenger. Vessel docked Granadilla de Abona port 10 May after 40 days at sea; 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination. No new infections reported since isolation measures implemented."
+      "desc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination."
     },
     {
       "id": "ushuaia",
@@ -125,7 +125,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing."
+      "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no new mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing."
     },
     {
       "id": "de",
