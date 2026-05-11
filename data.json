@@ -1,21 +1,21 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-11T06:58:32+00:00",
+  "updated_at": "2026-05-11T11:50:51+00:00",
   "totals": {
-    "confirmed": 11,
-    "suspected": 5,
+    "confirmed": 12,
+    "suspected": 4,
     "deaths": 5,
-    "monitored": 440,
+    "monitored": 432,
     "countries_affected": 26,
     "sites": 38
   },
   "ticker": [
+    "▲ FRANCE CONFIRMS FIRST HANTAVIRUS CASE; ONE PCR-POSITIVE, FOUR MONITORED AT BICHAT HOSPITAL",
     "▲ WHO CONFIRMS 8 CASES 3 DEATHS ANDES VIRUS ON HONDIUS; 5 SUSPECTED CASES STILL UNDER EVAL",
     "▲ HONDIUS DOCKED TENERIFE; 17 US PASSENGERS FLY NEBRASKA NQU — NONE POSITIVE AS OF 11 MAY",
-    "▲ CDC DIR BHATTACHARYA FACES SCRUTINY OVER HANTAVIRUS MONITORING PLAN; 24 AMERICANS INVOLVED",
     "► WHO: ANDES VIRUS LIMITED HUMAN-TO-HUMAN SPREAD; GLOBAL PUBLIC HEALTH RISK ASSESSED AS LOW",
-    "► FRANCE: ONE PASSENGER DEVELOPS SYMPTOMS MID-REPATRIATION FLIGHT; ALL 5 ISOLATED BICHAT HOSP",
+    "► FRANCE: SYMPTOMATIC PASSENGER ISOLATED MID-FLIGHT; ALL 5 REPATRIATES NOW AT BICHAT HOSP",
     "► SPAIN ACCEPTS HONDIUS AFTER CAPE VERDE DENIAL; 23-NATION EVACUATION DECLARED SUCCESSFUL",
     "► TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
     "► 5 SUSPECTED CASES STILL UNDER EVALUATION AS INCUBATION WINDOW NOT YET CLOSED — WHO 07 MAY",
@@ -107,12 +107,12 @@
       "country": "FRANCE",
       "lat": 48.86,
       "lng": 2.35,
-      "status": "suspected",
-      "confirmed": 0,
-      "suspected": 1,
+      "status": "confirmed",
+      "confirmed": 1,
+      "suspected": 0,
       "deaths": 0,
-      "monitored": 13,
-      "desc": "5 French Hondius passengers repatriated by government medical flight 10 May, landing Le Bourget ~16:30 per AP News. One developed symptoms on the repatriation flight — all 5 placed strict isolation, transferred to Bichat Hospital Paris for 72-hr hospitalisation + full evaluation, then 45-day home quarantine."
+      "monitored": 5,
+      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening, strict isolation at Bichat Hospital Paris. Four remaining high-risk passengers hospitalized for monitoring; all five arrived Le Bourget 10 May via government medical flight, one having developed symptoms in-flight."
     },
     {
       "id": "ch",
