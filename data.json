@@ -1,23 +1,23 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-11T18:26:29+00:00",
+  "updated_at": "2026-05-11T23:16:43+00:00",
   "totals": {
-    "confirmed": 12,
+    "confirmed": 20,
     "suspected": 4,
-    "deaths": 5,
+    "deaths": 7,
     "monitored": 432,
     "countries_affected": 26,
     "sites": 38
   },
   "ticker": [
-    "▲ GENETIC ANALYSIS CONFIRMS ANDES VARIANT ON HONDIUS; NO MUTATIONS OR REARRANGEMENTS DETECTED",
-    "▲ HONDIUS DOCKS TENERIFE AFTER 40 DAYS; 23-NATION EVACUATION DECLARED SUCCESSFUL BY WHO/SPAIN",
-    "▲ 10 POSSIBLE INFECTIONS 3 DEATHS REPORTED; ANDES VIRUS SEQUENCES PUBLISHED ON VIROLOGICAL.ORG",
-    "► ANDES STRAIN MATCHES ARGENTINA 2018-19 SEQUENCES; NEW MORE DANGEROUS VARIANT RULED OUT",
-    "► SWISS LAB ILLUMINA SEQUENCING: HIGH SIMILARITY TO ARGENTINA STRAINS, HUMAN-TO-HUMAN POSSIBLE",
-    "► SPAIN EVACUATES 14 NATIONALS FIRST TO GOMEZ ULLA HOSP; NO NEW INFECTIONS SINCE CONTAINMENT",
-    "► HONDIUS TO SAIL ROTTERDAM WITH 30 SKELETON CREW POST-TENERIFE FOR FULL DECONTAMINATION",
+    "▲ WHO CONFIRMS 8 CASES 3 DEATHS ON HONDIUS; DUTCH COUPLE AND GERMAN PASSENGER AMONG FATALITIES",
+    "▲ FRANCE RECORDS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+    "▲ TWO AMERICANS FLOWN TO NEBRASKA NQU IN BIOCONTAINMENT UNITS; ONE SYMPTOMATIC ONE PCR-MILD",
+    "► ANDES VIRUS CONFIRMED HONDIUS OUTBREAK STRAIN; HUMAN-TO-HUMAN TRANSMISSION CAPABILITY FLAGGED",
+    "► 17 AMERICANS REPATRIATED VIA STATE DEPT AIRLIFT; CDC SAYS US WIDESPREAD TRANSMISSION UNLIKELY",
+    "► FRANCE ISOLATES 5 HIGH-RISK PAX AT BICHAT HOSPITAL; CONTACT TRACING SPANS INTERNATIONAL FLIGHTS",
+    "► HONDIUS DOCKS TENERIFE AFTER 40 DAYS; 23-NATION EVACUATION DECLARED SUCCESSFUL BY WHO/SPAIN",
     "► TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
     "// ANDES ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; MULTI-SAMPLE SEQUENCING ONGOING",
     "// ACTING CDC DIR CRITICISED ON CNN FOR VAGUE RESPONSES ON PAX MONITORING PROTOCOLS"
@@ -30,11 +30,11 @@
       "lat": 28.17,
       "lng": -16.45,
       "status": "confirmed",
-      "confirmed": 2,
+      "confirmed": 8,
       "suspected": 0,
-      "deaths": 1,
+      "deaths": 3,
       "monitored": 53,
-      "desc": "Vessel docked Granadilla de Abona port 10 May after 40 days at sea; multinational evacuation operation involving 23 countries declared successful by WHO and Spain per El País. 30 skeleton crew + Dutch nurse to sail vessel to Rotterdam post-evacuation for full decontamination. No new infections reported since isolation measures implemented."
+      "desc": "WHO confirms 8 cases and 3 deaths aboard vessel as of 11 May; fatalities include Dutch couple and German passenger. Vessel docked Granadilla de Abona port 10 May after 40 days at sea; 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination. No new infections reported since isolation measures implemented."
     },
     {
       "id": "ushuaia",
@@ -112,7 +112,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening, strict isolation at Bichat Hospital Paris. Four remaining high-risk passengers hospitalized for monitoring; all five arrived Le Bourget 10 May via government medical flight, one having developed symptoms in-flight."
+      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. Four remaining high-risk passengers hospitalized for monitoring; French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
     },
     {
       "id": "ch",
@@ -328,12 +328,12 @@
       "country": "UNITED STATES",
       "lat": 41.26,
       "lng": -96.04,
-      "status": "monitor",
-      "confirmed": 0,
+      "status": "confirmed",
+      "confirmed": 2,
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) activated for 18 inbound passengers (17 Americans + 1 UK-resident British national) via Offutt AFB — US flight departed Tenerife ~21:30 local. None of the Americans tested positive as of Saturday per CDC and The Daily Beast. After brief NQU assessment, passengers may opt for 42-day home self-monitoring with daily health department contact."
+      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one displaying mild symptoms, one testing mildly PCR-positive for Andes virus per The Daily Beast. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
     },
     {
       "id": "us-ut",
