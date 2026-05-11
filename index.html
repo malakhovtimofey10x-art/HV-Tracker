@@ -4810,6 +4810,29 @@ async function fetchLatest() {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     const data = await r.json();
     applyData(data);
+
+    // On first load, fetch the pre-built audit.json so the audit modal
+    // is populated immediately without needing two in-session polling cycles.
+    if (!lastAuditDiff) {
+      try {
+        const auditUrl = CONFIG.liveDataUrl.replace(/data\.json(\?.*)?$/, 'audit.json');
+        const ar = await fetch(auditUrl, { cache: 'no-store' });
+        if (ar.ok) {
+          const auditData = await ar.json();
+          if (auditData && auditData.timestamp) {
+            lastAuditDiff = auditData;
+            if (lastAuditDiff.totalChanges > 0 || (lastAuditDiff.newTicker||[]).length > 0) {
+              const fb = document.getElementById('fab-badge');
+              if (fb) fb.classList.add('on');
+              const mb = document.getElementById('mn-audit-badge');
+              if (mb) mb.style.opacity = '1';
+            }
+          }
+        }
+      } catch (auditErr) {
+        console.warn('Audit fetch failed (non-fatal):', auditErr);
+      }
+    }
   } catch (err) {
     console.warn('Live data fetch failed:', err);
     upd.textContent = 'OFFLINE · CACHED';
