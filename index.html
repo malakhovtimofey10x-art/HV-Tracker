@@ -2265,20 +2265,48 @@
     #ticker { bottom: calc(44px + env(safe-area-inset-bottom) + 2px) !important; }
   }
 
-  /* ═══════════════════════════════════════════════════════════════════
-     DATA AUDIT MODAL
-  ═══════════════════════════════════════════════════════════════════ */
-  #audit-modal {
+  /* ═══ DATA AUDIT MODAL ═══════════════════════════════════════════ */
+  #audit-fab {
     position: fixed;
-    inset: 0;
-    z-index: 80;
-    display: flex;
+    bottom: calc(env(safe-area-inset-bottom) + 70px);
+    right: 18px;
+    z-index: 40;
+    display: none;
     align-items: center;
-    justify-content: center;
-    background: rgba(5,2,7,0.85);
-    backdrop-filter: blur(14px) saturate(1.1);
+    gap: 8px;
+    padding: 9px 14px 9px 11px;
+    background: rgba(10,3,10,0.92);
+    border: 1px solid rgba(255,31,61,0.45);
+    box-shadow: 0 0 18px rgba(255,31,61,0.25);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; letter-spacing: 2px;
+    color: rgba(255,80,96,0.85);
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  #audit-fab:hover { background: rgba(20,4,14,0.97); box-shadow: 0 0 26px rgba(255,31,61,0.4); }
+  #audit-fab svg { width: 14px; height: 14px; stroke: rgba(255,80,96,0.7); flex-shrink: 0; }
+  #audit-fab .fab-badge {
+    background: var(--laser);
+    color: #fff;
+    font-size: 7px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
     opacity: 0;
-    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  #audit-fab .fab-badge.on { opacity: 1; }
+  @media (min-width: 541px) { #audit-fab { display: flex; } }
+
+  #audit-modal {
+    position: fixed; inset: 0; z-index: 90;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(5,2,7,0.88);
+    backdrop-filter: blur(14px);
+    opacity: 0; pointer-events: none;
     transition: opacity 0.22s ease;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
@@ -2286,165 +2314,111 @@
 
   #audit-card {
     position: relative;
-    width: min(620px, 96vw);
-    max-height: min(86vh, 700px);
-    background: linear-gradient(160deg, rgba(14,4,10,0.98) 0%, rgba(8,2,8,0.98) 100%);
-    border: 1px solid rgba(255,31,61,0.35);
-    box-shadow: 0 0 0 1px rgba(255,31,61,0.07), 0 0 80px rgba(255,31,61,0.18), inset 0 0 60px rgba(255,31,61,0.03);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 2px;
+    width: min(600px, 96vw);
+    max-height: min(88vh, 720px);
+    background: linear-gradient(160deg,rgba(14,4,10,0.99),rgba(8,2,8,0.99));
+    border: 1px solid rgba(255,31,61,0.38);
+    box-shadow: 0 0 80px rgba(255,31,61,0.18), inset 0 0 60px rgba(255,31,61,0.03);
+    display: flex; flex-direction: column; overflow: hidden;
   }
-  #audit-card::before, #audit-card::after {
-    content: '';
-    position: absolute;
-    width: 16px; height: 16px;
-    border-color: rgba(255,31,61,0.55);
-    border-style: solid;
-    pointer-events: none;
-    z-index: 1;
+  #audit-card::before,#audit-card::after {
+    content:''; position:absolute; width:16px; height:16px;
+    border-color:rgba(255,31,61,0.55); border-style:solid; pointer-events:none; z-index:1;
   }
-  #audit-card::before { top: -1px; left: -1px;  border-width: 2px 0 0 2px; }
-  #audit-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+  #audit-card::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  #audit-card::after  { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
 
   #audit-header {
-    padding: 18px 22px 14px;
+    padding: 18px 20px 14px;
     border-bottom: 1px solid rgba(255,31,61,0.14);
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
+    display: flex; align-items: flex-start; justify-content: space-between; gap:12px;
     flex-shrink: 0;
   }
-  #audit-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px; letter-spacing: 3px;
-    color: rgba(255,80,96,0.55);
-    margin-bottom: 4px;
+  .audit-eyebrow {
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:3px;
+    color:rgba(255,80,96,0.5); margin-bottom:4px;
   }
-  #audit-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 14px; font-weight: 700; letter-spacing: 2px;
-    color: rgba(243,233,216,0.95);
+  .audit-h1 {
+    font-family:'Orbitron',sans-serif; font-size:14px; font-weight:700;
+    letter-spacing:2px; color:rgba(243,233,216,0.95);
   }
   #audit-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px; letter-spacing: 1.5px;
-    color: rgba(243,233,216,0.3);
-    margin-top: 5px;
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.5px;
+    color:rgba(243,233,216,0.28); margin-top:5px;
   }
   #audit-close {
-    width: 30px; height: 30px; flex-shrink: 0;
-    border: 1px solid rgba(255,31,61,0.25);
-    background: rgba(255,31,61,0.06);
-    color: rgba(255,80,96,0.7);
-    font-size: 15px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s, color 0.15s;
-    font-family: 'JetBrains Mono', monospace;
-    border-radius: 1px;
+    width:30px; height:30px; flex-shrink:0;
+    border:1px solid rgba(255,31,61,0.25); background:rgba(255,31,61,0.07);
+    color:rgba(255,80,96,0.7); font-size:15px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition:background 0.15s; font-family:'JetBrains Mono',monospace;
   }
-  #audit-close:hover, #audit-close:active { background: rgba(255,31,61,0.2); color: #fff; }
+  #audit-close:hover,#audit-close:active { background:rgba(255,31,61,0.22); color:#fff; }
 
   #audit-summary {
-    display: flex;
-    border-bottom: 1px solid rgba(255,31,61,0.12);
-    flex-shrink: 0;
+    display:flex; border-bottom:1px solid rgba(255,31,61,0.12); flex-shrink:0;
   }
-  .audit-stat {
-    flex: 1; padding: 11px 10px; border-right: 1px solid rgba(255,31,61,0.09);
-    text-align: center;
-  }
-  .audit-stat:last-child { border-right: none; }
+  .audit-stat { flex:1; padding:11px 8px; border-right:1px solid rgba(255,31,61,0.09); text-align:center; }
+  .audit-stat:last-child { border-right:none; }
   .audit-stat .as-n {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 19px; font-weight: 700;
-    color: rgba(243,233,216,0.9); line-height: 1;
+    font-family:'Orbitron',sans-serif; font-size:20px; font-weight:700;
+    color:rgba(243,233,216,0.9); line-height:1;
   }
-  .audit-stat .as-n.red   { color: var(--laser); text-shadow: 0 0 10px var(--laser-glow); }
-  .audit-stat .as-n.amber { color: var(--amber); }
-  .audit-stat .as-n.green { color: #66ff99; }
-  .audit-stat .as-n.none  { color: rgba(243,233,216,0.28); }
+  .as-n.red   { color:var(--laser); text-shadow:0 0 10px var(--laser-glow); }
+  .as-n.amber { color:var(--amber); }
+  .as-n.green { color:#66ff99; }
+  .as-n.none  { color:rgba(243,233,216,0.25); }
   .audit-stat .as-l {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7px; letter-spacing: 2px;
-    color: rgba(243,233,216,0.3); margin-top: 4px;
+    font-family:'JetBrains Mono',monospace; font-size:7px; letter-spacing:2px;
+    color:rgba(243,233,216,0.28); margin-top:4px;
   }
 
   #audit-body {
-    overflow-y: auto; flex: 1;
-    padding: 0 20px 20px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,31,61,0.22) transparent;
-    -webkit-overflow-scrolling: touch;
+    overflow-y:auto; flex:1; padding:0 20px 20px;
+    scrollbar-width:thin; scrollbar-color:rgba(255,31,61,0.2) transparent;
+    -webkit-overflow-scrolling:touch;
   }
-  #audit-body::-webkit-scrollbar { width: 3px; }
-  #audit-body::-webkit-scrollbar-thumb { background: rgba(255,31,61,0.28); border-radius: 2px; }
+  #audit-body::-webkit-scrollbar { width:3px; }
+  #audit-body::-webkit-scrollbar-thumb { background:rgba(255,31,61,0.25); border-radius:2px; }
 
-  .audit-section-head {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px; letter-spacing: 3px;
-    color: rgba(255,80,96,0.5);
-    padding: 14px 0 7px;
-    border-bottom: 1px solid rgba(255,31,61,0.09);
-    margin-bottom: 1px;
+  .audit-sh {
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:3px;
+    color:rgba(255,80,96,0.48); padding:14px 0 7px;
+    border-bottom:1px solid rgba(255,31,61,0.08); margin-bottom:1px;
   }
   .audit-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: baseline;
-    gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,31,61,0.055);
-    font-family: 'JetBrains Mono', monospace;
+    display:grid; grid-template-columns:1fr auto; align-items:baseline;
+    gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,31,61,0.05);
+    font-family:'JetBrains Mono',monospace;
   }
-  .audit-row:last-child { border-bottom: none; }
-  .audit-row-left { display: flex; flex-direction: column; gap: 3px; }
-  .audit-site { font-size: 10px; letter-spacing: 1.8px; color: rgba(243,233,216,0.85); font-weight: 500; }
-  .audit-field { font-size: 8px; letter-spacing: 1.2px; color: rgba(243,233,216,0.32); }
-  .audit-delta {
-    font-size: 13px; font-weight: 700;
-    letter-spacing: 1px; white-space: nowrap; text-align: right;
-  }
-  .audit-delta.up    { color: var(--laser); text-shadow: 0 0 7px var(--laser-glow); }
-  .audit-delta.down  { color: #66ff99; }
-  .audit-delta.same  { color: rgba(243,233,216,0.28); }
-  .audit-delta.new   { color: var(--amber); }
-  .audit-delta.amber { color: var(--amber); }
-
+  .audit-row:last-child { border-bottom:none; }
+  .audit-rl { display:flex; flex-direction:column; gap:3px; }
+  .audit-site { font-size:10px; letter-spacing:1.8px; color:rgba(243,233,216,0.85); font-weight:500; }
+  .audit-field { font-size:8px; letter-spacing:1px; color:rgba(243,233,216,0.3); line-height:1.5; }
+  .audit-delta { font-size:13px; font-weight:700; letter-spacing:1px; white-space:nowrap; text-align:right; }
+  .audit-delta.up    { color:var(--laser); text-shadow:0 0 7px var(--laser-glow); }
+  .audit-delta.down  { color:#66ff99; }
+  .audit-delta.same  { color:rgba(243,233,216,0.25); }
+  .audit-delta.new   { color:var(--amber); }
+  .audit-delta.amber { color:var(--amber); }
   .audit-empty {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px; letter-spacing: 2px;
-    color: rgba(243,233,216,0.22);
-    text-align: center; padding: 30px 0;
+    font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:2px;
+    color:rgba(243,233,216,0.2); text-align:center; padding:32px 0;
   }
   .audit-ticker-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 8px; letter-spacing: 1.2px;
-    color: rgba(243,233,216,0.45);
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(255,31,61,0.055);
-    line-height: 1.5;
+    font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.2px;
+    color:rgba(243,233,216,0.4); padding:5px 0;
+    border-bottom:1px solid rgba(255,31,61,0.05); line-height:1.5;
   }
-  .audit-ticker-item.alert { color: rgba(255,80,96,0.8); }
+  .audit-ticker-item.alert { color:rgba(255,80,96,0.8); }
 
-  /* Mobile nav AUDIT button badge */
-  #mn-audit .mn-badge {
-    background: var(--laser);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  #mn-audit .mn-badge.visible { opacity: 1; }
-
-  @media (max-width: 540px) {
-    #audit-card { max-height: 90vh; border-radius: 2px; }
-    #audit-header { padding: 14px 16px 11px; }
-    #audit-body { padding: 0 14px 16px; }
-    #audit-title { font-size: 12px; }
-    .audit-stat .as-n { font-size: 16px; }
-    .audit-stat { padding: 9px 8px; }
-    .audit-section-head { font-size: 7px; }
+  @media (max-width:540px) {
+    #audit-card { max-height:92vh; }
+    #audit-header { padding:14px 14px 11px; }
+    #audit-body { padding:0 14px 16px; }
+    .audit-h1 { font-size:12px; }
+    .as-n { font-size:17px !important; }
+    .audit-stat { padding:9px 6px; }
   }
 </style>
 </head>
@@ -2460,27 +2434,6 @@ if (window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad/i.test(navigator.userA
 <canvas id="globe"></canvas>
 <div id="info-panel"></div>
 <div id="panel-live">— FEED IDLE —</div>
-
-<!-- ═══ DATA AUDIT MODAL ═══ -->
-<div id="audit-modal" role="dialog" aria-modal="true" aria-label="Data audit log">
-  <div id="audit-card">
-    <div id="audit-header">
-      <div>
-        <div id="audit-eyebrow">// SURVEILLANCE AUDIT LOG</div>
-        <div id="audit-title">DATA UPDATE REPORT</div>
-        <div id="audit-meta">COMPARING CURRENT VS PREVIOUS SNAPSHOT</div>
-      </div>
-      <button id="audit-close" aria-label="Close">✕</button>
-    </div>
-    <div id="audit-summary">
-      <div class="audit-stat"><div class="as-n none" id="as-new-cases">—</div><div class="as-l">NEW CASES</div></div>
-      <div class="audit-stat"><div class="as-n none" id="as-new-deaths">—</div><div class="as-l">DEATHS</div></div>
-      <div class="audit-stat"><div class="as-n none" id="as-new-sites">—</div><div class="as-l">NEW SITES</div></div>
-      <div class="audit-stat"><div class="as-n none" id="as-changes">—</div><div class="as-l">CHANGES</div></div>
-    </div>
-    <div id="audit-body"><div class="audit-empty">LOADING…</div></div>
-  </div>
-</div>
 <div id="vignette"></div>
 <div id="scanlines"></div>
 <div id="flicker"></div>
@@ -2659,13 +2612,13 @@ if (window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad/i.test(navigator.userA
     </svg>
     DATA
   </button>
-  <button class="mn-btn" id="mn-audit" aria-label="Data Audit Log">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <button class="mn-btn" id="mn-audit" aria-label="Audit Log">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
       <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
       <rect x="9" y="3" width="6" height="4" rx="1"/>
-      <path d="M9 12h6M9 16h4" opacity="0.7"/>
+      <path d="M9 12h6M9 16h4"/>
     </svg>
-    <span class="mn-badge" id="mn-audit-badge" style="opacity:0">!</span>
+    <span class="mn-badge" id="mn-audit-badge" style="opacity:0;background:var(--laser);width:8px;height:8px;border-radius:50%;position:absolute;top:6px;right:18px;display:block;transition:opacity 0.3s"></span>
     AUDIT
   </button>
 </nav>
@@ -4773,176 +4726,22 @@ function isValidData(d) {
         && typeof s.confirmed === 'number');
 }
 
-
-// ════════════════════════════════════════════════════════════════════
-//  DATA AUDIT SYSTEM — diff engine + modal
-// ════════════════════════════════════════════════════════════════════
-
-let previousSnapshot = null;
-let currentSnapshot  = null;
-let lastAuditDiff    = null;
-
-function diffSnapshots(prev, next) {
-  if (!prev || !next) return null;
-  const result = {
-    timestamp: next.updated_at, prevTime: prev.updated_at,
-    newSites: [], caseDeltas: [], statusChanges: [], descChanges: [],
-    totalDeltas: {
-      confirmed: (next.totals?.confirmed||0) - (prev.totals?.confirmed||0),
-      suspected: (next.totals?.suspected||0) - (prev.totals?.suspected||0),
-      deaths:    (next.totals?.deaths||0)    - (prev.totals?.deaths||0),
-    },
-    newTicker: [], totalChanges: 0,
-  };
-  const prevById = {};
-  (prev.sites||[]).forEach(s => prevById[s.id] = s);
-  (next.sites||[]).forEach(ns => {
-    const ps = prevById[ns.id];
-    if (!ps) { result.newSites.push(ns); result.totalChanges++; return; }
-    for (const f of ['confirmed','suspected','deaths','monitored']) {
-      const delta = (ns[f]||0) - (ps[f]||0);
-      if (delta !== 0) { result.caseDeltas.push({site:ns,field:f,prev:ps[f],next:ns[f],delta}); result.totalChanges++; }
-    }
-    if (ns.status !== ps.status) { result.statusChanges.push({site:ns,prev:ps.status,next:ns.status}); result.totalChanges++; }
-    const pd = (ps.desc||'').replace(/\s+/g,' ').trim();
-    const nd = (ns.desc||'').replace(/\s+/g,' ').trim();
-    if (pd !== nd && nd) { result.descChanges.push({site:ns,prevDesc:pd,nextDesc:nd}); result.totalChanges++; }
-  });
-  const prevTicker = new Set(prev.ticker||[]);
-  result.newTicker = (next.ticker||[]).filter(t => !prevTicker.has(t));
-  return result;
-}
-
-function renderAudit(diff) {
-  const body = document.getElementById('audit-body');
-  const meta = document.getElementById('audit-meta');
-
-  // Summary strip
-  const newCases = (diff.totalDeltas.confirmed||0) + (diff.totalDeltas.suspected||0);
-  const setN = (id, val, cls) => {
-    const el = document.getElementById(id);
-    el.textContent = (val > 0 ? '+' : '') + val;
-    el.className = 'as-n ' + cls;
-  };
-  setN('as-new-cases',  newCases,                   newCases > 0 ? 'red' : 'none');
-  setN('as-new-deaths', diff.totalDeltas.deaths,    diff.totalDeltas.deaths > 0 ? 'red' : 'none');
-  const nsEl = document.getElementById('as-new-sites');
-  nsEl.textContent = diff.newSites.length > 0 ? '+' + diff.newSites.length : '0';
-  nsEl.className = 'as-n ' + (diff.newSites.length > 0 ? 'amber' : 'none');
-  const chEl = document.getElementById('as-changes');
-  chEl.textContent = diff.totalChanges;
-  chEl.className = 'as-n ' + (diff.totalChanges > 0 ? 'green' : 'none');
-
-  if (diff.prevTime && diff.timestamp) {
-    const fmt = ts => new Date(ts).toISOString().replace('T',' ').slice(0,16) + ' UTC';
-    meta.textContent = fmt(diff.prevTime) + '  →  ' + fmt(diff.timestamp);
-  }
-
-  if (diff.totalChanges === 0 && diff.newTicker.length === 0) {
-    body.innerHTML = '<div class="audit-empty">NO CHANGES DETECTED THIS CYCLE</div>';
-    return;
-  }
-
-  let html = '';
-
-  if (diff.newSites.length) {
-    html += `<div class="audit-section-head">▲ NEW SITES (${diff.newSites.length})</div>`;
-    diff.newSites.forEach(s => {
-      const tot = s.confirmed + s.suspected + s.deaths + s.monitored;
-      html += `<div class="audit-row"><div class="audit-row-left"><div class="audit-site">${s.name} · ${s.country}</div><div class="audit-field">${s.status.toUpperCase()} · ${s.desc}</div></div><div class="audit-delta new">NEW +${tot}</div></div>`;
-    });
-  }
-  if (diff.caseDeltas.length) {
-    html += `<div class="audit-section-head">► CASE COUNT CHANGES (${diff.caseDeltas.length})</div>`;
-    diff.caseDeltas.forEach(d => {
-      const sign = d.delta > 0 ? '+' : '';
-      html += `<div class="audit-row"><div class="audit-row-left"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.field.toUpperCase()} · ${d.prev} → ${d.next}</div></div><div class="audit-delta ${d.delta>0?'up':'down'}">${sign}${d.delta}</div></div>`;
-    });
-  }
-  if (diff.statusChanges.length) {
-    html += `<div class="audit-section-head">// STATUS CHANGES (${diff.statusChanges.length})</div>`;
-    diff.statusChanges.forEach(d => {
-      html += `<div class="audit-row"><div class="audit-row-left"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.prev.toUpperCase()} → ${d.next.toUpperCase()}</div></div><div class="audit-delta amber">STATUS</div></div>`;
-    });
-  }
-  if (diff.descChanges.length) {
-    html += `<div class="audit-section-head">// INTEL BRIEF UPDATES (${diff.descChanges.length})</div>`;
-    diff.descChanges.forEach(d => {
-      html += `<div class="audit-row"><div class="audit-row-left"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.nextDesc}</div></div><div class="audit-delta same">UPDATED</div></div>`;
-    });
-  }
-  if (diff.newTicker.length) {
-    html += `<div class="audit-section-head">// NEW HEADLINES (${diff.newTicker.length})</div>`;
-    diff.newTicker.forEach(t => {
-      html += `<div class="audit-ticker-item ${t.startsWith('▲')?'alert':''}">${t}</div>`;
-    });
-  }
-  body.innerHTML = html;
-}
-
-function openAudit() {
-  const modal = document.getElementById('audit-modal');
-  if (!lastAuditDiff) {
-    document.getElementById('audit-body').innerHTML =
-      '<div class="audit-empty">NO AUDIT YET — WAITING FOR FIRST LIVE UPDATE</div>';
-    document.getElementById('audit-meta').textContent = 'COMPARING CURRENT VS PREVIOUS SNAPSHOT';
-    ['as-new-cases','as-new-deaths','as-new-sites','as-changes'].forEach(id => {
-      const el = document.getElementById(id); el.textContent = '—'; el.className = 'as-n none';
-    });
-  } else {
-    renderAudit(lastAuditDiff);
-  }
-  modal.classList.add('open');
-  // Clear the mobile nav badge
-  const badge = document.getElementById('mn-audit-badge');
-  if (badge) { badge.style.opacity = '0'; }
-}
-
-function closeAudit() {
-  document.getElementById('audit-modal').classList.remove('open');
-}
-
-document.getElementById('audit-close').addEventListener('click', closeAudit);
-document.getElementById('audit-modal').addEventListener('click', e => {
-  if (e.target === document.getElementById('audit-modal')) closeAudit();
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAudit(); });
-
-// Wire both desktop pill and panel-live chip
-['updated','panel-live'].forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.style.cursor = 'pointer';
-  el.title = 'View data audit log';
-  el.addEventListener('click', openAudit);
-});
-
-// Wire mobile AUDIT nav button
-const mnAudit = document.getElementById('mn-audit');
-if (mnAudit) mnAudit.addEventListener('click', openAudit);
-
 function applyData(data) {
   if (!isValidData(data)) {
     console.warn('Invalid data payload, ignoring.');
     return false;
   }
 
-  // ── Diff against previous snapshot ──────────────────────────────
+  // Diff against previous snapshot before overwriting
   if (currentSnapshot && currentSnapshot.updated_at !== data.updated_at) {
     previousSnapshot = currentSnapshot;
     lastAuditDiff    = diffSnapshots(previousSnapshot, data);
-
-    // Flash pills + show mobile badge if there are real changes
+    // Light up badges if real changes found
     if (lastAuditDiff && lastAuditDiff.totalChanges > 0) {
-      ['updated','panel-live'].forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.style.transition = 'box-shadow 0.3s ease';
-        el.style.boxShadow  = '0 0 16px rgba(255,31,61,0.75)';
-        setTimeout(() => { el.style.boxShadow = ''; }, 2500);
-      });
-      const badge = document.getElementById('mn-audit-badge');
-      if (badge) badge.style.opacity = '1';
+      const fb=document.getElementById('fab-badge');
+      if(fb) fb.classList.add('on');
+      const mb=document.getElementById('mn-audit-badge');
+      if(mb) mb.style.opacity='1';
     }
   }
   currentSnapshot = data;
@@ -5288,5 +5087,174 @@ setTimeout(() => {
 
 })();
 </script>
+
+<!-- AUDIT FAB (desktop/tablet) -->
+<button id="audit-fab" aria-label="Open data audit log">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/>
+    <rect x="9" y="3" width="6" height="4" rx="1"/>
+    <path d="M9 12h6M9 16h4"/>
+  </svg>
+  AUDIT LOG
+  <div class="fab-badge" id="fab-badge">!</div>
+</button>
+
+<!-- AUDIT MODAL -->
+<div id="audit-modal" role="dialog" aria-modal="true" aria-label="Data audit log">
+  <div id="audit-card">
+    <div id="audit-header">
+      <div>
+        <div class="audit-eyebrow">// SURVEILLANCE AUDIT LOG</div>
+        <div class="audit-h1">DATA UPDATE REPORT</div>
+        <div id="audit-meta">COMPARING CURRENT VS PREVIOUS SNAPSHOT</div>
+      </div>
+      <button id="audit-close" aria-label="Close">✕</button>
+    </div>
+    <div id="audit-summary">
+      <div class="audit-stat"><div class="as-n none" id="as-cases">—</div><div class="as-l">NEW CASES</div></div>
+      <div class="audit-stat"><div class="as-n none" id="as-deaths">—</div><div class="as-l">DEATHS</div></div>
+      <div class="audit-stat"><div class="as-n none" id="as-sites">—</div><div class="as-l">NEW SITES</div></div>
+      <div class="audit-stat"><div class="as-n none" id="as-changes">—</div><div class="as-l">CHANGES</div></div>
+    </div>
+    <div id="audit-body"><div class="audit-empty">LOADING…</div></div>
+  </div>
+</div>
+
+
+// ════════════════════════════════════════════════════════════════════
+//  DATA AUDIT SYSTEM
+// ════════════════════════════════════════════════════════════════════
+let previousSnapshot = null;
+let currentSnapshot  = null;
+let lastAuditDiff    = null;
+
+function diffSnapshots(prev, next) {
+  if (!prev || !next) return null;
+  const r = {
+    timestamp: next.updated_at, prevTime: prev.updated_at,
+    newSites:[], caseDeltas:[], statusChanges:[], descChanges:[],
+    totalDeltas:{
+      confirmed:(next.totals?.confirmed||0)-(prev.totals?.confirmed||0),
+      suspected:(next.totals?.suspected||0)-(prev.totals?.suspected||0),
+      deaths:   (next.totals?.deaths||0)   -(prev.totals?.deaths||0),
+    },
+    newTicker:[], totalChanges:0,
+  };
+  const pb={};
+  (prev.sites||[]).forEach(s=>pb[s.id]=s);
+  (next.sites||[]).forEach(ns=>{
+    const ps=pb[ns.id];
+    if (!ps){r.newSites.push(ns);r.totalChanges++;return;}
+    for(const f of['confirmed','suspected','deaths','monitored']){
+      const d=(ns[f]||0)-(ps[f]||0);
+      if(d!==0){r.caseDeltas.push({site:ns,field:f,prev:ps[f],next:ns[f],delta:d});r.totalChanges++;}
+    }
+    if(ns.status!==ps.status){r.statusChanges.push({site:ns,prev:ps.status,next:ns.status});r.totalChanges++;}
+    const pd=(ps.desc||'').replace(/\s+/g,' ').trim();
+    const nd=(ns.desc||'').replace(/\s+/g,' ').trim();
+    if(pd!==nd&&nd){r.descChanges.push({site:ns,prevDesc:pd,nextDesc:nd});r.totalChanges++;}
+  });
+  const pt=new Set(prev.ticker||[]);
+  r.newTicker=(next.ticker||[]).filter(t=>!pt.has(t));
+  return r;
+}
+
+function renderAudit(diff) {
+  const body=document.getElementById('audit-body');
+  const meta=document.getElementById('audit-meta');
+  const newCases=(diff.totalDeltas.confirmed||0)+(diff.totalDeltas.suspected||0);
+  const setN=(id,val,cls)=>{const e=document.getElementById(id);e.textContent=(val>0?'+':'')+val;e.className='as-n '+cls;};
+  setN('as-cases', newCases, newCases>0?'red':'none');
+  setN('as-deaths',diff.totalDeltas.deaths, diff.totalDeltas.deaths>0?'red':'none');
+  const nsEl=document.getElementById('as-sites');
+  nsEl.textContent=diff.newSites.length>0?'+'+diff.newSites.length:'0';
+  nsEl.className='as-n '+(diff.newSites.length>0?'amber':'none');
+  const chEl=document.getElementById('as-changes');
+  chEl.textContent=diff.totalChanges;
+  chEl.className='as-n '+(diff.totalChanges>0?'green':'none');
+  if(diff.prevTime&&diff.timestamp){
+    const fmt=ts=>new Date(ts).toISOString().replace('T',' ').slice(0,16)+' UTC';
+    meta.textContent=fmt(diff.prevTime)+' → '+fmt(diff.timestamp);
+  }
+  if(diff.totalChanges===0&&diff.newTicker.length===0){
+    body.innerHTML='<div class="audit-empty">NO CHANGES DETECTED THIS CYCLE</div>';return;
+  }
+  let html='';
+  if(diff.newSites.length){
+    html+=`<div class="audit-sh">▲ NEW SITES (${diff.newSites.length})</div>`;
+    diff.newSites.forEach(s=>{
+      html+=`<div class="audit-row"><div class="audit-rl"><div class="audit-site">${s.name} · ${s.country}</div><div class="audit-field">${s.status.toUpperCase()} · ${s.desc}</div></div><div class="audit-delta new">NEW</div></div>`;
+    });
+  }
+  if(diff.caseDeltas.length){
+    html+=`<div class="audit-sh">► CASE COUNT CHANGES (${diff.caseDeltas.length})</div>`;
+    diff.caseDeltas.forEach(d=>{
+      const sign=d.delta>0?'+':'';
+      html+=`<div class="audit-row"><div class="audit-rl"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.field.toUpperCase()} · ${d.prev} → ${d.next}</div></div><div class="audit-delta ${d.delta>0?'up':'down'}">${sign}${d.delta}</div></div>`;
+    });
+  }
+  if(diff.statusChanges.length){
+    html+=`<div class="audit-sh">// STATUS CHANGES (${diff.statusChanges.length})</div>`;
+    diff.statusChanges.forEach(d=>{
+      html+=`<div class="audit-row"><div class="audit-rl"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.prev.toUpperCase()} → ${d.next.toUpperCase()}</div></div><div class="audit-delta amber">STATUS</div></div>`;
+    });
+  }
+  if(diff.descChanges.length){
+    html+=`<div class="audit-sh">// INTEL UPDATES (${diff.descChanges.length})</div>`;
+    diff.descChanges.forEach(d=>{
+      html+=`<div class="audit-row"><div class="audit-rl"><div class="audit-site">${d.site.name} · ${d.site.country}</div><div class="audit-field">${d.nextDesc}</div></div><div class="audit-delta same">UPDATED</div></div>`;
+    });
+  }
+  if(diff.newTicker.length){
+    html+=`<div class="audit-sh">// NEW HEADLINES (${diff.newTicker.length})</div>`;
+    diff.newTicker.forEach(t=>{
+      html+=`<div class="audit-ticker-item ${t.startsWith('▲')?'alert':''}">${t}</div>`;
+    });
+  }
+  body.innerHTML=html;
+}
+
+function openAudit() {
+  const modal=document.getElementById('audit-modal');
+  if(!lastAuditDiff){
+    document.getElementById('audit-body').innerHTML=
+      '<div class="audit-empty">NO AUDIT YET — NEED TWO AGENT RUNS TO COMPARE</div>';
+    document.getElementById('audit-meta').textContent='AWAITING SECOND DATA CYCLE';
+    ['as-cases','as-deaths','as-sites','as-changes'].forEach(id=>{
+      const e=document.getElementById(id);e.textContent='—';e.className='as-n none';
+    });
+  } else {
+    renderAudit(lastAuditDiff);
+  }
+  modal.classList.add('open');
+  // Clear badges
+  const fb=document.getElementById('fab-badge');
+  if(fb) fb.classList.remove('on');
+  const mb=document.getElementById('mn-audit-badge');
+  if(mb) mb.style.opacity='0';
+}
+
+function closeAudit(){
+  document.getElementById('audit-modal').classList.remove('open');
+}
+
+// Wire close
+document.getElementById('audit-close').addEventListener('click',closeAudit);
+document.getElementById('audit-modal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('audit-modal'))closeAudit();
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAudit();});
+
+// Wire open triggers — FAB, mobile nav, and live pills
+document.getElementById('audit-fab').addEventListener('click',openAudit);
+document.getElementById('mn-audit').addEventListener('click',()=>{openAudit();});
+['updated','panel-live'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.style.cursor='pointer';
+  el.title='View data audit log';
+  el.addEventListener('click',openAudit);
+});
+
 </body>
 </html>
