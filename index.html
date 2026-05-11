@@ -4726,6 +4726,11 @@ function isValidData(d) {
         && typeof s.confirmed === 'number');
 }
 
+// Audit state — declared here so applyData can reference them
+let previousSnapshot = null;
+let currentSnapshot  = null;
+let lastAuditDiff    = null;
+
 function applyData(data) {
   if (!isValidData(data)) {
     console.warn('Invalid data payload, ignoring.');
@@ -5124,10 +5129,6 @@ setTimeout(() => {
 // ════════════════════════════════════════════════════════════════════
 //  DATA AUDIT SYSTEM
 // ════════════════════════════════════════════════════════════════════
-let previousSnapshot = null;
-let currentSnapshot  = null;
-let lastAuditDiff    = null;
-
 function diffSnapshots(prev, next) {
   if (!prev || !next) return null;
   const r = {
