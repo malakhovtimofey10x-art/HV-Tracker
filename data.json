@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-11T11:50:51+00:00",
+  "updated_at": "2026-05-11T18:26:29+00:00",
   "totals": {
     "confirmed": 12,
     "suspected": 4,
@@ -11,16 +11,16 @@
     "sites": 38
   },
   "ticker": [
-    "▲ FRANCE CONFIRMS FIRST HANTAVIRUS CASE; ONE PCR-POSITIVE, FOUR MONITORED AT BICHAT HOSPITAL",
-    "▲ WHO CONFIRMS 8 CASES 3 DEATHS ANDES VIRUS ON HONDIUS; 5 SUSPECTED CASES STILL UNDER EVAL",
-    "▲ HONDIUS DOCKED TENERIFE; 17 US PASSENGERS FLY NEBRASKA NQU — NONE POSITIVE AS OF 11 MAY",
-    "► WHO: ANDES VIRUS LIMITED HUMAN-TO-HUMAN SPREAD; GLOBAL PUBLIC HEALTH RISK ASSESSED AS LOW",
-    "► FRANCE: SYMPTOMATIC PASSENGER ISOLATED MID-FLIGHT; ALL 5 REPATRIATES NOW AT BICHAT HOSP",
-    "► SPAIN ACCEPTS HONDIUS AFTER CAPE VERDE DENIAL; 23-NATION EVACUATION DECLARED SUCCESSFUL",
+    "▲ GENETIC ANALYSIS CONFIRMS ANDES VARIANT ON HONDIUS; NO MUTATIONS OR REARRANGEMENTS DETECTED",
+    "▲ HONDIUS DOCKS TENERIFE AFTER 40 DAYS; 23-NATION EVACUATION DECLARED SUCCESSFUL BY WHO/SPAIN",
+    "▲ 10 POSSIBLE INFECTIONS 3 DEATHS REPORTED; ANDES VIRUS SEQUENCES PUBLISHED ON VIROLOGICAL.ORG",
+    "► ANDES STRAIN MATCHES ARGENTINA 2018-19 SEQUENCES; NEW MORE DANGEROUS VARIANT RULED OUT",
+    "► SWISS LAB ILLUMINA SEQUENCING: HIGH SIMILARITY TO ARGENTINA STRAINS, HUMAN-TO-HUMAN POSSIBLE",
+    "► SPAIN EVACUATES 14 NATIONALS FIRST TO GOMEZ ULLA HOSP; NO NEW INFECTIONS SINCE CONTAINMENT",
+    "► HONDIUS TO SAIL ROTTERDAM WITH 30 SKELETON CREW POST-TENERIFE FOR FULL DECONTAMINATION",
     "► TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
-    "► 5 SUSPECTED CASES STILL UNDER EVALUATION AS INCUBATION WINDOW NOT YET CLOSED — WHO 07 MAY",
-    "// ACTING CDC DIR CRITICISED ON CNN FOR VAGUE RESPONSES ON PAX MONITORING PROTOCOLS",
-    "// ANDES VIRUS ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION POTENTIAL — WHO ADVISORY"
+    "// ANDES ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; MULTI-SAMPLE SEQUENCING ONGOING",
+    "// ACTING CDC DIR CRITICISED ON CNN FOR VAGUE RESPONSES ON PAX MONITORING PROTOCOLS"
   ],
   "sites": [
     {
@@ -34,7 +34,7 @@
       "suspected": 0,
       "deaths": 1,
       "monitored": 53,
-      "desc": "Vessel docked Granadilla de Abona port 10 May after 40 days at sea; multinational evacuation operation involving 23 countries declared successful by WHO and Spain. 30 skeleton crew + Dutch nurse to sail vessel to Rotterdam post-evacuation for full decontamination. No new infections reported since isolation measures implemented."
+      "desc": "Vessel docked Granadilla de Abona port 10 May after 40 days at sea; multinational evacuation operation involving 23 countries declared successful by WHO and Spain per El País. 30 skeleton crew + Dutch nurse to sail vessel to Rotterdam post-evacuation for full decontamination. No new infections reported since isolation measures implemented."
     },
     {
       "id": "ushuaia",
@@ -47,7 +47,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route. Argentina reports ~101 hantavirus infections since Jun 2025."
+      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route. Illumina sequencing shows Andes strain on Hondius has high similarity to Argentina 2018-19 strains per El País."
     },
     {
       "id": "sthelena",
@@ -116,7 +116,7 @@
     },
     {
       "id": "ch",
-      "name": "ZURICH",
+      "name": "ZURICH / GENEVA",
       "country": "SWITZERLAND",
       "lat": 47.38,
       "lng": 8.54,
@@ -125,7 +125,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr via South Africa and Qatar; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich, confirmed 06 May. Wife (also on trip) asymptomatic and isolating; Swiss contact tracing ongoing."
+      "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing at Zurich and Geneva laboratories confirmed Andes variant with high similarity to Argentina 2018-19 strains and no mutations per El País. Wife asymptomatic and isolating; Swiss contact tracing ongoing."
     },
     {
       "id": "de",
@@ -203,7 +203,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 1,
-      "desc": "UKHSA confirmed suspected case 08 May: British male islander aboard Hondius during 13–15 Apr stop; symptoms onset 28 Apr, stable in isolation on island. The Daily Beast (09 May) flagged this as raising wider spread concerns given ship's multi-island Atlantic stops. RAF A400M emergency airdrop 09 May: 6 paratroopers + 2 military clinicians parachuted onto island's golf course delivering 3.3 tonnes medical supplies — first-ever UK military humanitarian parachute deployment."
+      "desc": "UKHSA confirmed suspected case 08 May: British male islander aboard Hondius during 13–15 Apr stop; symptoms onset 28 Apr, stable in isolation on island. RAF A400M emergency airdrop 09 May: 6 paratroopers + 2 military clinicians parachuted onto island's golf course delivering 3.3 tonnes medical supplies — first-ever UK military humanitarian parachute deployment."
     },
     {
       "id": "sg",
