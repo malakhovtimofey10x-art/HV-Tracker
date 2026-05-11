@@ -26,6 +26,7 @@ from pathlib import Path
 import anthropic, openai
 
 DATA_PATH    = Path("data.json")
+AUDIT_PATH   = Path("audit.json")
 OPENAI_MINI  = "gpt-4o-mini"
 OPENAI_FULL  = "gpt-4o"
 CLAUDE_MODEL = "claude-sonnet-4-6"
@@ -187,6 +188,63 @@ def validate(data):
     return data
 
 
+def diff_snapshots(prev, nxt):
+    """Compute a structured diff between two data snapshots.
+    Output schema mirrors what diffSnapshots() in index.html expects,
+    so the HTML can load audit.json directly on page load."""
+    r = {
+        "timestamp":   nxt.get("updated_at"),
+        "prevTime":    prev.get("updated_at"),
+        "newSites":    [],
+        "caseDeltas":  [],
+        "statusChanges": [],
+        "descChanges": [],
+        "totalDeltas": {
+            "confirmed": (nxt.get("totals",{}).get("confirmed",0) or 0)
+                       - (prev.get("totals",{}).get("confirmed",0) or 0),
+            "suspected": (nxt.get("totals",{}).get("suspected",0) or 0)
+                       - (prev.get("totals",{}).get("suspected",0) or 0),
+            "deaths":    (nxt.get("totals",{}).get("deaths",0) or 0)
+                       - (prev.get("totals",{}).get("deaths",0) or 0),
+        },
+        "newTicker":   [],
+        "totalChanges": 0,
+    }
+    prev_by_id = {s["id"]: s for s in prev.get("sites", [])}
+    for ns in nxt.get("sites", []):
+        ps = prev_by_id.get(ns["id"])
+        if ps is None:
+            r["newSites"].append(ns)
+            r["totalChanges"] += 1
+            continue
+        for field in ("confirmed", "suspected", "deaths", "monitored"):
+            delta = (ns.get(field) or 0) - (ps.get(field) or 0)
+            if delta != 0:
+                r["caseDeltas"].append({
+                    "site":  ns,
+                    "field": field,
+                    "prev":  ps.get(field, 0),
+                    "next":  ns.get(field, 0),
+                    "delta": delta,
+                })
+                r["totalChanges"] += 1
+        if ns.get("status") != ps.get("status"):
+            r["statusChanges"].append({
+                "site": ns,
+                "prev": ps.get("status", ""),
+                "next": ns.get("status", ""),
+            })
+            r["totalChanges"] += 1
+        pd = " ".join((ps.get("desc") or "").split())
+        nd = " ".join((ns.get("desc") or "").split())
+        if pd != nd and nd:
+            r["descChanges"].append({"site": ns, "prevDesc": pd, "nextDesc": nd})
+            r["totalChanges"] += 1
+    prev_tickers = set(prev.get("ticker", []))
+    r["newTicker"] = [t for t in nxt.get("ticker", []) if t not in prev_tickers]
+    return r
+
+
 def main():
     missing=[k for k in ("ANTHROPIC_API_KEY","OPENAI_API_KEY") if not os.environ.get(k)]
     if missing: print(f"ERROR: missing env: {', '.join(missing)}",file=sys.stderr); return 2
@@ -206,6 +264,12 @@ def main():
     except AssertionError as e: print(f"ERROR validation: {e}",file=sys.stderr); return 1
 
     DATA_PATH.write_text(json.dumps(new,indent=2,ensure_ascii=False)+"\n")
+
+    # --- Audit diff ---------------------------------------------------
+    audit = diff_snapshots(current, new)
+    AUDIT_PATH.write_text(json.dumps(audit, indent=2, ensure_ascii=False)+"\n")
+    print(f"  audit: {audit['totalChanges']} changes | {len(audit['newTicker'])} new headlines")
+
     t=new["totals"]
     print(f"✓ {t['sites']} sites | {t['confirmed']} confirmed | {t['suspected']} suspected | {t['deaths']} deaths | {t['countries_affected']} countries")
     return 0
