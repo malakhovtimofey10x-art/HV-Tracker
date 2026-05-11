@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-10T22:33:15+00:00",
+  "updated_at": "2026-05-11T06:53:59+00:00",
   "totals": {
     "confirmed": 11,
     "suspected": 5,
@@ -11,16 +11,16 @@
     "sites": 38
   },
   "ticker": [
-    "▲ HONDIUS DOCKS TENERIFE; 23-NATION EVACUATION OPERATION DEEMED SUCCESS BY WHO AND SPAIN",
-    "▲ SPANISH NATIONALS FIRST EVACUATED TO MADRID; FRENCH PAX ARRIVE PARIS LE BOURGET ON GOV FLIGHT",
-    "▲ FRENCH NATIONAL DEVELOPS SYMPTOMS ON REPATRIATION FLIGHT — ALL 5 FR PAX ISOLATED BICHAT HOSPITAL",
-    "► PASSENGERS FROM 20+ COUNTRIES RETURNING HOME VIA GOVERNMENT AND MILITARY FLIGHTS WITH BIOSECURITY",
-    "► ACTING CDC DIR BHATTACHARYA CRITICISED ON CNN FOR VAGUE RESPONSES ON HANTAVIRUS PAX MONITORING",
-    "► 18 US/UK-RESIDENT PAX → OFFUTT AFB → NEBRASKA NQU; NONE POSITIVE AS OF SAT; FINAL AUS FLIGHT MON PM",
-    "► UK ARMY HISTORIC FIRST: PARATROOPERS PARACHUTE ONTO TRISTAN DA CUNHA — OXYGEN CRITICAL, NO AIRSTRIP",
-    "► HONDIUS TO SAIL ROTTERDAM POST-EVACUATION FOR FULL DECONTAMINATION WITH 30 SKELETON CREW ABOARD",
-    "// WHO: GLOBAL PUBLIC RISK LOW; ANDES ONLY HANTAVIRUS HUMAN-TRANSMISSIBLE — 'THIS IS NOT ANOTHER COVID'",
-    "// SPAIN HEALTH MINISTER: MULTINATIONAL OPERATION UNPRECEDENTED; NO CONTACT WITH LOCAL TENERIFE POPULATION"
+    "▲ HONDIUS CRISIS RESOLVED: SHIP DOCKS TENERIFE AFTER 40-DAY HANTAVIRUS EMERGENCY — 3 DEAD",
+    "▲ WHO CONFIRMS ANDES VIRUS STRAIN; GLOBAL PUBLIC HEALTH RISK ASSESSED AS LOW BY EXPERTS",
+    "▲ SUSPECTED CASE REPORTED TRISTAN DA CUNHA — WORLDS MOST REMOTE INHABITED ISLAND AFFECTED",
+    "► 17 US PASSENGERS UNDER MEDICAL EVAL; NONE POSITIVE AS OF SAT — CDC COORDINATING RETURNS",
+    "► FRENCH PAX: ONE DEVELOPS SYMPTOMS ON REPATRIATION FLIGHT; ALL 5 ISOLATED BICHAT HOSPITAL",
+    "► THREE EVACUATED PATIENTS FLOWN NETHERLANDS FOR TREATMENT AFTER CAPE VERDE MEDEVAC OPS",
+    "► 23-NATION OPERATION COMPLETE; 152 ABOARD — NO NEW INFECTIONS SINCE HEALTH PROTOCOLS ACTIVATED",
+    "► UK ARMY FIRST: PARATROOPERS PARACHUTE ONTO TRISTAN DA CUNHA WITH MEDICAL SUPPLIES 09 MAY",
+    "// WHO: ANDES ONLY HUMAN-TRANSMISSIBLE HANTAVIRUS — 'THIS IS NOT ANOTHER COVID' SAY EXPERTS",
+    "// ACTING CDC DIR BHATTACHARYA CRITICISED ON CNN FOR VAGUE RESPONSES ON PAX MONITORING PLAN"
   ],
   "sites": [
     {
@@ -203,7 +203,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 1,
-      "desc": "UKHSA confirmed suspected case 08 May: British male islander aboard Hondius during 13–15 Apr stop; symptoms onset 28 Apr, stable in isolation on island. RAF A400M emergency airdrop 09 May: 6 paratroopers + 2 military clinicians parachuted onto island's golf course delivering 3.3 tonnes medical supplies — first-ever UK military humanitarian parachute deployment."
+      "desc": "UKHSA confirmed suspected case 08 May: British male islander aboard Hondius during 13–15 Apr stop; symptoms onset 28 Apr, stable in isolation on island. The Daily Beast (09 May) flagged this as raising wider spread concerns given ship's multi-island Atlantic stops. RAF A400M emergency airdrop 09 May: 6 paratroopers + 2 military clinicians parachuted onto island's golf course delivering 3.3 tonnes medical supplies — first-ever UK military humanitarian parachute deployment."
     },
     {
       "id": "sg",
@@ -333,7 +333,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) activated for 18 inbound passengers (17 Americans + 1 UK-resident British national) via Offutt AFB — US flight departed Tenerife ~21:30 local. None of the Americans tested positive as of Saturday (CDC). After brief NQU assessment, passengers may opt for 42-day home self-monitoring with daily health department contact."
+      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) activated for 18 inbound passengers (17 Americans + 1 UK-resident British national) via Offutt AFB — US flight departed Tenerife ~21:30 local. None of the Americans tested positive as of Saturday per CDC and The Daily Beast. After brief NQU assessment, passengers may opt for 42-day home self-monitoring with daily health department contact."
     },
     {
       "id": "us-ut",
@@ -385,7 +385,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Hondius anchored Praia 03–06 May; departed 19:15 local 06 May for Tenerife. Three medevac patients evacuated 06 May — two flew Amsterdam (hazmat teams at Schiphol), third plane made unscheduled Gran Canaria refueling stop after Morocco refused permission + medical equipment malfunction. Cape Verde unable to handle full passenger evacuation."
+      "desc": "Hondius anchored Praia 03–06 May; refused docking by Cape Verde per The Week. Three medevac patients evacuated 06 May — two flew Amsterdam (hazmat teams at Schiphol), third plane made unscheduled Gran Canaria refueling stop after Morocco refused permission + medical equipment malfunction. Cape Verde unable to handle full passenger evacuation."
     },
     {
       "id": "dk",
