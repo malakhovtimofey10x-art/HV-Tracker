@@ -2189,9 +2189,8 @@
       margin-top: 3px;
     }
 
-    /* Backdrop for sheets */
     #mobile-backdrop {
-      display: none;
+      display: block;
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.55);
@@ -2199,11 +2198,12 @@
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
       opacity: 0;
+      pointer-events: none;
       transition: opacity 0.3s ease;
     }
     #mobile-backdrop.active {
-      display: block;
       opacity: 1;
+      pointer-events: auto;
     }
   }
 
@@ -4627,250 +4627,233 @@ setTimeout(() => {
 
 <script>
 // ═══════════════════════════════════════════════════════════════
-//  MOBILE COMMAND INTERFACE — iPhone-first navigation system
+//  MOBILE COMMAND INTERFACE — fixed, event-safe
+//  Key fixes:
+//  1. backdrop uses pointer-events:none when inactive (no canvas freeze)
+//  2. vessel panel hooked via MutationObserver, not window-function wrap
+//  3. all sheet clicks stop propagation so they can't reach the canvas
+//  4. swipe-close uses stopPropagation on touchmove
 // ═══════════════════════════════════════════════════════════════
-
 (function() {
-  const IS_PHONE = window.innerWidth <= 900 ||
+  var IS_PHONE = window.innerWidth <= 900 ||
     /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-  if (!IS_PHONE) return; // Desktop: no mobile UI needed
+  if (!IS_PHONE) return;
 
-  const backdrop    = document.getElementById('mobile-backdrop');
-  const filterSheet = document.getElementById('mobile-filter-sheet');
-  const mobileNav   = document.getElementById('mobile-nav');
+  var backdrop    = document.getElementById('mobile-backdrop');
+  var filterSheet = document.getElementById('mobile-filter-sheet');
+  var activeSheet = null;
 
-  // ── Active sheet tracker ────────────────────────────────────
-  let activeSheet = null; // 'filter' | 'vessel' | null
-
+  // ── Sheet open/close ─────────────────────────────────────────
   function openSheet(name) {
-    closeAllSheets();
+    if (activeSheet === name) { closeAllSheets(); return; }
+    closeAllSheets(false);
     activeSheet = name;
     backdrop.classList.add('active');
-
     if (name === 'filter') {
       filterSheet.classList.add('open');
       setNavActive('mn-filter');
     } else if (name === 'vessel') {
-      // Trigger existing vessel panel open
-      const vp = document.getElementById('vessel-panel');
-      if (vp) vp.classList.add('open');
-      setNavActive('mn-vessel');
+      // Call the real openVesselPanel — it will add .open to #vessel-panel
+      // which our MutationObserver picks up to show backdrop + nav state
+      if (typeof openVesselPanel === 'function') openVesselPanel();
+      else {
+        // Fallback: directly toggle the DOM element
+        var vp = document.getElementById('vessel-panel');
+        if (vp) vp.classList.add('open');
+        setNavActive('mn-vessel');
+      }
     }
   }
 
-  function closeAllSheets() {
+  function closeAllSheets(resetNav) {
+    if (resetNav === undefined) resetNav = true;
     activeSheet = null;
     backdrop.classList.remove('active');
     filterSheet.classList.remove('open');
-    const vp = document.getElementById('vessel-panel');
-    if (vp) vp.classList.remove('open');
-    // Reset nav — globe is always base state
-    setNavActive('mn-globe');
+    // Close vessel panel
+    if (typeof closeVesselPanel === 'function') closeVesselPanel();
+    else {
+      var vp = document.getElementById('vessel-panel');
+      if (vp) vp.classList.remove('open');
+    }
+    // Close site detail
+    var det = document.getElementById('detail');
+    if (det) det.classList.remove('open');
+    if (resetNav) setNavActive('mn-globe');
   }
 
   function setNavActive(id) {
-    document.querySelectorAll('.mn-btn').forEach(b => b.classList.remove('active'));
-    const btn = document.getElementById(id);
+    document.querySelectorAll('.mn-btn').forEach(function(b) { b.classList.remove('active'); });
+    var btn = document.getElementById(id);
     if (btn) btn.classList.add('active');
   }
 
-  // Backdrop tap closes
-  backdrop.addEventListener('click', closeAllSheets);
+  // ── Backdrop closes everything ────────────────────────────────
+  backdrop.addEventListener('click', function() { closeAllSheets(); });
 
-  // ── Nav button handlers ──────────────────────────────────────
-  document.getElementById('mn-globe').addEventListener('click', () => {
-    closeAllSheets();
-    setNavActive('mn-globe');
-  });
-
-  document.getElementById('mn-vessel').addEventListener('click', () => {
-    if (activeSheet === 'vessel') {
-      closeAllSheets();
-    } else {
-      openSheet('vessel');
-    }
-  });
-
-  document.getElementById('mn-filter').addEventListener('click', () => {
-    if (activeSheet === 'filter') {
-      closeAllSheets();
-    } else {
-      openSheet('filter');
-    }
-  });
-
-  document.getElementById('mn-stats').addEventListener('click', () => {
+  // ── Nav buttons ──────────────────────────────────────────────
+  document.getElementById('mn-globe').addEventListener('click', function() { closeAllSheets(); });
+  document.getElementById('mn-vessel').addEventListener('click', function() { openSheet('vessel'); });
+  document.getElementById('mn-filter').addEventListener('click', function() { openSheet('filter'); });
+  document.getElementById('mn-stats').addEventListener('click', function() {
     closeAllSheets();
     setNavActive('mn-stats');
-    // Flash stats strip to highlight it
-    const stats = document.getElementById('stats');
+    var stats = document.getElementById('stats');
     if (stats) {
-      stats.style.transition = 'opacity 0.15s';
-      stats.style.opacity = '0.3';
-      setTimeout(() => { stats.style.opacity = '1'; }, 200);
+      stats.style.transition = 'opacity 0.12s ease';
+      stats.style.opacity = '0.25';
+      setTimeout(function() { stats.style.opacity = '1'; }, 180);
     }
-    setTimeout(() => setNavActive('mn-globe'), 1500);
+    setTimeout(function() { setNavActive('mn-globe'); }, 1400);
   });
 
-  // ── Swipe down to close sheets ───────────────────────────────
+  // ── Swipe-down to close + stop touch bleed-through ───────────
   function addSwipeClose(el) {
-    let startY = 0;
-    el.addEventListener('touchstart', e => {
+    var startY = 0;
+    el.addEventListener('touchstart', function(e) {
       startY = e.touches[0].clientY;
     }, { passive: true });
-    el.addEventListener('touchend', e => {
-      const dy = e.changedTouches[0].clientY - startY;
-      if (dy > 60) closeAllSheets();
+    el.addEventListener('touchend', function(e) {
+      if (e.changedTouches[0].clientY - startY > 55) closeAllSheets();
     }, { passive: true });
+    // CRITICAL: stop touchmove so it never reaches the globe canvas
+    el.addEventListener('touchmove', function(e) {
+      e.stopPropagation();
+    }, { passive: true });
+    // Also stop click propagation
+    el.addEventListener('click', function(e) { e.stopPropagation(); });
   }
   addSwipeClose(filterSheet);
-  const vp = document.getElementById('vessel-panel');
-  if (vp) addSwipeClose(vp);
+  addSwipeClose(backdrop); // backdrop itself should stop propagation too
 
-  // ── Mobile filter pills ──────────────────────────────────────
-  // Mirror the existing desktop filter state
-  const mPills = document.querySelectorAll('.mfs-pill[data-mfilter]');
-
-  function syncMobileCounts() {
-    const ids = {
-      all:  ['c-all',  'mc-all'],
-      confirmed: ['c-conf', 'mc-conf'],
-      suspected: ['c-susp', 'mc-susp'],
-      monitor:   ['c-mon',  'mc-mon'],
-      origin:    ['c-org',  'mc-org'],
-    };
-    for (const [key, [desktop, mobile]] of Object.entries(ids)) {
-      const d = document.getElementById(desktop);
-      const m = document.getElementById(mobile);
-      if (d && m) m.textContent = d.textContent;
-    }
-  }
-
-  mPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const f = pill.dataset.mfilter;
-      // Find and click the matching desktop filter to keep state in sync
-      const desktopFilter = document.querySelector(
-        f === 'all' ? '.filter[data-filter="all"]' : `.filter[data-filter="${f}"]`
-      );
-      if (desktopFilter) desktopFilter.click();
-
-      // Update mobile pill states to mirror desktop
-      setTimeout(() => {
-        document.querySelectorAll('.filter[data-filter]').forEach(df => {
-          const mf = document.querySelector(`.mfs-pill[data-mfilter="${df.dataset.filter}"]`);
-          if (mf) mf.classList.toggle('active', df.classList.contains('active'));
-        });
-        updateFilterBadge();
-      }, 50);
+  // ── Hook vessel panel via MutationObserver ───────────────────
+  // Safe because the element may be built dynamically (buildVesselPanel)
+  function hookVesselPanel() {
+    var vp = document.getElementById('vessel-panel');
+    if (!vp || vp._mobileHooked) return;
+    vp._mobileHooked = true;
+    addSwipeClose(vp);
+    var obs = new MutationObserver(function() {
+      if (vp.classList.contains('open')) {
+        activeSheet = 'vessel';
+        backdrop.classList.add('active');
+        setNavActive('mn-vessel');
+      } else if (activeSheet === 'vessel') {
+        activeSheet = null;
+        backdrop.classList.remove('active');
+        setNavActive('mn-globe');
+      }
     });
-  });
-
-  function updateFilterBadge() {
-    const pills = document.querySelectorAll('.mfs-pill[data-mfilter]:not([data-mfilter="all"])');
-    const activeCount = [...pills].filter(p => p.classList.contains('active')).length;
-    const badge = document.getElementById('mn-filter-badge');
-    if (badge) {
-      badge.textContent = activeCount;
-      badge.style.display = activeCount < pills.length ? 'flex' : 'none';
-    }
+    obs.observe(vp, { attributes: true, attributeFilter: ['class'] });
   }
+  hookVesselPanel();
+  setTimeout(hookVesselPanel, 300);
+  setTimeout(hookVesselPanel, 1500);
 
-  // ── Mobile view action buttons ────────────────────────────────
-  const mRouteToggle  = document.getElementById('m-route-toggle');
-  const mAutorot      = document.getElementById('m-autorot-toggle');
-  const mReset        = document.getElementById('m-reset-view');
-  const dRouteToggle  = document.getElementById('route-toggle');
-  const dAutorot      = document.getElementById('autorot-toggle');
-  const dReset        = document.getElementById('reset-view');
-
-  if (mRouteToggle && dRouteToggle) {
-    mRouteToggle.addEventListener('click', () => {
-      dRouteToggle.click();
-      mRouteToggle.classList.toggle('active', dRouteToggle.classList.contains('active'));
-    });
-  }
-  if (mAutorot && dAutorot) {
-    mAutorot.addEventListener('click', () => {
-      dAutorot.click();
-      mAutorot.classList.toggle('active', dAutorot.classList.contains('active'));
-    });
-  }
-  if (mReset && dReset) {
-    mReset.addEventListener('click', () => {
-      dReset.click();
-      closeAllSheets();
-    });
-  }
-
-  // ── Sync countdown to mobile sheet ───────────────────────────
-  function syncCountdown() {
-    const cdTime   = document.getElementById('cd-time');
-    const cdStatus = document.getElementById('cd-status');
-    const mTime    = document.getElementById('mfs-cd-time');
-    const mStatus  = document.getElementById('mfs-cd-status');
-    if (cdTime && mTime)     mTime.textContent   = cdTime.textContent;
-    if (cdStatus && mStatus) mStatus.textContent = cdStatus.textContent;
-  }
-  setInterval(syncCountdown, 1000);
-
-  // ── Intercept vessel panel open button (desktop) ─────────────
-  // The globe tap on hondius beacon calls openVesselPanel() — we want
-  // that to work on mobile too (it already sets .open on #vessel-panel).
-  // We just need to show the backdrop and set nav state.
-  const origOpen = window.openVesselPanel;
-  window.openVesselPanel = function() {
-    if (typeof origOpen === 'function') origOpen.apply(this, arguments);
-    if (IS_PHONE) {
-      activeSheet = 'vessel';
-      backdrop.classList.add('active');
-      setNavActive('mn-vessel');
-    }
-  };
-  const origClose = window.closeVesselPanel;
-  window.closeVesselPanel = function() {
-    if (typeof origClose === 'function') origClose.apply(this, arguments);
-    if (IS_PHONE) {
-      closeAllSheets();
-    }
-  };
-
-  // ── Close detail panel on swipe down ─────────────────────────
-  const detailEl = document.getElementById('detail');
+  // ── Detail panel: observe for open, close on swipe ───────────
+  var detailEl = document.getElementById('detail');
   if (detailEl) {
     addSwipeClose(detailEl);
-    const closeBtn = detailEl.querySelector('.close');
+    var detObs = new MutationObserver(function() {
+      if (detailEl.classList.contains('open')) {
+        // Close filter/vessel sheets when detail opens from beacon tap
+        filterSheet.classList.remove('open');
+        var vp2 = document.getElementById('vessel-panel');
+        if (vp2) vp2.classList.remove('open');
+        if (activeSheet) {
+          activeSheet = null;
+          backdrop.classList.remove('active');
+        }
+        setNavActive('mn-globe');
+      }
+    });
+    detObs.observe(detailEl, { attributes: true, attributeFilter: ['class'] });
+    var closeBtn = detailEl.querySelector('.close');
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
         detailEl.classList.remove('open');
       });
     }
   }
 
-  // ── Initial sync ──────────────────────────────────────────────
-  setTimeout(() => {
-    syncMobileCounts();
-    updateFilterBadge();
-    syncCountdown();
-  }, 2000);
-  setInterval(syncMobileCounts, 5000);
+  // ── Filter pills ─────────────────────────────────────────────
+  function syncMobileCounts() {
+    var map = { 'c-all':'mc-all','c-conf':'mc-conf','c-susp':'mc-susp','c-mon':'mc-mon','c-org':'mc-org' };
+    Object.keys(map).forEach(function(src) {
+      var s = document.getElementById(src);
+      var d = document.getElementById(map[src]);
+      if (s && d) d.textContent = s.textContent;
+    });
+  }
 
-  // ── Observe count changes ─────────────────────────────────────
-  const countObs = new MutationObserver(syncMobileCounts);
-  ['c-all','c-conf','c-susp','c-mon','c-org'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) countObs.observe(el, { childList: true, characterData: true, subtree: true });
+  document.querySelectorAll('.mfs-pill[data-mfilter]').forEach(function(pill) {
+    pill.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var desktop = document.querySelector('.filter[data-filter="' + pill.dataset.mfilter + '"]');
+      if (desktop) desktop.click();
+      setTimeout(function() {
+        document.querySelectorAll('.filter[data-filter]').forEach(function(df) {
+          var mf = document.querySelector('.mfs-pill[data-mfilter="' + df.dataset.filter + '"]');
+          if (mf) mf.classList.toggle('active', df.classList.contains('active'));
+        });
+        updateFilterBadge();
+        syncMobileCounts();
+      }, 40);
+    });
   });
 
-  // Also patch the detail panel open to update nav state
-  const origShowDetail = window.showDetail;
-  window.showDetail = function(site) {
-    if (typeof origShowDetail === 'function') origShowDetail.apply(this, arguments);
-    if (IS_PHONE) {
-      closeAllSheets();
-      setNavActive('mn-globe');
+  function updateFilterBadge() {
+    var pills = document.querySelectorAll('.mfs-pill[data-mfilter]:not([data-mfilter="all"])');
+    var count = Array.from(pills).filter(function(p) { return p.classList.contains('active'); }).length;
+    var badge = document.getElementById('mn-filter-badge');
+    if (badge) {
+      badge.textContent = count;
+      badge.style.display = count < pills.length ? 'flex' : 'none';
     }
-  };
+  }
+
+  // ── View controls ─────────────────────────────────────────────
+  [['m-route-toggle','route-toggle'],['m-autorot-toggle','autorot-toggle']].forEach(function(pair) {
+    var mBtn = document.getElementById(pair[0]);
+    var dBtn = document.getElementById(pair[1]);
+    if (mBtn && dBtn) {
+      mBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dBtn.click();
+        setTimeout(function() { mBtn.classList.toggle('active', dBtn.classList.contains('active')); }, 30);
+      });
+    }
+  });
+  var mReset = document.getElementById('m-reset-view');
+  var dReset = document.getElementById('reset-view');
+  if (mReset && dReset) {
+    mReset.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dReset.click();
+      closeAllSheets();
+    });
+  }
+
+  // ── Countdown sync ───────────────────────────────────────────
+  function syncCountdown() {
+    var src   = document.getElementById('cd-time');
+    var stat  = document.getElementById('cd-status');
+    var dst   = document.getElementById('mfs-cd-time');
+    var dstat = document.getElementById('mfs-cd-status');
+    if (src && dst)    dst.textContent  = src.textContent;
+    if (stat && dstat) dstat.textContent = stat.textContent;
+  }
+  setInterval(syncCountdown, 1000);
+
+  // ── Boot ─────────────────────────────────────────────────────
+  setTimeout(function() { syncMobileCounts(); updateFilterBadge(); syncCountdown(); }, 1800);
+  setInterval(syncMobileCounts, 4000);
+  var countObs = new MutationObserver(syncMobileCounts);
+  ['c-all','c-conf','c-susp','c-mon','c-org'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) countObs.observe(el, { childList: true, characterData: true, subtree: true });
+  });
 
 })();
 </script>
