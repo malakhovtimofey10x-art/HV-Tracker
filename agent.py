@@ -30,7 +30,7 @@ OPENAI_MINI  = "gpt-4o-mini"
 OPENAI_FULL  = "gpt-4o"
 CLAUDE_MODEL = "claude-sonnet-4-6"
 MIN_DELTAS   = 2
-MAX_TOKENS   = 4000
+MAX_TOKENS   = 8000  # Sonnet needs headroom for full 38-site dataset
 ALLOWED_STATUSES = {"confirmed","suspected","monitor","origin"}
 
 SEARCH_QUERIES = [
