@@ -1,100 +1,113 @@
 {
-  "timestamp": "2026-05-12T00:09:25+00:00",
-  "prevTime": "2026-05-11T23:31:49+00:00",
+  "timestamp": "2026-05-12T19:17:40+00:00",
+  "prevTime": "2026-05-12T00:09:25+00:00",
   "newSites": [],
-  "caseDeltas": [],
-  "statusChanges": [],
+  "caseDeltas": [
+    {
+      "site": {
+        "id": "es-tenerife",
+        "name": "TENERIFE",
+        "country": "SPAIN",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "suspected",
+        "confirmed": 0,
+        "suspected": 1,
+        "deaths": 0,
+        "monitored": 152,
+        "desc": "Hondius docked Granadilla de Abona port 10 May concluding 40-day health crisis; 152 disembarked in successful 23-nation evacuation praised by WHO per El País. One Spanish passenger tested PCR-positive post-disembarkation (12 May, El País); patient asymptomatic, confirmatory PCR pending. Spanish inspectors confirmed no rodents found aboard vessel."
+      },
+      "field": "suspected",
+      "prev": 0,
+      "next": 1,
+      "delta": 1
+    }
+  ],
+  "statusChanges": [
+    {
+      "site": {
+        "id": "es-tenerife",
+        "name": "TENERIFE",
+        "country": "SPAIN",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "suspected",
+        "confirmed": 0,
+        "suspected": 1,
+        "deaths": 0,
+        "monitored": 152,
+        "desc": "Hondius docked Granadilla de Abona port 10 May concluding 40-day health crisis; 152 disembarked in successful 23-nation evacuation praised by WHO per El País. One Spanish passenger tested PCR-positive post-disembarkation (12 May, El País); patient asymptomatic, confirmatory PCR pending. Spanish inspectors confirmed no rodents found aboard vessel."
+      },
+      "prev": "monitor",
+      "next": "suspected"
+    }
+  ],
   "descChanges": [
     {
       "site": {
-        "id": "hondius",
-        "name": "M/V HONDIUS",
-        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
-        "lat": 28.17,
-        "lng": -16.45,
+        "id": "fr",
+        "name": "PARIS / LE BOURGET",
+        "country": "FRANCE",
+        "lat": 48.86,
+        "lng": 2.35,
         "status": "confirmed",
-        "confirmed": 10,
-        "suspected": 0,
-        "deaths": 3,
-        "monitored": 53,
-        "desc": "El País confirms 10 possible infections and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations, high similarity to Argentina 2018-19 strains. No new infections reported since containment measures implemented; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
-      },
-      "prevDesc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination.",
-      "nextDesc": "El País confirms 10 possible infections and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations, high similarity to Argentina 2018-19 strains. No new infections reported since containment measures implemented; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
-    },
-    {
-      "site": {
-        "id": "nl",
-        "name": "AMSTERDAM / NIJMEGEN / ROTTERDAM",
-        "country": "NETHERLANDS",
-        "lat": 52.31,
-        "lng": 4.76,
-        "status": "confirmed",
-        "confirmed": 2,
-        "suspected": 1,
-        "deaths": 1,
-        "monitored": 3,
-        "desc": "British Case 3 (Anstee) transferred to Netherlands after improving in South Africa. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed German woman died of Andes virus. MV Hondius sailing to Rotterdam post-Tenerife for full disinfection with skeleton crew of 30 + Dutch nurse aboard."
-      },
-      "prevDesc": "British Case 3 (Anstee) transferred to Netherlands after improving in South Africa. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed German woman died of Andes virus. MV Hondius to sail Rotterdam post-Tenerife for full disinfection with skeleton crew of 30 + Dutch nurse aboard.",
-      "nextDesc": "British Case 3 (Anstee) transferred to Netherlands after improving in South Africa. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed German woman died of Andes virus. MV Hondius sailing to Rotterdam post-Tenerife for full disinfection with skeleton crew of 30 + Dutch nurse aboard."
-    },
-    {
-      "site": {
-        "id": "us-ne",
-        "name": "NEBRASKA",
-        "country": "UNITED STATES",
-        "lat": 41.26,
-        "lng": -96.04,
-        "status": "confirmed",
-        "confirmed": 2,
+        "confirmed": 1,
         "suspected": 0,
         "deaths": 0,
-        "monitored": 18,
-        "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
+        "monitored": 5,
+        "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
       },
-      "prevDesc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one displaying mild symptoms, one testing mildly PCR-positive for Andes virus per The Daily Beast. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring.",
-      "nextDesc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
+      "prevDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. Four remaining high-risk passengers hospitalized for monitoring; French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights.",
+      "nextDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
+    },
+    {
+      "site": {
+        "id": "es-tenerife",
+        "name": "TENERIFE",
+        "country": "SPAIN",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "suspected",
+        "confirmed": 0,
+        "suspected": 1,
+        "deaths": 0,
+        "monitored": 152,
+        "desc": "Hondius docked Granadilla de Abona port 10 May concluding 40-day health crisis; 152 disembarked in successful 23-nation evacuation praised by WHO per El País. One Spanish passenger tested PCR-positive post-disembarkation (12 May, El País); patient asymptomatic, confirmatory PCR pending. Spanish inspectors confirmed no rodents found aboard vessel."
+      },
+      "prevDesc": "Hondius docked Granadilla de Abona port 10 May concluding 40-day health crisis; 23-nation evacuation operation declared successful by WHO and national authorities per El País. No new infections reported; Spanish inspectors confirmed no rodents found aboard vessel. 358 Guardia Civil agents involved in operation.",
+      "nextDesc": "Hondius docked Granadilla de Abona port 10 May concluding 40-day health crisis; 152 disembarked in successful 23-nation evacuation praised by WHO per El País. One Spanish passenger tested PCR-positive post-disembarkation (12 May, El País); patient asymptomatic, confirmatory PCR pending. Spanish inspectors confirmed no rodents found aboard vessel."
     }
   ],
   "totalDeltas": {
     "confirmed": 0,
-    "suspected": 0,
+    "suspected": 1,
     "deaths": 0
   },
   "newTicker": [
     {
-      "text": "▲ ANDES VARIANT CONFIRMED; NO NEW MUTATIONS — HIGH SIMILARITY TO ARGENTINA 2018-19 STRAINS",
+      "text": "▲ SPAIN: ONE PASSENGER PCR+ POST-DISEMBARKATION; ASYMPTOMATIC, CONFIRMATORY TEST PENDING",
       "url": "https://elpais.com"
     },
     {
-      "text": "▲ WHO ASSESSES PUBLIC HEALTH RISK AS LOW; LIMITED HUMAN-TO-HUMAN TRANSMISSION DOCUMENTED",
+      "text": "▲ ECDC: 9 HONDIUS CASES — 7 CONFIRMED, 2 PROBABLE; 3 DEATHS; SHIP DOCKED TENERIFE",
+      "url": "https://www.ecdc.europa.eu"
+    },
+    {
+      "text": "▲ WHO RAISES CONFIRMED CASES TO 7, DEATHS TO 3; PUBLIC HEALTH RISK REMAINS LOW",
       "url": "https://www.who.int"
     },
     {
-      "text": "▲ HONDIUS OUTBREAK: 10 POSSIBLE INFECTIONS, 3 DEATHS; SITUATION STABLE PER WHO/AP 11 MAY",
-      "url": "https://apnews.com"
+      "text": "► 152 PASSENGERS DISEMBARKED TENERIFE; 23-NATION EVACUATION OPERATION DECLARED SUCCESS",
+      "url": "https://elpais.com"
     },
     {
-      "text": "► FRANCE CONFIRMS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+      "text": "► ANDES VARIANT CONFIRMED; HIGH SIMILARITY TO ARGENTINA 2018-19 STRAINS, NO NEW MUTATIONS",
+      "url": "https://elpais.com"
+    },
+    {
+      "text": "// HONDIUS EN ROUTE ROTTERDAM WITH SKELETON CREW OF 30 + DUTCH NURSE FOR FULL DECONTAMINATION",
       "url": ""
-    },
-    {
-      "text": "► TWO AMERICANS IN NEBRASKA NQU BIOCONTAINMENT; ONE ASYMPTOMATIC PCR+, ONE SYMPTOMATIC",
-      "url": ""
-    },
-    {
-      "text": "► OVER 140 PASSENGERS EVACUATED HONDIUS; SHIP EN ROUTE ROTTERDAM FOR FULL DISINFECTION",
-      "url": "https://apnews.com"
-    },
-    {
-      "text": "► DR. KORNFELD MANAGED MEDICAL CARE ABOARD HONDIUS UNTIL WHO/ECDC OFFICIALS ARRIVED",
-      "url": "https://www.theatlantic.com"
-    },
-    {
-      "text": "► CAPE VERDE AND CANARY ISLANDS REFUSED DOCKING; POLITICAL TENSIONS OVER RODENT-BORNE RISK",
-      "url": "https://theweek.com"
     }
   ],
-  "totalChanges": 3
+  "totalChanges": 4
 }
