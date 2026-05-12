@@ -619,7 +619,17 @@
     z-index: 21;
     overflow: hidden;
     background: rgba(8,2,8,0.6);
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: default;
+  }
+  #ticker .track a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  #ticker .track a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   #ticker .track {
     display: flex;
@@ -2419,8 +2429,11 @@
     font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:1.2px;
     color:rgba(243,233,216,0.4); padding:5px 0;
     border-bottom:1px solid rgba(255,31,61,0.05); line-height:1.5;
+    transition: color 0.15s;
   }
+  a:hover .audit-ticker-item { color:rgba(243,233,216,0.8); }
   .audit-ticker-item.alert { color:rgba(255,80,96,0.8); }
+  a:hover .audit-ticker-item.alert { color:rgba(255,80,96,1); text-shadow:0 0 10px var(--laser-glow); }
 
   @media (max-width:540px) {
     #audit-card { max-height:92vh; }
@@ -4770,11 +4783,15 @@ function applyData(data) {
   // Update ticker if the feed provided one
   if (Array.isArray(data.ticker) && data.ticker.length) {
     const track = document.querySelector('#ticker .track');
-    track.innerHTML = data.ticker.map(t => {
+    track.innerHTML = data.ticker.map(item => {
+      // Accept both legacy plain strings and new {text, url} objects
+      const text = (typeof item === 'object') ? (item.text || '') : item;
+      const url  = (typeof item === 'object') ? (item.url  || '') : '';
       let cls = '';
-      if (t.startsWith('▲')) cls = ' class="alert"';
-      else if (t.startsWith('►')) cls = ' class="ok"';
-      return `<span${cls}>${t}</span>`;
+      if (text.startsWith('▲')) cls = ' class="alert"';
+      else if (text.startsWith('►')) cls = ' class="ok"';
+      if (url) return `<a href="${url}" target="_blank" rel="noopener"${cls ? ' ' + cls.trim() : ''}><span${cls}>${text}</span></a>`;
+      return `<span${cls}>${text}</span>`;
     }).join('');
   }
 
@@ -5188,8 +5205,8 @@ function diffSnapshots(prev, next) {
     const nd=(ns.desc||'').replace(/\s+/g,' ').trim();
     if(pd!==nd&&nd){r.descChanges.push({site:ns,prevDesc:pd,nextDesc:nd});r.totalChanges++;}
   });
-  const pt=new Set(prev.ticker||[]);
-  r.newTicker=(next.ticker||[]).filter(t=>!pt.has(t));
+  const pt=new Set((prev.ticker||[]).map(t=>typeof t==='object'?t.text:t));
+  r.newTicker=(next.ticker||[]).filter(t=>{const txt=typeof t==='object'?t.text:t;return !pt.has(txt);});
   return r;
 }
 
@@ -5242,7 +5259,13 @@ function renderAudit(diff) {
   if(diff.newTicker.length){
     html+=`<div class="audit-sh">// NEW HEADLINES (${diff.newTicker.length})</div>`;
     diff.newTicker.forEach(t=>{
-      html+=`<div class="audit-ticker-item ${t.startsWith('▲')?'alert':''}">${t}</div>`;
+      const text = typeof t==='object' ? (t.text||'') : t;
+      const url  = typeof t==='object' ? (t.url||'')  : '';
+      const isAlert = text.startsWith('▲');
+      const inner = `<div class="audit-ticker-item ${isAlert?'alert':''}">${text}</div>`;
+      html += url
+        ? `<a href="${url}" target="_blank" rel="noopener" style="text-decoration:none;display:block;">${inner}</a>`
+        : inner;
     });
   }
   body.innerHTML=html;
