@@ -1894,6 +1894,20 @@
       font-family: 'Orbitron', monospace;
       box-shadow: 0 0 6px rgba(255,31,61,0.6);
     }
+    /* Audit badge: dot style, hidden by default, shown via .on class */
+    #mn-audit-badge {
+      background: var(--laser);
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s;
+      right: 18px;
+      min-width: unset;
+      padding: 0;
+      top: 6px;
+    }
+    #mn-audit-badge.on { opacity: 1; }
 
     /* ── Ticker: above nav bar ── */
     #ticker {
@@ -2310,8 +2324,11 @@
     transition: opacity 0.3s;
   }
   #audit-fab .fab-badge.on { opacity: 1; }
-  /* FAB visible on all screen sizes — sits above mobile nav on small screens */
+  /* FAB visible on desktop only — mobile uses the nav bar audit button */
   #audit-fab { display: flex; }
+  @media (max-width: 900px) {
+    #audit-fab { display: none !important; }
+  }
   @media (max-width: 540px) {
     #audit-fab {
       bottom: calc(env(safe-area-inset-bottom) + 62px);
@@ -2322,10 +2339,11 @@
   }
 
   #audit-modal {
-    position: fixed; inset: 0; z-index: 90;
+    position: fixed; inset: 0; z-index: 200;
     display: flex; align-items: center; justify-content: center;
     background: rgba(5,2,7,0.88);
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     opacity: 0; pointer-events: none;
     transition: opacity 0.22s ease;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -2367,11 +2385,13 @@
     color:rgba(243,233,216,0.28); margin-top:5px;
   }
   #audit-close {
-    width:30px; height:30px; flex-shrink:0;
+    width:44px; height:44px; flex-shrink:0;
     border:1px solid rgba(255,31,61,0.25); background:rgba(255,31,61,0.07);
-    color:rgba(255,80,96,0.7); font-size:15px; cursor:pointer;
+    color:rgba(255,80,96,0.7); font-size:18px; cursor:pointer;
     display:flex; align-items:center; justify-content:center;
     transition:background 0.15s; font-family:'JetBrains Mono',monospace;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
   #audit-close:hover,#audit-close:active { background:rgba(255,31,61,0.22); color:#fff; }
 
@@ -2436,8 +2456,26 @@
   a:hover .audit-ticker-item.alert { color:rgba(255,80,96,1); text-shadow:0 0 10px var(--laser-glow); }
 
   @media (max-width:540px) {
-    #audit-card { max-height:92vh; }
-    #audit-header { padding:14px 14px 11px; }
+    #audit-modal { align-items: flex-end; }
+    #audit-card {
+      width: 100%; max-width: 100%; max-height: 88vh;
+      border-radius: 16px 16px 0 0;
+      border-left: none; border-right: none; border-bottom: none;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    #audit-card::before,#audit-card::after { display: none; }
+    #audit-header {
+      padding: 16px 14px 11px;
+      flex-direction: row; align-items: flex-start;
+      position: relative;
+    }
+    /* Drag handle above header */
+    #audit-header::before {
+      content: '';
+      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      width: 36px; height: 3px;
+      background: rgba(255,31,61,0.38); border-radius: 2px;
+    }
     #audit-body { padding:0 14px 16px; }
     .audit-h1 { font-size:12px; }
     .as-n { font-size:17px !important; }
@@ -2445,11 +2483,11 @@
   }
 </style>
 </head>
-<body class="split" id="body-root">
+<body id="body-root">
 <script>
-// Remove split class immediately on mobile to avoid flash of desktop layout
-if (window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
-  document.getElementById('body-root').classList.remove('split');
+// On desktop, start in split mode; mobile starts without it (avoids flash)
+if (window.innerWidth > 900 && !/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  document.getElementById('body-root').classList.add('split');
 }
 </script>
 
@@ -2641,7 +2679,7 @@ if (window.innerWidth <= 900 || /Mobi|Android|iPhone|iPad/i.test(navigator.userA
       <rect x="9" y="3" width="6" height="4" rx="1"/>
       <path d="M9 12h6M9 16h4"/>
     </svg>
-    <span class="mn-badge" id="mn-audit-badge" style="opacity:0;background:var(--laser);width:8px;height:8px;border-radius:50%;position:absolute;top:6px;right:18px;display:block;transition:opacity 0.3s"></span>
+    <span class="mn-badge" id="mn-audit-badge"></span>
     AUDIT
   </button>
 </nav>
@@ -4769,7 +4807,7 @@ function applyData(data) {
       const fb=document.getElementById('fab-badge');
       if(fb) fb.classList.add('on');
       const mb=document.getElementById('mn-audit-badge');
-      if(mb) mb.style.opacity='1';
+      if(mb) mb.classList.add('on');
     }
   }
   currentSnapshot = data;
@@ -4842,7 +4880,7 @@ async function fetchLatest() {
               const fb = document.getElementById('fab-badge');
               if (fb) fb.classList.add('on');
               const mb = document.getElementById('mn-audit-badge');
-              if (mb) mb.style.opacity = '1';
+              if (mb) mb.classList.add('on');
             }
           }
         }
@@ -5288,7 +5326,7 @@ function openAudit() {
   const fb=document.getElementById('fab-badge');
   if(fb) fb.classList.remove('on');
   const mb=document.getElementById('mn-audit-badge');
-  if(mb) mb.style.opacity='0';
+  if(mb) mb.classList.remove('on');
 }
 
 function closeAudit(){
@@ -5307,6 +5345,18 @@ function bindAuditListeners() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAudit(); });
   if (fab)     fab.addEventListener('click', openAudit);
   if (mnAudit) mnAudit.addEventListener('click', openAudit);
+
+  // Swipe-down to close audit modal on mobile
+  const card = document.getElementById('audit-card');
+  if (card) {
+    let startY = 0;
+    card.addEventListener('touchstart', e => { startY = e.touches[0].clientY; }, { passive: true });
+    card.addEventListener('touchend', e => {
+      if (e.changedTouches[0].clientY - startY > 60) closeAudit();
+    }, { passive: true });
+    card.addEventListener('touchmove', e => { e.stopPropagation(); }, { passive: true });
+    card.addEventListener('click', e => { e.stopPropagation(); });
+  }
 
   ['updated','panel-live'].forEach(id => {
     const el = document.getElementById(id);
