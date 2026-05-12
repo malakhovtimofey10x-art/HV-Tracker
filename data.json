@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-11T23:31:49+00:00",
+  "updated_at": "2026-05-12T00:09:25+00:00",
   "totals": {
     "confirmed": 22,
     "suspected": 4,
@@ -11,16 +11,46 @@
     "sites": 38
   },
   "ticker": [
-    "▲ ANDES VARIANT CONFIRMED BY EL PAÍS GENETIC ANALYSIS; NO NEW MUTATIONS DETECTED IN SEQUENCING",
-    "▲ HONDIUS VESSEL CONFIRMED CASES RISE TO 10 WITH 3 DEATHS; OUTBREAK STABLE PER EL PAÍS 11 MAY",
-    "▲ WHO CONFIRMS 8 CASES 3 DEATHS ON HONDIUS; DUTCH COUPLE AND GERMAN PASSENGER AMONG FATALITIES",
-    "► FRANCE RECORDS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
-    "► TWO AMERICANS FLOWN TO NEBRASKA NQU IN BIOCONTAINMENT UNITS; ONE SYMPTOMATIC ONE PCR-MILD",
-    "► ANDES VIRUS ONLY KNOWN HANTAVIRUS WITH HUMAN-TO-HUMAN TRANSMISSION; SEQUENCING ONGOING",
-    "► 17 AMERICANS REPATRIATED VIA STATE DEPT AIRLIFT; CDC SAYS US WIDESPREAD TRANSMISSION UNLIKELY",
-    "► HONDIUS DOCKS TENERIFE AFTER 40 DAYS; 23-NATION EVACUATION DECLARED SUCCESSFUL BY WHO/SPAIN",
-    "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
-    "// NO NEW INFECTIONS REPORTED SINCE CONTAINMENT MEASURES IMPLEMENTED ABOARD HONDIUS"
+    {
+      "text": "▲ ANDES VARIANT CONFIRMED; NO NEW MUTATIONS — HIGH SIMILARITY TO ARGENTINA 2018-19 STRAINS",
+      "url": "https://elpais.com"
+    },
+    {
+      "text": "▲ WHO ASSESSES PUBLIC HEALTH RISK AS LOW; LIMITED HUMAN-TO-HUMAN TRANSMISSION DOCUMENTED",
+      "url": "https://www.who.int"
+    },
+    {
+      "text": "▲ HONDIUS OUTBREAK: 10 POSSIBLE INFECTIONS, 3 DEATHS; SITUATION STABLE PER WHO/AP 11 MAY",
+      "url": "https://apnews.com"
+    },
+    {
+      "text": "► FRANCE CONFIRMS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+      "url": ""
+    },
+    {
+      "text": "► TWO AMERICANS IN NEBRASKA NQU BIOCONTAINMENT; ONE ASYMPTOMATIC PCR+, ONE SYMPTOMATIC",
+      "url": ""
+    },
+    {
+      "text": "► OVER 140 PASSENGERS EVACUATED HONDIUS; SHIP EN ROUTE ROTTERDAM FOR FULL DISINFECTION",
+      "url": "https://apnews.com"
+    },
+    {
+      "text": "► DR. KORNFELD MANAGED MEDICAL CARE ABOARD HONDIUS UNTIL WHO/ECDC OFFICIALS ARRIVED",
+      "url": "https://www.theatlantic.com"
+    },
+    {
+      "text": "► CAPE VERDE AND CANARY ISLANDS REFUSED DOCKING; POLITICAL TENSIONS OVER RODENT-BORNE RISK",
+      "url": "https://theweek.com"
+    },
+    {
+      "text": "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
+      "url": ""
+    },
+    {
+      "text": "// NO NEW INFECTIONS REPORTED SINCE CONTAINMENT MEASURES IMPLEMENTED ABOARD HONDIUS",
+      "url": ""
+    }
   ],
   "sites": [
     {
@@ -34,7 +64,7 @@
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "El País confirms 10 cases and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations. No new infections reported since containment measures implemented; vessel docked Granadilla de Abona port 10 May after 40 days at sea with 30 skeleton crew + Dutch nurse to sail to Rotterdam for full decontamination."
+      "desc": "El País confirms 10 possible infections and 3 deaths aboard vessel as of 11 May; Andes variant identified with no new mutations, high similarity to Argentina 2018-19 strains. No new infections reported since containment measures implemented; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
     },
     {
       "id": "ushuaia",
@@ -86,7 +116,7 @@
       "suspected": 1,
       "deaths": 1,
       "monitored": 3,
-      "desc": "British Case 3 (Anstee) transferred to Netherlands after improving in South Africa. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed German woman died of Andes virus. MV Hondius to sail Rotterdam post-Tenerife for full disinfection with skeleton crew of 30 + Dutch nurse aboard."
+      "desc": "British Case 3 (Anstee) transferred to Netherlands after improving in South Africa. Dutch crew member (41, confirmed) treated at Radboud UMC Nijmegen. Netherlands lab PCR-confirmed German woman died of Andes virus. MV Hondius sailing to Rotterdam post-Tenerife for full disinfection with skeleton crew of 30 + Dutch nurse aboard."
     },
     {
       "id": "uk",
@@ -333,7 +363,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one displaying mild symptoms, one testing mildly PCR-positive for Andes virus per The Daily Beast. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
+      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
     },
     {
       "id": "us-ut",
