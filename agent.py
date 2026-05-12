@@ -73,7 +73,7 @@ Schema:
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel":   "M/V HONDIUS",
-  "ticker":   [string, ...],
+  "ticker":   [{"text": string, "url": string}, ...],
   "sites": [
     {"id":string,"name":string,"country":string,"lat":number,"lng":number,
      "status":"confirmed"|"suspected"|"monitor"|"origin",
@@ -85,7 +85,7 @@ Schema:
 Rules:
 1. Apply every delta that has a named source. Ignore unsourced claims.
 2. PRESERVE all existing sites — never drop a site.
-3. ticker: 6-10 ALL-CAPS headlines 60-90 chars each, prefix with ▲/►//
+3. ticker: 6-10 objects, each {"text": "ALL-CAPS headline 60-90 chars, prefix ▲/►//", "url": "direct article URL or empty string if none"}
 4. desc: 1-2 terse intel-brief sentences."""
 
 CLAUDE_USER = """=== RESEARCH BRIEF ===
@@ -174,6 +174,14 @@ def validate(data):
         seen.add(s["id"]); clean.append(s)
     data["sites"]=clean
     if not isinstance(data.get("ticker"),list): data["ticker"]=[]
+    # Normalise ticker: accept plain strings (legacy) or {text,url} objects
+    clean_ticker = []
+    for item in data["ticker"]:
+        if isinstance(item, str):
+            clean_ticker.append({"text": item, "url": ""})
+        elif isinstance(item, dict) and item.get("text"):
+            clean_ticker.append({"text": str(item["text"]), "url": str(item.get("url",""))})
+    data["ticker"] = clean_ticker
     data["totals"]={
         "confirmed":         sum(s["confirmed"] for s in clean),
         "suspected":         sum(s["suspected"] for s in clean),
@@ -240,8 +248,8 @@ def diff_snapshots(prev, nxt):
         if pd != nd and nd:
             r["descChanges"].append({"site": ns, "prevDesc": pd, "nextDesc": nd})
             r["totalChanges"] += 1
-    prev_tickers = set(prev.get("ticker", []))
-    r["newTicker"] = [t for t in nxt.get("ticker", []) if t not in prev_tickers]
+    prev_tickers = {(t["text"] if isinstance(t, dict) else t) for t in prev.get("ticker", [])}
+    r["newTicker"] = [t for t in nxt.get("ticker", []) if (t["text"] if isinstance(t, dict) else t) not in prev_tickers]
     return r
 
 
