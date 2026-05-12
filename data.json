@@ -1,35 +1,39 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-12T22:50:41+00:00",
+  "updated_at": "2026-05-12T23:42:08+00:00",
   "totals": {
     "confirmed": 22,
     "suspected": 5,
     "deaths": 7,
-    "monitored": 432,
+    "monitored": 434,
     "countries_affected": 26,
     "sites": 38
   },
   "ticker": [
     {
-      "text": "▲ ECDC: 9 HONDIUS CASES — 7 CONFIRMED, 2 PROBABLE; 3 DEATHS; SHIP DOCKED TENERIFE",
-      "url": "https://www.ecdc.europa.eu"
+      "text": "▲ EMORY SCDU ATLANTA RECEIVES 2 HONDIUS AMERICANS; 2 MORE GA RESIDENTS ISOLATE AT HOME",
+      "url": "https://www.axios.com/local/atlanta/2026/05/12/emory-atlanta-hantavirus-cruise-ship-hondius-biocontainment-unit"
     },
     {
-      "text": "▲ WHO RAISES CONFIRMED CASES TO 8, DEATHS TO 3; ANDES VIRUS IDENTIFIED AS CAUSE",
-      "url": "https://www.who.int"
+      "text": "▲ OUTBREAK TOLL: 22 CONFIRMED CASES, 7 DEATHS — ANDES VIRUS CONFIRMED BY WHO",
+      "url": "https://www.who.int/news/item/07-05-2026-who-s-response-to-hantavirus-cases-linked-to-a-cruise-ship"
     },
     {
-      "text": "▲ UNOG: MV HONDIUS EVACUATION COMPLETE; ALL PAX/CREW DISEMBARKED TENERIFE",
-      "url": ""
+      "text": "▲ DAILY BEAST: 8 CONFIRMED CASES, 3 DEATHS; 17 AMERICANS REPATRIATED VIA STATE DEPT AIRLIFT",
+      "url": "https://www.thedailybeast.com/americans-transported-in-biocontainment-units-after-deadly-cruise-outbreak/"
     },
     {
-      "text": "► FRANCE CONFIRMS FIRST HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
-      "url": ""
+      "text": "► FRANCE CONFIRMS HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+      "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
     },
     {
-      "text": "► 152 PASSENGERS DISEMBARKED TENERIFE; 23-NATION EVACUATION OPERATION DECLARED SUCCESS",
-      "url": "https://elpais.com"
+      "text": "► THE ATLANTIC: ANDES VIRUS HUMAN-TO-HUMAN RISK LOW; EXPERTS REJECT COVID-19 COMPARISONS",
+      "url": "https://www.theatlantic.com/health/2026/05/hantavirus-pandemic-covid-fears/687101/"
+    },
+    {
+      "text": "► ECDC: RISK TO GENERAL EU/EEA POPULATION ASSESSED AS VERY LOW; MONITORING ONGOING",
+      "url": "https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak"
     },
     {
       "text": "► TWO AMERICANS IN NEBRASKA NQU BIOCONTAINMENT; ONE ASYMPTOMATIC PCR+, ONE SYMPTOMATIC",
@@ -38,10 +42,6 @@
     {
       "text": "► ANDES VARIANT CONFIRMED; HIGH SIMILARITY TO ARGENTINA 2018-19 STRAINS, NO NEW MUTATIONS",
       "url": "https://elpais.com"
-    },
-    {
-      "text": "► CAPE VERDE AND CANARY ISLANDS REFUSED DOCKING; POLITICAL TENSIONS OVER RODENT-BORNE RISK",
-      "url": "https://theweek.com"
     },
     {
       "text": "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
@@ -142,7 +142,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
+      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights. The Week confirms French passenger positive post-evacuation from Canary Islands."
     },
     {
       "id": "ch",
@@ -310,8 +310,8 @@
       "confirmed": 0,
       "suspected": 0,
       "deaths": 0,
-      "monitored": 2,
-      "desc": "Georgia DPH monitoring two residents who returned from Hondius. Both in good health with no signs of infection as of 10 May. Following CDC recommendations. Part of domestic US monitoring cohort across 6 states."
+      "monitored": 4,
+      "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU (Serious Communicable Diseases Unit) in Atlanta for monitoring as of 12 May per Axios; two additional Georgia residents from same cruise asymptomatic and following CDC guidance at home. Emory SCDU, established 2002, is one of few US facilities capable of treating dangerous communicable diseases."
     },
     {
       "id": "us-tx",
@@ -363,7 +363,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
+      "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic per The Daily Beast. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring."
     },
     {
       "id": "us-ut",
