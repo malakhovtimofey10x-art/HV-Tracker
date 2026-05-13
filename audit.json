@@ -1,77 +1,26 @@
 {
-  "timestamp": "2026-05-13T10:04:05+00:00",
-  "prevTime": "2026-05-13T05:41:12+00:00",
+  "timestamp": "2026-05-13T18:32:22+00:00",
+  "prevTime": "2026-05-13T10:04:05+00:00",
   "newSites": [],
   "caseDeltas": [],
   "statusChanges": [],
   "descChanges": [
     {
       "site": {
-        "id": "fr",
-        "name": "PARIS / LE BOURGET",
-        "country": "FRANCE",
-        "lat": 48.86,
-        "lng": 2.35,
+        "id": "hondius",
+        "name": "M/V HONDIUS",
+        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
+        "lat": 28.17,
+        "lng": -16.45,
         "status": "confirmed",
-        "confirmed": 1,
+        "confirmed": 10,
         "suspected": 0,
-        "deaths": 0,
-        "monitored": 5,
-        "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman now on artificial lung (ECMO) at Bichat Hospital Paris per AP 12 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
+        "deaths": 3,
+        "monitored": 53,
+        "desc": "UNOG confirmed evacuation complete 11 May; all passengers and crew disembarked Tenerife, repatriation underway across 23 nations. WHO reports 8 cases (6 confirmed, 2 additional) and 3 deaths linked to vessel as of 10 May; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
       },
-      "prevDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights.",
-      "nextDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman now on artificial lung (ECMO) at Bichat Hospital Paris per AP 12 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
-    },
-    {
-      "site": {
-        "id": "us-ga",
-        "name": "GEORGIA",
-        "country": "UNITED STATES",
-        "lat": 33.75,
-        "lng": -84.39,
-        "status": "monitor",
-        "confirmed": 0,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 4,
-        "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU (Serious Communicable Diseases Unit) in Atlanta for monitoring as of 12 May per Emory/Axios; two additional Georgia residents from same cruise asymptomatic and following CDC guidance at home. Emory stated no public risk anticipated. Emory SCDU, established 2002, is one of few US facilities capable of treating dangerous communicable diseases."
-      },
-      "prevDesc": "Two American Hondius passengers transferred to Emory University Hospital SCDU (Serious Communicable Diseases Unit) in Atlanta for monitoring as of 12 May per Axios; two additional Georgia residents from same cruise asymptomatic and following CDC guidance at home. Emory SCDU, established 2002, is one of few US facilities capable of treating dangerous communicable diseases.",
-      "nextDesc": "Two American Hondius passengers transferred to Emory University Hospital SCDU (Serious Communicable Diseases Unit) in Atlanta for monitoring as of 12 May per Emory/Axios; two additional Georgia residents from same cruise asymptomatic and following CDC guidance at home. Emory stated no public risk anticipated. Emory SCDU, established 2002, is one of few US facilities capable of treating dangerous communicable diseases."
-    },
-    {
-      "site": {
-        "id": "us-ne",
-        "name": "NEBRASKA",
-        "country": "UNITED STATES",
-        "lat": 41.26,
-        "lng": -96.04,
-        "status": "confirmed",
-        "confirmed": 2,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 18,
-        "desc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic per The Daily Beast — travel content creator Jake Rosmarin among those quarantined, reporting feeling safe under medical care. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely."
-      },
-      "prevDesc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans transported in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic per The Daily Beast. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely. Post-assessment, asymptomatic passengers may opt for 42-day home self-monitoring.",
-      "nextDesc": "Nebraska Medicine / UNMC National Quarantine Unit (NQU) received two Americans in biocontainment units: one asymptomatic PCR-positive per AP News 11 May, one symptomatic per The Daily Beast — travel content creator Jake Rosmarin among those quarantined, reporting feeling safe under medical care. 17 Americans total repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely."
-    },
-    {
-      "site": {
-        "id": "cv",
-        "name": "PRAIA",
-        "country": "CAPE VERDE",
-        "lat": 14.93,
-        "lng": -23.51,
-        "status": "monitor",
-        "confirmed": 0,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 0,
-        "desc": "Hondius anchored Praia 03–06 May; refused docking by Cape Verde per The Week. Three medevac patients evacuated 06 May — two flew Amsterdam (hazmat teams at Schiphol), third plane made unscheduled Gran Canaria refueling stop after Morocco refused permission + medical equipment malfunction. Dr. Stephen Kornfeld (oncologist aboard) coordinated with global health experts during this period per The Atlantic."
-      },
-      "prevDesc": "Hondius anchored Praia 03–06 May; refused docking by Cape Verde per The Week. Three medevac patients evacuated 06 May — two flew Amsterdam (hazmat teams at Schiphol), third plane made unscheduled Gran Canaria refueling stop after Morocco refused permission + medical equipment malfunction. Cape Verde unable to handle full passenger evacuation.",
-      "nextDesc": "Hondius anchored Praia 03–06 May; refused docking by Cape Verde per The Week. Three medevac patients evacuated 06 May — two flew Amsterdam (hazmat teams at Schiphol), third plane made unscheduled Gran Canaria refueling stop after Morocco refused permission + medical equipment malfunction. Dr. Stephen Kornfeld (oncologist aboard) coordinated with global health experts during this period per The Atlantic."
+      "prevDesc": "UNOG confirmed evacuation complete 11 May; all passengers and crew disembarked Tenerife, repatriation underway across 23 nations. ECDC reports 9 total cases (7 confirmed, 2 probable) monitored aboard; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination.",
+      "nextDesc": "UNOG confirmed evacuation complete 11 May; all passengers and crew disembarked Tenerife, repatriation underway across 23 nations. WHO reports 8 cases (6 confirmed, 2 additional) and 3 deaths linked to vessel as of 10 May; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
     }
   ],
   "totalDeltas": {
@@ -81,25 +30,21 @@
   },
   "newTicker": [
     {
-      "text": "▲ AP: 11 HONDIUS CASES, 3 DEATHS; CRITICALLY ILL FRENCH WOMAN ON ARTIFICIAL LUNG IN PARIS",
-      "url": "https://apnews.com"
+      "text": "▲ WHO: 8 HONDIUS HANTAVIRUS CASES, 3 DEATHS; ANDES VIRUS CONFIRMED CAUSE AS OF 10 MAY",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600"
     },
     {
-      "text": "▲ OUTBREAK TOLL: 22 CONFIRMED, 7 DEATHS, 38 MONITORED — SHIP EVACUATED ACROSS 26 COUNTRIES",
-      "url": "https://www.who.int/news/item/07-05-2026-who-s-response-to-hantavirus-cases-linked-to-a-cruise-ship"
+      "text": "▲ WHO CASE FATALITY RATIO 38% AMONG 8 CASES; PUBLIC HEALTH RISK ASSESSED AS LOW GLOBALLY",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600"
     },
     {
-      "text": "▲ DAILY BEAST: HONDIUS QUARANTINEE JAKE ROSMARIN TARGETED BY CRISIS-ACTOR SMEAR CAMPAIGN",
-      "url": "https://www.thedailybeast.com"
+      "text": "▲ WHO ISSUES TECHNICAL NOTES ON CONTACT MANAGEMENT AND DISEMBARKATION PROCEDURES FOR HONDIUS",
+      "url": "https://www.who.int/mega-menu/emergencies/news/situation-reports"
     },
     {
-      "text": "► THE ATLANTIC: DR. KORNFELD MANAGED ANDES VIRUS CARE ABOARD HONDIUS; CABO VERDE MEDEVAC",
-      "url": "https://www.theatlantic.com/health/2026/05/hantavirus-pandemic-covid-fears/687101/"
-    },
-    {
-      "text": "► FRANCE 42-DAY QUARANTINE DECREE; 22 FLIGHT CONTACTS TRACED ACROSS INTERNATIONAL ROUTES",
+      "text": "► FRANCE 42-DAY QUARANTINE DECREE; CRITICALLY ILL FRENCH WOMAN ON ECMO AT BICHAT HOSPITAL PARIS",
       "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
     }
   ],
-  "totalChanges": 4
+  "totalChanges": 1
 }
