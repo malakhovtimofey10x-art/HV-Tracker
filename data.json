@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-12T23:42:08+00:00",
+  "updated_at": "2026-05-13T05:41:12+00:00",
   "totals": {
     "confirmed": 22,
     "suspected": 5,
@@ -12,28 +12,24 @@
   },
   "ticker": [
     {
+      "text": "▲ ECDC: 9 HONDIUS CASES (7 CONFIRMED, 2 PROBABLE); SHIP ARRIVED TENERIFE, EU RISK VERY LOW",
+      "url": "https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak"
+    },
+    {
+      "text": "▲ FRANCE CONFIRMS HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
+      "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
+    },
+    {
+      "text": "▲ WHO: 7 CONFIRMED CASES, 3 DEATHS LINKED TO MV HONDIUS; ANDES VIRUS IDENTIFIED",
+      "url": "https://www.who.int/news/item/07-05-2026-who-s-response-to-hantavirus-cases-linked-to-a-cruise-ship"
+    },
+    {
       "text": "▲ EMORY SCDU ATLANTA RECEIVES 2 HONDIUS AMERICANS; 2 MORE GA RESIDENTS ISOLATE AT HOME",
       "url": "https://www.axios.com/local/atlanta/2026/05/12/emory-atlanta-hantavirus-cruise-ship-hondius-biocontainment-unit"
     },
     {
-      "text": "▲ OUTBREAK TOLL: 22 CONFIRMED CASES, 7 DEATHS — ANDES VIRUS CONFIRMED BY WHO",
+      "text": "► OUTBREAK TOLL: 22 CONFIRMED CASES, 7 DEATHS ACROSS 26 COUNTRIES — ANDES VIRUS CONFIRMED",
       "url": "https://www.who.int/news/item/07-05-2026-who-s-response-to-hantavirus-cases-linked-to-a-cruise-ship"
-    },
-    {
-      "text": "▲ DAILY BEAST: 8 CONFIRMED CASES, 3 DEATHS; 17 AMERICANS REPATRIATED VIA STATE DEPT AIRLIFT",
-      "url": "https://www.thedailybeast.com/americans-transported-in-biocontainment-units-after-deadly-cruise-outbreak/"
-    },
-    {
-      "text": "► FRANCE CONFIRMS HANTAVIRUS CASE; 42-DAY QUARANTINE DECREE TARGETS 22 FLIGHT CONTACTS",
-      "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
-    },
-    {
-      "text": "► THE ATLANTIC: ANDES VIRUS HUMAN-TO-HUMAN RISK LOW; EXPERTS REJECT COVID-19 COMPARISONS",
-      "url": "https://www.theatlantic.com/health/2026/05/hantavirus-pandemic-covid-fears/687101/"
-    },
-    {
-      "text": "► ECDC: RISK TO GENERAL EU/EEA POPULATION ASSESSED AS VERY LOW; MONITORING ONGOING",
-      "url": "https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak"
     },
     {
       "text": "► TWO AMERICANS IN NEBRASKA NQU BIOCONTAINMENT; ONE ASYMPTOMATIC PCR+, ONE SYMPTOMATIC",
@@ -42,6 +38,10 @@
     {
       "text": "► ANDES VARIANT CONFIRMED; HIGH SIMILARITY TO ARGENTINA 2018-19 STRAINS, NO NEW MUTATIONS",
       "url": "https://elpais.com"
+    },
+    {
+      "text": "► THE ATLANTIC: ANDES VIRUS HUMAN-TO-HUMAN RISK LOW; EXPERTS REJECT COVID-19 COMPARISONS",
+      "url": "https://www.theatlantic.com/health/2026/05/hantavirus-pandemic-covid-fears/687101/"
     },
     {
       "text": "// TRISTAN DA CUNHA SUSPECTED CASE STABLE; RAF A400M PARACHUTE DROP DELIVERS 3.3T MED SUPPLIES",
@@ -64,7 +64,7 @@
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "UNOG confirmed evacuation complete 11 May; all passengers and crew disembarked Tenerife, repatriation underway across 23 nations. ECDC reports 9 total cases (7 confirmed, 2 probable); vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
+      "desc": "UNOG confirmed evacuation complete 11 May; all passengers and crew disembarked Tenerife, repatriation underway across 23 nations. ECDC reports 9 total cases (7 confirmed, 2 probable) monitored aboard; vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination."
     },
     {
       "id": "ushuaia",
@@ -142,7 +142,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights. The Week confirms French passenger positive post-evacuation from Canary Islands."
+      "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive 11 May (Le Monde); condition worsening overnight, strict isolation at Bichat Hospital Paris. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
     },
     {
       "id": "ch",
