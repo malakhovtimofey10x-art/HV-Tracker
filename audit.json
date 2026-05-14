@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-14T06:18:07+00:00",
-  "prevTime": "2026-05-13T23:42:00+00:00",
+  "timestamp": "2026-05-14T09:42:13+00:00",
+  "prevTime": "2026-05-14T06:18:07+00:00",
   "newSites": [],
   "caseDeltas": [],
   "statusChanges": [],
@@ -17,27 +17,10 @@
         "suspected": 0,
         "deaths": 3,
         "monitored": 53,
-        "desc": "WHO confirmed 8 cases and 3 deaths as of 08 May; vessel docked Canary Islands Sunday to allow passenger evacuation to home countries per The Week. En route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; company expects to determine future cruise schedule by end of week per AP News."
+        "desc": "WHO confirmed 9 cases and 3 deaths as of 14 May; vessel docked Canary Islands to allow passenger evacuation to home countries. En route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; future Arctic cruise schedule uncertain pending health authority authorization per AP News."
       },
-      "prevDesc": "WHO confirmed 9 cases and 3 deaths linked to vessel as of 13 May; evacuations confirmed complete per WHO. Vessel en route Rotterdam with 30 skeleton crew + Dutch nurse for full decontamination.",
-      "nextDesc": "WHO confirmed 8 cases and 3 deaths as of 08 May; vessel docked Canary Islands Sunday to allow passenger evacuation to home countries per The Week. En route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; company expects to determine future cruise schedule by end of week per AP News."
-    },
-    {
-      "site": {
-        "id": "us-ne",
-        "name": "NEBRASKA",
-        "country": "UNITED STATES",
-        "lat": 41.26,
-        "lng": -96.04,
-        "status": "confirmed",
-        "confirmed": 2,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 18,
-        "desc": "Nebraska Medicine / UNMC NQU received Dr. Stephen Kornfeld (Oregon oncologist, PCR-positive) after he assisted ill Hondius passengers aboard; a second symptomatic American also in biocontainment. 17 Americans quarantined in Omaha with two requiring biocontainment due to mild symptoms per The Daily Beast; CDC says widespread US transmission unlikely."
-      },
-      "prevDesc": "Nebraska Medicine / UNMC NQU received Dr. Stephen Kornfeld (Oregon oncologist, PCR-positive, isolated awaiting confirmation per AP 13 May) after he assisted ill Hondius passengers aboard; a second symptomatic American also in biocontainment. 17 Americans repatriated via State Dept airlift from Tenerife to Offutt AFB; CDC says widespread US transmission unlikely.",
-      "nextDesc": "Nebraska Medicine / UNMC NQU received Dr. Stephen Kornfeld (Oregon oncologist, PCR-positive) after he assisted ill Hondius passengers aboard; a second symptomatic American also in biocontainment. 17 Americans quarantined in Omaha with two requiring biocontainment due to mild symptoms per The Daily Beast; CDC says widespread US transmission unlikely."
+      "prevDesc": "WHO confirmed 8 cases and 3 deaths as of 08 May; vessel docked Canary Islands Sunday to allow passenger evacuation to home countries per The Week. En route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; company expects to determine future cruise schedule by end of week per AP News.",
+      "nextDesc": "WHO confirmed 9 cases and 3 deaths as of 14 May; vessel docked Canary Islands to allow passenger evacuation to home countries. En route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; future Arctic cruise schedule uncertain pending health authority authorization per AP News."
     },
     {
       "site": {
@@ -51,10 +34,10 @@
         "suspected": 1,
         "deaths": 0,
         "monitored": 1,
-        "desc": "Winnebago County resident suspected of contracting hantavirus after cleaning a rodent-infested property per The Daily Beast; health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; local and state health authorities investigating."
+        "desc": "Winnebago County resident suspected of contracting hantavirus (North African variant, not Andes) after cleaning a rodent-infested property per The Daily Beast; health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; showing mild symptoms, not hospitalized, and recovering per The Daily Beast."
       },
-      "prevDesc": "Illinois resident suspected of contracting hantavirus after cleaning a rodent-infested property per The Daily Beast (13 May); health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; local and state health authorities investigating.",
-      "nextDesc": "Winnebago County resident suspected of contracting hantavirus after cleaning a rodent-infested property per The Daily Beast; health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; local and state health authorities investigating."
+      "prevDesc": "Winnebago County resident suspected of contracting hantavirus after cleaning a rodent-infested property per The Daily Beast; health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; local and state health authorities investigating.",
+      "nextDesc": "Winnebago County resident suspected of contracting hantavirus (North African variant, not Andes) after cleaning a rodent-infested property per The Daily Beast; health officials believe exposure via aerosolized rat urine or feces. Case assessed as unrelated to MV Hondius outbreak; showing mild symptoms, not hospitalized, and recovering per The Daily Beast."
     }
   ],
   "totalDeltas": {
@@ -64,45 +47,41 @@
   },
   "newTicker": [
     {
-      "text": "▲ WHO CONFIRMS 8 HONDIUS HANTAVIRUS CASES, 3 DEATHS; ANDES VIRUS IDENTIFIED AS CAUSE",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600"
+      "text": "▲ WHO: 9 CONFIRMED HONDIUS HANTAVIRUS CASES, 3 DEATHS; ANDES VIRUS CAUSE CONFIRMED",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "▲ WHO: GLOBAL PUBLIC HEALTH RISK FROM HONDIUS HANTAVIRUS OUTBREAK ASSESSED AS LOW",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600"
+      "text": "▲ AP: HONDIUS EN ROUTE ROTTERDAM FOR DISINFECTION; ARCTIC CRUISE SCHEDULE UNCERTAIN",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "▲ WIKIPEDIA: 7 CONFIRMED + 2 PROBABLE CASES AWAITING LAB RESULTS AS OF 11 MAY 2026",
-      "url": ""
-    },
-    {
-      "text": "► 17 AMERICANS QUARANTINED OMAHA; 2 IN BIOCONTAINMENT; 2 MORE MONITORED EMORY ATLANTA",
+      "text": "► 2 AMERICAN HONDIUS PASSENGERS IN EMORY ATLANTA BIOCONTAINMENT SCDU; NO PUBLIC RISK",
       "url": "https://www.axios.com/local/atlanta/2026/05/12/emory-atlanta-hantavirus-cruise-ship-hondius-biocontainment-unit"
     },
     {
-      "text": "► HONDIUS EN ROUTE ROTTERDAM FOR FULL DISINFECTION; CRUISE SCHEDULE REVIEW END OF WEEK",
+      "text": "► ILLINOIS WINNEBAGO CO. RESIDENT SUSPECTED HANTAVIRUS AFTER RODENT CLEANUP; NOT HONDIUS",
+      "url": "https://www.thedailybeast.com/american-who-wasnt-on-doomed-cruise-is-feared-to-have-caught-rat-virus/"
+    },
+    {
+      "text": "► 22 MONITORED INDIVIDUALS TRACKED GLOBALLY; 9 CONFIRMED CASES ACROSS MULTIPLE NATIONS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "► ILLINOIS HANTAVIRUS STRAIN UNRELATED TO HONDIUS; NORTH AFRICAN VARIANT, NO H2H SPREAD",
+      "url": "https://www.thedailybeast.com/american-who-wasnt-on-doomed-cruise-is-feared-to-have-caught-rat-virus/"
+    },
+    {
+      "text": "// EXPERTS: FUTURE HONDIUS PASSENGERS LIKELY SAFE; ANDES VIRUS POOR SURVIVABILITY SURFACES",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "// CDC LEVEL-3 EOC ACTIVE; US WHO DISENGAGEMENT CITED AS OUTBREAK RESPONSE VULNERABILITY",
       "url": ""
     },
     {
-      "text": "► ILLINOIS RESIDENT SUSPECTED HANTAVIRUS AFTER RODENT CLEANUP; UNRELATED TO HONDIUS",
-      "url": ""
-    },
-    {
-      "text": "► FRANCE 42-DAY QUARANTINE DECREE; CRITICALLY ILL FRENCH WOMAN ON ECMO AT BICHAT PARIS",
-      "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
-    },
-    {
-      "text": "► HONDIUS DOCKED CANARY ISLANDS SUNDAY; PASSENGERS EVACUATED TO HOME COUNTRIES",
-      "url": "https://theweek.com/health/new-hantavirus-cases-passengers-flown-home"
-    },
-    {
-      "text": "// CDC LEVEL-3 RESPONSE EOC ACTIVE; EXPERTS CITE US WHO DISENGAGEMENT AS VULNERABILITY",
-      "url": ""
-    },
-    {
-      "text": "// EXPERTS: FUTURE HONDIUS PASSENGERS LIKELY SAFE; NO RODENTS DETECTED, VIRUS POOR ON SURFACES",
-      "url": ""
+      "text": "// WHO GLOBAL PUBLIC HEALTH RISK FROM HONDIUS HANTAVIRUS OUTBREAK ASSESSED AS LOW",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON600"
     }
   ],
-  "totalChanges": 3
+  "totalChanges": 2
 }
