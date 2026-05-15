@@ -1,8 +1,28 @@
 {
-  "timestamp": "2026-05-14T21:57:55+00:00",
-  "prevTime": "2026-05-14T17:17:07+00:00",
+  "timestamp": "2026-05-15T08:34:14+00:00",
+  "prevTime": "2026-05-14T21:57:55+00:00",
   "newSites": [],
-  "caseDeltas": [],
+  "caseDeltas": [
+    {
+      "site": {
+        "id": "au",
+        "name": "PERTH / BULLSBROOK / SYDNEY",
+        "country": "AUSTRALIA",
+        "lat": -31.87,
+        "lng": 115.97,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 7,
+        "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 14 May; all tested negative on arrival but further health assessments under way. Health Minister Mark Butler announced one of the world's strictest quarantine measures; facility originally stood up during COVID-19 in 2022."
+      },
+      "field": "monitored",
+      "prev": 2,
+      "next": 7,
+      "delta": 5
+    }
+  ],
   "statusChanges": [],
   "descChanges": [
     {
@@ -17,10 +37,61 @@
         "suspected": 0,
         "deaths": 3,
         "monitored": 53,
-        "desc": "WHO confirmed 11 cases and 3 deaths as of 13 May; 8 confirmed as Andes virus infections. Vessel docked Granadilla de Abona 10 May concluding 40-day health crisis with successful 23-nation evacuation; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection."
+        "desc": "WHO confirmed 11 cases (9 confirmed, 2 suspected) and 3 deaths as of 13 May; Andes virus identified. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew transported to Canary Islands; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection. Arctic voyage schedule under review."
       },
-      "prevDesc": "WHO and CDC updated confirmed cases to 11 as of 14 May; 3 deaths remain. Vessel docked Granadilla de Abona 10 May concluding 40-day health crisis with successful 23-nation evacuation; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection.",
-      "nextDesc": "WHO confirmed 11 cases and 3 deaths as of 13 May; 8 confirmed as Andes virus infections. Vessel docked Granadilla de Abona 10 May concluding 40-day health crisis with successful 23-nation evacuation; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection."
+      "prevDesc": "WHO confirmed 11 cases and 3 deaths as of 13 May; 8 confirmed as Andes virus infections. Vessel docked Granadilla de Abona 10 May concluding 40-day health crisis with successful 23-nation evacuation; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection.",
+      "nextDesc": "WHO confirmed 11 cases (9 confirmed, 2 suspected) and 3 deaths as of 13 May; Andes virus identified. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew transported to Canary Islands; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection. Arctic voyage schedule under review."
+    },
+    {
+      "site": {
+        "id": "ushuaia",
+        "name": "USHUAIA / ARGENTINA ROUTE",
+        "country": "ARGENTINA",
+        "lat": -54.81,
+        "lng": -68.31,
+        "status": "origin",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 0,
+        "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route."
+      },
+      "prevDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route. Illumina sequencing shows Andes strain on Hondius has high similarity to Argentina 2018-19 strains per El País.",
+      "nextDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route."
+    },
+    {
+      "site": {
+        "id": "fr",
+        "name": "PARIS / LE BOURGET",
+        "country": "FRANCE",
+        "lat": 48.86,
+        "lng": 2.35,
+        "status": "confirmed",
+        "confirmed": 1,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 5,
+        "desc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on artificial lung (ECMO) at Bichat Hospital Paris per AP 13 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
+      },
+      "prevDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman now on artificial lung (ECMO) at Bichat Hospital Paris per AP 12 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights.",
+      "nextDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on artificial lung (ECMO) at Bichat Hospital Paris per AP 13 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights."
+    },
+    {
+      "site": {
+        "id": "us-az",
+        "name": "ARIZONA",
+        "country": "UNITED STATES",
+        "lat": 33.45,
+        "lng": -112.07,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 15 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
+      },
+      "prevDesc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 14 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states.",
+      "nextDesc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 15 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
     },
     {
       "site": {
@@ -34,27 +105,112 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 1,
-        "desc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 14 May. CDC confirmed no US cases resulting from Hondius incident per CDC situation summary."
+        "desc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 15 May. CDC confirmed no US cases resulting from Hondius incident per CDC situation summary."
       },
-      "prevDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 14 May. Acting CDC Director Bhattacharya criticised on CNN for vague responses on hantavirus passenger monitoring procedures per The Daily Beast.",
-      "nextDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 14 May. CDC confirmed no US cases resulting from Hondius incident per CDC situation summary."
+      "prevDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 14 May. CDC confirmed no US cases resulting from Hondius incident per CDC situation summary.",
+      "nextDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 15 May. CDC confirmed no US cases resulting from Hondius incident per CDC situation summary."
     },
     {
       "site": {
-        "id": "us-ne",
-        "name": "NEBRASKA",
+        "id": "us-tx",
+        "name": "TEXAS",
         "country": "UNITED STATES",
-        "lat": 41.26,
-        "lng": -96.04,
-        "status": "confirmed",
-        "confirmed": 2,
+        "lat": 30.27,
+        "lng": -97.74,
+        "status": "monitor",
+        "confirmed": 0,
         "suspected": 0,
         "deaths": 0,
-        "monitored": 18,
-        "desc": "Dr. Stephen Kornfeld (Oregon oncologist) released from UNMC NQU biocontainment 14 May after inconclusive overseas swabs resolved negative; joins 15 other Americans in regular quarantine monitoring per AP News. CDC confirmed no widespread US transmission; a second symptomatic American remains under observation at UNMC."
+        "monitored": 2,
+        "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 15 May. Part of domestic US monitoring cohort across 6 states."
       },
-      "prevDesc": "Dr. Stephen Kornfeld (Oregon oncologist) released from UNMC NQU biocontainment 14 May after testing negative; will join 15 other Americans in regular quarantine monitoring per AP News. A second symptomatic American remains under observation; CDC says widespread US transmission unlikely.",
-      "nextDesc": "Dr. Stephen Kornfeld (Oregon oncologist) released from UNMC NQU biocontainment 14 May after inconclusive overseas swabs resolved negative; joins 15 other Americans in regular quarantine monitoring per AP News. CDC confirmed no widespread US transmission; a second symptomatic American remains under observation at UNMC."
+      "prevDesc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 14 May. Part of domestic US monitoring cohort across 6 states.",
+      "nextDesc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 15 May. Part of domestic US monitoring cohort across 6 states."
+    },
+    {
+      "site": {
+        "id": "us-nj",
+        "name": "NEW JERSEY",
+        "country": "UNITED STATES",
+        "lat": 40.22,
+        "lng": -74.76,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 2,
+        "desc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 15 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
+      },
+      "prevDesc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 14 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves.",
+      "nextDesc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 15 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
+    },
+    {
+      "site": {
+        "id": "us-ut",
+        "name": "UTAH",
+        "country": "UNITED STATES",
+        "lat": 40.76,
+        "lng": -111.89,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 15 May."
+      },
+      "prevDesc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 14 May.",
+      "nextDesc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 15 May."
+    },
+    {
+      "site": {
+        "id": "ph",
+        "name": "MANILA",
+        "country": "PHILIPPINES",
+        "lat": 14.6,
+        "lng": 120.98,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 38,
+        "desc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 15 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
+      },
+      "prevDesc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 14 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window.",
+      "nextDesc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 15 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
+    },
+    {
+      "site": {
+        "id": "nz",
+        "name": "WELLINGTON",
+        "country": "NEW ZEALAND",
+        "lat": -41.29,
+        "lng": 174.78,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 14 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+      },
+      "prevDesc": "NZ nationals among passengers on final Australia-led repatriation flight departing Tenerife Monday afternoon. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported.",
+      "nextDesc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 14 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+    },
+    {
+      "site": {
+        "id": "au",
+        "name": "PERTH / BULLSBROOK / SYDNEY",
+        "country": "AUSTRALIA",
+        "lat": -31.87,
+        "lng": 115.97,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 7,
+        "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 14 May; all tested negative on arrival but further health assessments under way. Health Minister Mark Butler announced one of the world's strictest quarantine measures; facility originally stood up during COVID-19 in 2022."
+      },
+      "prevDesc": "Australia sending repatriation plane for final Tenerife flight Monday afternoon covering Australian, New Zealand, and several Asian-country nationals per AP News. At least one Australian national had disembarked at Saint Helena 24 Apr and returned home. Australian health authorities monitoring; no symptomatic cases reported.",
+      "nextDesc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 14 May; all tested negative on arrival but further health assessments under way. Health Minister Mark Butler announced one of the world's strictest quarantine measures; facility originally stood up during COVID-19 in 2022."
     }
   ],
   "totalDeltas": {
@@ -64,13 +220,45 @@
   },
   "newTicker": [
     {
-      "text": "► ANDES VIRUS RARE H2H TRANSMISSION POSSIBLE IN CLOSE CONTACT; PANDEMIC RISK MINIMAL",
-      "url": "https://www.theatlantic.com/health/archive/2026/05/hantavirus-hondius-cruise-ship-outbreak/682451/"
+      "text": "▲ 6 HONDIUS PAXFIVE AUSTRALIANS, ONE NZ—IN BULLSBROOK QUARANTINE NEAR PERTH",
+      "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "► EUROPEAN HONDIUS PASSENGERS BACK HOME; QUARANTINE AND TESTING UNDER WAY IN ALL NATIONS",
-      "url": "https://www.euronews.com/health/2026/05/11/european-passengers-from-the-hantavirus-hit-ship-are-back-in-their-home-countries-what-hap"
+      "text": "▲ AUSTRALIA ENFORCES STRICTEST GLOBAL QUARANTINE; RAAF PEARCE INTAKE 14 MAY",
+      "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
+    },
+    {
+      "text": "▲ CRITICALLY ILL FRENCH WOMAN ON ECMO ARTIFICIAL LUNG AT BICHAT HOSPITAL PARIS",
+      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
+    },
+    {
+      "text": "▲ WHO: 11 HONDIUS HANTAVIRUS CASES, 9 CONFIRMED 2 SUSPECTED, 3 DEATHS TOTAL",
+      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
+    },
+    {
+      "text": "► HONDIUS EN ROUTE ROTTERDAM; SKELETON CREW 30 + DUTCH NURSE; FULL DISINFECTION AHEAD",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "► DUTCH COUPLE BELIEVED TO HAVE CONTRACTED ANDES VIRUS IN S. AMERICA PRE-BOARDING",
+      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
+    },
+    {
+      "text": "► 87 PASSENGERS + 35 CREW EVACUATED CANARY ISLANDS; VESSEL FULLY CLEARED OF PASSENGERS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "► HONDIUS ARCTIC MAY VOYAGE UNCERTAIN PENDING CLEAN PROTOCOLS + HEALTH AUTHORITY SIGN-OFF",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "► NO RODENTS FOUND ABOARD; ANDES VIRUS POOR SURFACE SURVIVABILITY; FUTURE PAXSAFE: EXPERTS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "// WHO: NO EVIDENCE BROADER COMMUNITY OUTBREAK; GLOBAL PUBLIC HEALTH RISK ASSESSED LOW",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
     }
   ],
-  "totalChanges": 3
+  "totalChanges": 12
 }
