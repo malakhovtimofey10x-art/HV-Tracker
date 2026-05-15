@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-15T16:31:00+00:00",
+  "updated_at": "2026-05-15T21:41:45+00:00",
   "totals": {
     "confirmed": 23,
     "suspected": 6,
@@ -12,8 +12,8 @@
   },
   "ticker": [
     {
-      "text": "▲ WHO: 11 HONDIUS CASES — 8 PCR-CONFIRMED ANDES VIRUS, 2 PROBABLE, 3 DEATHS",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "▲ WHO: 11 HONDIUS CASES — 9 PCR-CONFIRMED ANDES VIRUS, 2 SUSPECTED, 3 DEATHS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
       "text": "▲ 6 HONDIUS PAX — 5 AUSTRALIANS, ONE NZ — IN BULLSBROOK QUARANTINE NEAR PERTH",
@@ -24,24 +24,24 @@
       "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "▲ CDC COORDINATES US PAX REPATRIATION TO OFFUTT AFB; NATIONAL QUARANTINE CTR OMAHA",
-      "url": "https://www.cdc.gov/media/releases/2026/2026-cdc-provides-update-on-hantavirus-outbreak-linked-to-m-v-hondius-cruise-ship.html"
+      "text": "▲ 18 US PAX QUARANTINED: 15 AT UNMC OMAHA, 2 MONITORED EMORY ATLANTA, 1 CLEARED",
+      "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
     },
     {
-      "text": "▲ CRITICALLY ILL FRENCH WOMAN ON ECMO ARTIFICIAL LUNG AT BICHAT HOSPITAL PARIS",
-      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
+      "text": "▲ DUTCH COUPLE NAMED INDEX CASES; 42-DAY INCUBATION DRIVES GLOBAL QUARANTINE DECISIONS",
+      "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
     },
     {
       "text": "► HONDIUS EN ROUTE ROTTERDAM; SKELETON CREW 30 + DUTCH NURSE; FULL DISINFECTION AHEAD",
       "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "► WHO IHR FOCAL POINTS ACTIVE; INTERNATIONAL CONTACT TRACING ONGOING ACROSS 26 NATIONS",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "► CRITICALLY ILL FRENCH WOMAN ON ECMO ARTIFICIAL LUNG AT BICHAT HOSPITAL PARIS",
+      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
-      "text": "► DUTCH COUPLE BELIEVED TO HAVE CONTRACTED ANDES VIRUS IN S. AMERICA PRE-BOARDING",
-      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
+      "text": "► ARCTIC VOYAGE SCHEDULE UNCERTAIN PENDING ROTTERDAM DISINFECTION AND HEALTH CLEARANCE",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
       "text": "► NO RODENTS FOUND ABOARD; ANDES VIRUS POOR SURFACE SURVIVABILITY; FUTURE PAX SAFE: EXPERTS",
@@ -64,7 +64,7 @@
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "WHO confirmed 11 cases (8 lab-confirmed Andes virus, 2 probable, 1 inconclusive) and 3 deaths as of 13 May 2026. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection."
+      "desc": "AP News 13–15 May confirmed 11 total cases (9 PCR-confirmed Andes virus, 2 suspected) and 3 deaths. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
     },
     {
       "id": "ushuaia",
@@ -311,7 +311,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 4,
-      "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring as of 12 May per Axios; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home."
+      "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring per AP 13 May; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home."
     },
     {
       "id": "us-tx",
@@ -363,7 +363,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "CDC coordinating repatriation of American passengers to Offutt AFB with transfer to National Quarantine Center at University of Nebraska Omaha per CDC 08 May. Dr. Stephen Kornfeld released from UNMC NQU biocontainment 14 May after inconclusive swabs resolved negative; a second symptomatic American remains under observation at UNMC."
+      "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative."
     },
     {
       "id": "us-ut",
@@ -467,7 +467,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 14 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+      "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 15 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
     },
     {
       "id": "se",
@@ -558,7 +558,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 7,
-      "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 14 May; all tested negative on arrival but further health assessments under way. Health Minister Mark Butler announced one of the world's strictest quarantine measures."
+      "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 15 May; all tested negative pre-departure but Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk."
     }
   ]
 }
