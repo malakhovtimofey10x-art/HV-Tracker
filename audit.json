@@ -1,8 +1,28 @@
 {
-  "timestamp": "2026-05-15T21:41:45+00:00",
-  "prevTime": "2026-05-15T16:31:00+00:00",
+  "timestamp": "2026-05-16T06:40:59+00:00",
+  "prevTime": "2026-05-15T21:41:45+00:00",
   "newSites": [],
-  "caseDeltas": [],
+  "caseDeltas": [
+    {
+      "site": {
+        "id": "hondius",
+        "name": "M/V HONDIUS",
+        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
+        "lat": 28.17,
+        "lng": -16.45,
+        "status": "confirmed",
+        "confirmed": 10,
+        "suspected": 0,
+        "deaths": 3,
+        "monitored": 53,
+        "desc": "WHO confirmed 10 global hantavirus cases linked to Hondius as of 15 May (Al Jazeera); crew remain symptom-free. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance per AP 14 May."
+      },
+      "field": "confirmed",
+      "prev": 11,
+      "next": 10,
+      "delta": -1
+    }
+  ],
   "statusChanges": [],
   "descChanges": [
     {
@@ -13,31 +33,82 @@
         "lat": 28.17,
         "lng": -16.45,
         "status": "confirmed",
-        "confirmed": 11,
+        "confirmed": 10,
         "suspected": 0,
         "deaths": 3,
         "monitored": 53,
-        "desc": "AP News 13–15 May confirmed 11 total cases (9 PCR-confirmed Andes virus, 2 suspected) and 3 deaths. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
+        "desc": "WHO confirmed 10 global hantavirus cases linked to Hondius as of 15 May (Al Jazeera); crew remain symptom-free. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance per AP 14 May."
       },
-      "prevDesc": "WHO confirmed 11 cases (8 lab-confirmed Andes virus, 2 probable, 1 inconclusive) and 3 deaths as of 13 May 2026. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection.",
-      "nextDesc": "AP News 13–15 May confirmed 11 total cases (9 PCR-confirmed Andes virus, 2 suspected) and 3 deaths. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
+      "prevDesc": "AP News 13–15 May confirmed 11 total cases (9 PCR-confirmed Andes virus, 2 suspected) and 3 deaths. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance.",
+      "nextDesc": "WHO confirmed 10 global hantavirus cases linked to Hondius as of 15 May (Al Jazeera); crew remain symptom-free. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance per AP 14 May."
     },
     {
       "site": {
-        "id": "us-ga",
-        "name": "GEORGIA",
+        "id": "us-az",
+        "name": "ARIZONA",
         "country": "UNITED STATES",
-        "lat": 33.75,
-        "lng": -84.39,
+        "lat": 33.45,
+        "lng": -112.07,
         "status": "monitor",
         "confirmed": 0,
         "suspected": 0,
         "deaths": 0,
-        "monitored": 4,
-        "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring per AP 13 May; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home."
+        "monitored": 1,
+        "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 16 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
       },
-      "prevDesc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring as of 12 May per Axios; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home.",
-      "nextDesc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring per AP 13 May; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home."
+      "prevDesc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 15 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states.",
+      "nextDesc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 16 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
+    },
+    {
+      "site": {
+        "id": "us-ca",
+        "name": "CALIFORNIA",
+        "country": "UNITED STATES",
+        "lat": 38.58,
+        "lng": -121.49,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 16 May."
+      },
+      "prevDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 15 May.",
+      "nextDesc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 16 May."
+    },
+    {
+      "site": {
+        "id": "us-tx",
+        "name": "TEXAS",
+        "country": "UNITED STATES",
+        "lat": 30.27,
+        "lng": -97.74,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 2,
+        "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 16 May. Part of domestic US monitoring cohort across 6 states."
+      },
+      "prevDesc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 15 May. Part of domestic US monitoring cohort across 6 states.",
+      "nextDesc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 16 May. Part of domestic US monitoring cohort across 6 states."
+    },
+    {
+      "site": {
+        "id": "us-nj",
+        "name": "NEW JERSEY",
+        "country": "UNITED STATES",
+        "lat": 40.22,
+        "lng": -74.76,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 2,
+        "desc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 16 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
+      },
+      "prevDesc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 15 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves.",
+      "nextDesc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 16 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
     },
     {
       "site": {
@@ -51,72 +122,101 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 18,
-        "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative."
+        "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May."
       },
-      "prevDesc": "CDC coordinating repatriation of American passengers to Offutt AFB with transfer to National Quarantine Center at University of Nebraska Omaha per CDC 08 May. Dr. Stephen Kornfeld released from UNMC NQU biocontainment 14 May after inconclusive swabs resolved negative; a second symptomatic American remains under observation at UNMC.",
-      "nextDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative."
+      "prevDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative.",
+      "nextDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May."
     },
     {
       "site": {
-        "id": "nz",
-        "name": "WELLINGTON",
-        "country": "NEW ZEALAND",
-        "lat": -41.29,
-        "lng": 174.78,
+        "id": "us-ut",
+        "name": "UTAH",
+        "country": "UNITED STATES",
+        "lat": 40.76,
+        "lng": -111.89,
         "status": "monitor",
         "confirmed": 0,
         "suspected": 0,
         "deaths": 0,
         "monitored": 1,
-        "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 15 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+        "desc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 16 May."
       },
-      "prevDesc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 14 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported.",
-      "nextDesc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 15 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+      "prevDesc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 15 May.",
+      "nextDesc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 16 May."
     },
     {
       "site": {
-        "id": "au",
-        "name": "PERTH / BULLSBROOK / SYDNEY",
-        "country": "AUSTRALIA",
-        "lat": -31.87,
-        "lng": 115.97,
+        "id": "us-il",
+        "name": "ILLINOIS",
+        "country": "UNITED STATES",
+        "lat": 41.88,
+        "lng": -87.63,
+        "status": "suspected",
+        "confirmed": 0,
+        "suspected": 1,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "Winnebago County resident feared to have contracted hantavirus (non-Andes variant) after cleaning a rodent-infested property per The Daily Beast 14 May. Case assessed as unrelated to MV Hondius outbreak; showing mild symptoms, not hospitalized, and recovering."
+      },
+      "prevDesc": "Winnebago County resident suspected of contracting hantavirus (North African variant, not Andes) after cleaning a rodent-infested property per The Daily Beast. Case assessed as unrelated to MV Hondius outbreak; showing mild symptoms, not hospitalized, and recovering.",
+      "nextDesc": "Winnebago County resident feared to have contracted hantavirus (non-Andes variant) after cleaning a rodent-infested property per The Daily Beast 14 May. Case assessed as unrelated to MV Hondius outbreak; showing mild symptoms, not hospitalized, and recovering."
+    },
+    {
+      "site": {
+        "id": "ph",
+        "name": "MANILA",
+        "country": "PHILIPPINES",
+        "lat": 14.6,
+        "lng": 120.98,
         "status": "monitor",
         "confirmed": 0,
         "suspected": 0,
         "deaths": 0,
-        "monitored": 7,
-        "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 15 May; all tested negative pre-departure but Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk."
+        "monitored": 38,
+        "desc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 16 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
       },
-      "prevDesc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 14 May; all tested negative on arrival but further health assessments under way. Health Minister Mark Butler announced one of the world's strictest quarantine measures.",
-      "nextDesc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 15 May; all tested negative pre-departure but Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk."
+      "prevDesc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 15 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window.",
+      "nextDesc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 16 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
     }
   ],
   "totalDeltas": {
-    "confirmed": 0,
+    "confirmed": -1,
     "suspected": 0,
     "deaths": 0
   },
   "newTicker": [
     {
-      "text": "▲ WHO: 11 HONDIUS CASES — 9 PCR-CONFIRMED ANDES VIRUS, 2 SUSPECTED, 3 DEATHS",
+      "text": "▲ WHO CONFIRMS 10 GLOBAL HANTAVIRUS CASES; HONDIUS CREW REMAIN SYMPTOM-FREE",
+      "url": "https://www.aljazeera.com/news/2026/5/15/who-confirms-10-global-hantavirus-cases-hondius-crew-remain-symptom-free"
+    },
+    {
+      "text": "▲ CDC ACTIVELY MONITORING HONDIUS OUTBREAK; US PUBLIC RISK ASSESSED EXTREMELY LOW",
+      "url": "https://www.cdc.gov/media/releases/2026/2026-cdc-provides-update-on-hantavirus-outbreak-linked-to-m-v-hondius-cruise-ship.html"
+    },
+    {
+      "text": "▲ SHIP DOCTOR WHO CARED FOR HANTAVIRUS PAX RELEASED FROM MEDICAL ISOLATION 14 MAY",
       "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "▲ 18 US PAX QUARANTINED: 15 AT UNMC OMAHA, 2 MONITORED EMORY ATLANTA, 1 CLEARED",
-      "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
+      "text": "▲ ILLINOIS RESIDENT FEARED TO HAVE CAUGHT HANTAVIRUS — NOT LINKED TO HONDIUS CRUISE",
+      "url": "https://www.thedailybeast.com"
     },
     {
-      "text": "▲ DUTCH COUPLE NAMED INDEX CASES; 42-DAY INCUBATION DRIVES GLOBAL QUARANTINE DECISIONS",
-      "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
-    },
-    {
-      "text": "► CRITICALLY ILL FRENCH WOMAN ON ECMO ARTIFICIAL LUNG AT BICHAT HOSPITAL PARIS",
-      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
-    },
-    {
-      "text": "► ARCTIC VOYAGE SCHEDULE UNCERTAIN PENDING ROTTERDAM DISINFECTION AND HEALTH CLEARANCE",
+      "text": "► HONDIUS ARCTIC SCHEDULE UNCERTAIN; COMPANY UNCLEAR WHEN CRUISES WILL RESUME",
       "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+    },
+    {
+      "text": "► 18 US PAX QUARANTINED: 15 AT UNMC OMAHA, 2 MONITORED EMORY ATLANTA, 1 CLEARED",
+      "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
+    },
+    {
+      "text": "► WHO COORDINATING WITH MULTIPLE COUNTRIES UNDER IHR; GLOBAL OUTBREAK RISK LOW",
+      "url": "https://www.who.int/news/item/07-05-2026-who-s-response-to-hantavirus-cases-linked-to-a-cruise-ship"
+    },
+    {
+      "text": "// NO EVIDENCE BROADER COMMUNITY OUTBREAK; WHO GLOBAL PUBLIC HEALTH RISK ASSESSED LOW",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
     }
   ],
-  "totalChanges": 5
+  "totalChanges": 10
 }
