@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-16T15:40:49+00:00",
+  "updated_at": "2026-05-16T19:52:10+00:00",
   "totals": {
     "confirmed": 22,
     "suspected": 6,
@@ -12,40 +12,40 @@
   },
   "ticker": [
     {
-      "text": "▲ WHO/ECDC: 11 CONFIRMED ANDES HANTAVIRUS CASES — 3 DEATHS — NO NEW CASES 15 MAY",
-      "url": "https://www.ecdc.europa.eu/en/news-events/epidemiological-update-hantavirus-disease-linked-mv-hondius-cruise-ship"
+      "text": "▲ ANDES VIRUS MATCHES S. AMERICAN STRAINS — NO NEW MUTATIONS OR VARIANTS DETECTED",
+      "url": "https://apnews.com/article/hantavirus-hondius-france-andes-virus-strain-analysis"
     },
     {
-      "text": "▲ GENETIC ANALYSIS CONFIRMS ANDES VIRUS — NO MUTATIONS, NO NEW VARIANT DETECTED",
-      "url": "https://elpais.com/sociedad/2026-05-11/el-analisis-genetico-del-virus-hanta-del-hondius-confirma-que-es-una-cepa-andina-clasica.html"
+      "text": "▲ WHO/ECDC: 11 CONFIRMED ANDES HANTAVIRUS CASES — 3 DEATHS — NO NEW CASES 15 MAY",
+      "url": "https://www.ecdc.europa.eu/en/news-events/epidemiological-update-hantavirus-disease-linked-mv-hondius-cruise-ship"
     },
     {
       "text": "▲ FRANCE CONFIRMS FIRST HANTAVIRUS CASE; 22 POTENTIAL CONTACTS IDENTIFIED NATIONWIDE",
       "url": "https://www.lemonde.fr/sante/article/2026/05/11/hantavirus-premier-cas-confirme-en-france-lie-au-hondius.html"
     },
     {
-      "text": "▲ WHO GLOBAL RISK REMAINS LOW; EU/EEA GENERAL POPULATION RISK ASSESSED VERY LOW",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "► DR. STEPHEN KORNFELD (OREGON) RELEASED FROM BIOCONTAINMENT AFTER NEGATIVE RESULTS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "▲ CDC: NO US HANTAVIRUS CASES CONFIRMED AS RESULT OF HONDIUS OUTBREAK AS OF 08 MAY",
-      "url": "https://www.cdc.gov/media/releases/2026/2026-cdc-provides-update-on-hantavirus-outbreak-linked-to-m-v-hondius-cruise-ship.html"
+      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, 1 NZ — IN BULLSBROOK QUARANTINE NEAR PERTH WA",
+      "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
+    },
+    {
+      "text": "► CANARY ISLANDS EVAC HUB: HONDIUS DOCKS TENERIFE — 23-NATION EVACUATION COMPLETE",
+      "url": "https://elpais.com/sociedad/2026-05-11/el-analisis-genetico-del-virus-hanta-del-hondius-confirma-que-es-una-cepa-andina-clasica.html"
     },
     {
       "text": "► CRITICALLY ILL FRENCH WOMAN ON ECMO ARTIFICIAL LUNG AT BICHAT HOSPITAL PARIS",
       "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
-      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, ONE NZ — IN BULLSBROOK QUARANTINE NEAR PERTH",
-      "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
-    },
-    {
-      "text": "► SHIP DOCTOR WHO CARED FOR HANTAVIRUS PAX RELEASED FROM MEDICAL ISOLATION 14 MAY",
-      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
-    },
-    {
       "text": "► 18 US PAX QUARANTINED: 15 AT UNMC OMAHA, 2 MONITORED EMORY ATLANTA, 1 CLEARED",
       "url": "https://apnews.com/article/7b4523ecc33aed0e951533e6e9766f7a"
+    },
+    {
+      "text": "▲ WHO GLOBAL RISK REMAINS LOW; EU/EEA GENERAL POPULATION RISK ASSESSED VERY LOW",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
     },
     {
       "text": "// ILLINOIS RESIDENT HANTAVIRUS CASE ASSESSED UNRELATED TO MV HONDIUS OUTBREAK",
@@ -77,7 +77,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (El País, 11 May) confirms Andes strain similar to Argentina 2018–19 strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
+      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (AP News, 16 May; El País, 11 May) confirms Andes strain matches known South American strains with no new mutations indicating increased transmissibility or severity; Malbrán Institute trapping/testing rodents along route."
     },
     {
       "id": "sthelena",
@@ -142,7 +142,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
+      "desc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News (16 May) confirms Andes virus detected matches known South American strains with no new mutations; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
     },
     {
       "id": "ch",
@@ -363,7 +363,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
+      "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). Dr. Stephen Kornfeld (Oregon oncologist), the only American placed in biocontainment isolation, was released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
     },
     {
       "id": "us-ut",

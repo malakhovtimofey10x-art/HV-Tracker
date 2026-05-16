@@ -1,27 +1,10 @@
 {
-  "timestamp": "2026-05-16T15:40:49+00:00",
-  "prevTime": "2026-05-16T11:35:45+00:00",
+  "timestamp": "2026-05-16T19:52:10+00:00",
+  "prevTime": "2026-05-16T15:40:49+00:00",
   "newSites": [],
   "caseDeltas": [],
   "statusChanges": [],
   "descChanges": [
-    {
-      "site": {
-        "id": "hondius",
-        "name": "M/V HONDIUS",
-        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
-        "lat": 28.17,
-        "lng": -16.45,
-        "status": "confirmed",
-        "confirmed": 10,
-        "suspected": 0,
-        "deaths": 3,
-        "monitored": 53,
-        "desc": "WHO/ECDC confirmed 11 total Andes hantavirus cases as of 13–15 May with no new cases or deaths since previous update; three deaths total. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
-      },
-      "prevDesc": "WHO confirmed 11 total hantavirus cases (8 confirmed, 2 probable, 1 inconclusive) as of 13 May (WHO DON601); three deaths total. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance.",
-      "nextDesc": "WHO/ECDC confirmed 11 total Andes hantavirus cases as of 13–15 May with no new cases or deaths since previous update; three deaths total. Vessel evacuated at Granadilla de Abona with 87 passengers and 35 crew; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
-    },
     {
       "site": {
         "id": "ushuaia",
@@ -34,10 +17,10 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 0,
-        "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (El País, 11 May) confirms Andes strain similar to Argentina 2018–19 strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
+        "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (AP News, 16 May; El País, 11 May) confirms Andes strain matches known South American strains with no new mutations indicating increased transmissibility or severity; Malbrán Institute trapping/testing rodents along route."
       },
-      "prevDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Argentine health ministry published detailed route map 06 May; Malbrán Institute trapping/testing rodents along route.",
-      "nextDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (El País, 11 May) confirms Andes strain similar to Argentina 2018–19 strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
+      "prevDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (El País, 11 May) confirms Andes strain similar to Argentina 2018–19 strains with no new mutations; Malbrán Institute trapping/testing rodents along route.",
+      "nextDesc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis (AP News, 16 May; El País, 11 May) confirms Andes strain matches known South American strains with no new mutations indicating increased transmissibility or severity; Malbrán Institute trapping/testing rodents along route."
     },
     {
       "site": {
@@ -51,27 +34,10 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 5,
-        "desc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
+        "desc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News (16 May) confirms Andes virus detected matches known South American strains with no new mutations; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
       },
-      "prevDesc": "First confirmed hantavirus case in France: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on artificial lung (ECMO) at Bichat Hospital Paris per AP 13 May. French government mandated 42-day quarantine decree with contact tracing identifying 22 potential cases across international flights.",
-      "nextDesc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
-    },
-    {
-      "site": {
-        "id": "ch",
-        "name": "ZURICH / GENEVA",
-        "country": "SWITZERLAND",
-        "lat": 47.38,
-        "lng": 8.54,
-        "status": "confirmed",
-        "confirmed": 1,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 1,
-        "desc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing confirmed Andes variant with high similarity to Argentina 2018–19 strains and no new mutations (El País, 11 May); wife asymptomatic and isolating."
-      },
-      "prevDesc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing confirmed Andes variant with high similarity to Argentina 2018-19 strains and no new mutations; wife asymptomatic and isolating.",
-      "nextDesc": "PCR-confirmed male passenger disembarked St Helena 24 Apr; symptoms onset 01 May, tested positive Andes virus 05 May at University Hospital Zurich. Illumina sequencing confirmed Andes variant with high similarity to Argentina 2018–19 strains and no new mutations (El País, 11 May); wife asymptomatic and isolating."
+      "prevDesc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. French government mandated 42-day quarantine with 22 potential contact cases identified across international flights.",
+      "nextDesc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News (16 May) confirms Andes virus detected matches known South American strains with no new mutations; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
     },
     {
       "site": {
@@ -85,10 +51,10 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 18,
-        "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
+        "desc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). Dr. Stephen Kornfeld (Oregon oncologist), the only American placed in biocontainment isolation, was released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
       },
-      "prevDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC actively monitoring and supporting repatriation efforts per CDC Newsroom 08 May.",
-      "nextDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
+      "prevDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). One symptomatic individual in UNMC biocontainment; Dr. Stephen Kornfeld cleared and released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May.",
+      "nextDesc": "18 American passengers coordinated to Offutt AFB and transferred to National Quarantine Center at UNMC per AP 13 May; 15 quarantined at NQU including content creator Jake Rosmarin (asymptomatic, 42-day quarantine). Dr. Stephen Kornfeld (Oregon oncologist), the only American placed in biocontainment isolation, was released 14 May after inconclusive swabs resolved negative per AP 14 May. CDC confirmed no US cases resulting from this outbreak per CDC Newsroom 08 May."
     }
   ],
   "totalDeltas": {
@@ -98,33 +64,21 @@
   },
   "newTicker": [
     {
-      "text": "▲ WHO/ECDC: 11 CONFIRMED ANDES HANTAVIRUS CASES — 3 DEATHS — NO NEW CASES 15 MAY",
-      "url": "https://www.ecdc.europa.eu/en/news-events/epidemiological-update-hantavirus-disease-linked-mv-hondius-cruise-ship"
+      "text": "▲ ANDES VIRUS MATCHES S. AMERICAN STRAINS — NO NEW MUTATIONS OR VARIANTS DETECTED",
+      "url": "https://apnews.com/article/hantavirus-hondius-france-andes-virus-strain-analysis"
     },
     {
-      "text": "▲ GENETIC ANALYSIS CONFIRMS ANDES VIRUS — NO MUTATIONS, NO NEW VARIANT DETECTED",
-      "url": "https://elpais.com/sociedad/2026-05-11/el-analisis-genetico-del-virus-hanta-del-hondius-confirma-que-es-una-cepa-andina-clasica.html"
+      "text": "► DR. STEPHEN KORNFELD (OREGON) RELEASED FROM BIOCONTAINMENT AFTER NEGATIVE RESULTS",
+      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
     },
     {
-      "text": "▲ FRANCE CONFIRMS FIRST HANTAVIRUS CASE; 22 POTENTIAL CONTACTS IDENTIFIED NATIONWIDE",
-      "url": "https://www.lemonde.fr/sante/article/2026/05/11/hantavirus-premier-cas-confirme-en-france-lie-au-hondius.html"
-    },
-    {
-      "text": "▲ WHO GLOBAL RISK REMAINS LOW; EU/EEA GENERAL POPULATION RISK ASSESSED VERY LOW",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
-    },
-    {
-      "text": "▲ CDC: NO US HANTAVIRUS CASES CONFIRMED AS RESULT OF HONDIUS OUTBREAK AS OF 08 MAY",
-      "url": "https://www.cdc.gov/media/releases/2026/2026-cdc-provides-update-on-hantavirus-outbreak-linked-to-m-v-hondius-cruise-ship.html"
-    },
-    {
-      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, ONE NZ — IN BULLSBROOK QUARANTINE NEAR PERTH",
+      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, 1 NZ — IN BULLSBROOK QUARANTINE NEAR PERTH WA",
       "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "► SHIP DOCTOR WHO CARED FOR HANTAVIRUS PAX RELEASED FROM MEDICAL ISOLATION 14 MAY",
-      "url": "https://apnews.com/article/e04be7251214d05bc13628ff7ebd8970"
+      "text": "► CANARY ISLANDS EVAC HUB: HONDIUS DOCKS TENERIFE — 23-NATION EVACUATION COMPLETE",
+      "url": "https://elpais.com/sociedad/2026-05-11/el-analisis-genetico-del-virus-hanta-del-hondius-confirma-que-es-una-cepa-andina-clasica.html"
     }
   ],
-  "totalChanges": 5
+  "totalChanges": 3
 }
