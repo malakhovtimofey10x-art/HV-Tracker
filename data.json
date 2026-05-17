@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-17T19:58:35+00:00",
+  "updated_at": "2026-05-17T23:16:57+00:00",
   "totals": {
     "confirmed": 24,
     "suspected": 6,
@@ -12,11 +12,7 @@
   },
   "ticker": [
     {
-      "text": "▲ WHO CONFIRMS 10 GLOBAL HANTAVIRUS CASES; HONDIUS CREW REMAIN SYMPTOM-FREE",
-      "url": "https://www.aljazeera.com/news/2026/5/15/who-confirms-10-global-hantavirus-cases-hondius-crew-remain-symptom-free"
-    },
-    {
-      "text": "▲ CANADA CONFIRMS POSITIVE HANTAVIRUS: YUKON RESIDENT IN 70S HOSPITALIZED VICTORIA",
+      "text": "▲ CANADA CONFIRMS 10TH HANTAVIRUS CASE: YUKON RESIDENT IN 70S HOSPITALIZED VICTORIA",
       "url": "https://apnews.com/article/1ef18249115195f09381a174092a1cae"
     },
     {
@@ -32,11 +28,11 @@
       "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
-      "text": "► 2 US PAX MONITORED EMORY UNIV HOSPITAL ATLANTA; NO PUBLIC RISK — OFFICIALS",
+      "text": "► 2 US PAX MONITORED EMORY UNIV HOSPITAL ATLANTA; CDC: NO PUBLIC RISK TO AMERICANS",
       "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "▲ ANDES STRAIN MATCHES SOUTH AMERICAN STRAINS; NO NEW MUTATIONS DETECTED",
+      "text": "▲ ANDES STRAIN MATCHES SOUTH AMERICAN STRAINS; NO NEW MUTATIONS DETECTED — AP",
       "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
@@ -50,6 +46,10 @@
     {
       "text": "// ILLINOIS RESIDENT HANTAVIRUS CASE ASSESSED UNRELATED TO MV HONDIUS OUTBREAK",
       "url": "https://www.thedailybeast.com"
+    },
+    {
+      "text": "► PHAC CONFIRMS POSITIVE HANTAVIRUS AMONG FOUR CANADIAN HONDIUS RETURNEES 17 MAY",
+      "url": "https://apnews.com/article/1ef18249115195f09381a174092a1cae"
     }
   ],
   "sites": [
@@ -259,7 +259,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
+      "desc": "PHAC confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 17 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, marking the 10th confirmed case linked to the outbreak. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
     },
     {
       "id": "ca-on",
@@ -376,7 +376,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC Newsroom 08 May."
+      "desc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC 14 May update."
     },
     {
       "id": "us-ut",
@@ -480,7 +480,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 15 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+      "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 16 May, traveling alongside five Australians on RAAF Base Pearce intake flight; all tested negative before departure. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
     },
     {
       "id": "se",
@@ -571,7 +571,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 7,
-      "desc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 15 May; all tested negative pre-departure. Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk; facility largely unused since COVID-19 pandemic."
+      "desc": "Five Australians and one New Zealander arrived at RAAF Base Pearce near Perth 16 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 16 May; all tested negative before departure. Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk; facility largely unused since COVID-19 pandemic."
     }
   ]
 }

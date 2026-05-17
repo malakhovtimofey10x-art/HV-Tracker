@@ -1,86 +1,12 @@
 {
-  "timestamp": "2026-05-17T19:58:35+00:00",
-  "prevTime": "2026-05-17T14:43:48+00:00",
+  "timestamp": "2026-05-17T23:16:57+00:00",
+  "prevTime": "2026-05-17T19:58:35+00:00",
   "newSites": [],
-  "caseDeltas": [
-    {
-      "site": {
-        "id": "ca-bc",
-        "name": "VICTORIA / BRITISH COLUMBIA",
-        "country": "CANADA",
-        "lat": 48.43,
-        "lng": -123.37,
-        "status": "confirmed",
-        "confirmed": 1,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 2,
-        "desc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
-      },
-      "field": "confirmed",
-      "prev": 0,
-      "next": 1,
-      "delta": 1
-    },
-    {
-      "site": {
-        "id": "ca-bc",
-        "name": "VICTORIA / BRITISH COLUMBIA",
-        "country": "CANADA",
-        "lat": 48.43,
-        "lng": -123.37,
-        "status": "confirmed",
-        "confirmed": 1,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 2,
-        "desc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
-      },
-      "field": "suspected",
-      "prev": 1,
-      "next": 0,
-      "delta": -1
-    }
-  ],
-  "statusChanges": [
-    {
-      "site": {
-        "id": "ca-bc",
-        "name": "VICTORIA / BRITISH COLUMBIA",
-        "country": "CANADA",
-        "lat": 48.43,
-        "lng": -123.37,
-        "status": "confirmed",
-        "confirmed": 1,
-        "suspected": 0,
-        "deaths": 0,
-        "monitored": 2,
-        "desc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
-      },
-      "prev": "suspected",
-      "next": "confirmed"
-    }
-  ],
+  "caseDeltas": [],
+  "statusChanges": [],
   "descChanges": [
     {
       "site": {
-        "id": "hondius",
-        "name": "M/V HONDIUS",
-        "country": "TENERIFE / CANARY ISLANDS — EVACUATION COMPLETE",
-        "lat": 28.17,
-        "lng": -16.45,
-        "status": "confirmed",
-        "confirmed": 11,
-        "suspected": 0,
-        "deaths": 3,
-        "monitored": 53,
-        "desc": "WHO DON601 (13 May) confirms 11 total cases: 8 laboratory-confirmed Andes virus, 2 probable, 1 inconclusive pending further testing; 3 deaths. No new cases or deaths since previous update; crew remains asymptomatic. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection."
-      },
-      "prevDesc": "ECDC confirms 11 total Andes hantavirus cases and 3 deaths as of 13 May; no new cases or deaths since previous update. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance.",
-      "nextDesc": "WHO DON601 (13 May) confirms 11 total cases: 8 laboratory-confirmed Andes virus, 2 probable, 1 inconclusive pending further testing; 3 deaths. No new cases or deaths since previous update; crew remains asymptomatic. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection."
-    },
-    {
-      "site": {
         "id": "ca-bc",
         "name": "VICTORIA / BRITISH COLUMBIA",
         "country": "CANADA",
@@ -91,38 +17,85 @@
         "suspected": 0,
         "deaths": 0,
         "monitored": 2,
-        "desc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
+        "desc": "PHAC confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 17 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, marking the 10th confirmed case linked to the outbreak. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
       },
-      "prevDesc": "Yukon resident in their 70s hospitalized in Victoria with presumptive positive hantavirus test (AP News, 17 May); if confirmed, would represent 12th ship-linked case. Confirmatory PCR pending at National Microbiology Lab Winnipeg; partner tested negative. All four Canadian Hondius returnees arrived BC 10 May in isolation; Dr. Bonnie Henry reassured no increased risk to general public.",
-      "nextDesc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
+      "prevDesc": "Public Health Agency of Canada confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 15 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, mild symptoms. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public.",
+      "nextDesc": "PHAC confirmed one positive hantavirus case among four Canadian Hondius returnees (AP News, 17 May): Yukon resident in their 70s hospitalized in Victoria with fever and headache, marking the 10th confirmed case linked to the outbreak. Confirmatory PCR sent to National Microbiology Lab Winnipeg; partner tested negative. Dr. Bonnie Henry reassured no increased risk to general public."
+    },
+    {
+      "site": {
+        "id": "us-ne",
+        "name": "NEBRASKA",
+        "country": "UNITED STATES",
+        "lat": 41.26,
+        "lng": -96.04,
+        "status": "confirmed",
+        "confirmed": 2,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 18,
+        "desc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC 14 May update."
+      },
+      "prevDesc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC Newsroom 08 May.",
+      "nextDesc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC 14 May update."
+    },
+    {
+      "site": {
+        "id": "nz",
+        "name": "WELLINGTON",
+        "country": "NEW ZEALAND",
+        "lat": -41.29,
+        "lng": 174.78,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 1,
+        "desc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 16 May, traveling alongside five Australians on RAAF Base Pearce intake flight; all tested negative before departure. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+      },
+      "prevDesc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 15 May, traveling alongside five Australians on RAAF Base Pearce intake flight. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported.",
+      "nextDesc": "One NZ national arrived at Bullsbrook quarantine facility near Perth, Australia for mandatory three-week quarantine per AP 16 May, traveling alongside five Australians on RAAF Base Pearce intake flight; all tested negative before departure. NZ Ministry of Health coordinating contact tracing; no symptomatic cases reported."
+    },
+    {
+      "site": {
+        "id": "au",
+        "name": "PERTH / BULLSBROOK / SYDNEY",
+        "country": "AUSTRALIA",
+        "lat": -31.87,
+        "lng": 115.97,
+        "status": "monitor",
+        "confirmed": 0,
+        "suspected": 0,
+        "deaths": 0,
+        "monitored": 7,
+        "desc": "Five Australians and one New Zealander arrived at RAAF Base Pearce near Perth 16 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 16 May; all tested negative before departure. Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk; facility largely unused since COVID-19 pandemic."
+      },
+      "prevDesc": "Five Australians and one New Zealander landed at RAAF Base Pearce near Perth 14 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 15 May; all tested negative pre-departure. Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk; facility largely unused since COVID-19 pandemic.",
+      "nextDesc": "Five Australians and one New Zealander arrived at RAAF Base Pearce near Perth 16 May and transported to Bullsbrook quarantine facility for mandatory three-week quarantine per AP 16 May; all tested negative before departure. Health Minister Mark Butler enacted one of the world's strictest quarantine responses citing 42-day incubation risk; facility largely unused since COVID-19 pandemic."
     }
   ],
   "totalDeltas": {
-    "confirmed": 1,
-    "suspected": -1,
+    "confirmed": 0,
+    "suspected": 0,
     "deaths": 0
   },
   "newTicker": [
     {
-      "text": "▲ WHO CONFIRMS 10 GLOBAL HANTAVIRUS CASES; HONDIUS CREW REMAIN SYMPTOM-FREE",
-      "url": "https://www.aljazeera.com/news/2026/5/15/who-confirms-10-global-hantavirus-cases-hondius-crew-remain-symptom-free"
-    },
-    {
-      "text": "▲ CANADA CONFIRMS POSITIVE HANTAVIRUS: YUKON RESIDENT IN 70S HOSPITALIZED VICTORIA",
+      "text": "▲ CANADA CONFIRMS 10TH HANTAVIRUS CASE: YUKON RESIDENT IN 70S HOSPITALIZED VICTORIA",
       "url": "https://apnews.com/article/1ef18249115195f09381a174092a1cae"
     },
     {
-      "text": "▲ WHO DON601: 11 CASES (8 CONFIRMED ANDV, 2 PROBABLE, 1 INCONCLUSIVE) — 3 DEATHS",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "► 2 US PAX MONITORED EMORY UNIV HOSPITAL ATLANTA; CDC: NO PUBLIC RISK TO AMERICANS",
+      "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "▲ ANDES STRAIN MATCHES SOUTH AMERICAN STRAINS; NO NEW MUTATIONS DETECTED",
+      "text": "▲ ANDES STRAIN MATCHES SOUTH AMERICAN STRAINS; NO NEW MUTATIONS DETECTED — AP",
       "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
-      "text": "▲ WHO: EU/EEA + GLOBAL GENERAL POPULATION RISK VERY LOW; MONITORING ONGOING",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "► PHAC CONFIRMS POSITIVE HANTAVIRUS AMONG FOUR CANADIAN HONDIUS RETURNEES 17 MAY",
+      "url": "https://apnews.com/article/1ef18249115195f09381a174092a1cae"
     }
   ],
-  "totalChanges": 5
+  "totalChanges": 4
 }
