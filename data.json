@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-17T08:37:10+00:00",
+  "updated_at": "2026-05-17T14:43:48+00:00",
   "totals": {
     "confirmed": 23,
     "suspected": 7,
@@ -16,19 +16,19 @@
       "url": "https://apnews.com/article/880ad45b272c59a96a9fb07bf6425d45"
     },
     {
-      "text": "▲ WHO/ECDC: 11 CONFIRMED ANDES HANTAVIRUS CASES — 3 DEATHS — NO NEW CASES 15 MAY",
+      "text": "▲ ECDC: 11 CONFIRMED ANDES HANTAVIRUS CASES ABOARD HONDIUS — 3 DEATHS TOTAL",
       "url": "https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak"
     },
     {
-      "text": "▲ FRENCH ANDES VIRUS CONFIRMED NO NEW MUTATIONS; MATCHES KNOWN S. AMERICAN STRAINS",
+      "text": "▲ FRENCH ANDES VIRUS: NO NEW MUTATIONS; MATCHES KNOWN SOUTH AMERICAN STRAINS",
       "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
-      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, 1 NZ — IN BULLSBROOK QUARANTINE NEAR PERTH WA",
+      "text": "► 2 US PAX MONITORED EMORY UNIV HOSPITAL ATLANTA; NO PUBLIC RISK — OFFICIALS",
       "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
-      "text": "► 2 US PAX TRANSFERRED OMAHA NQU; ONE INITIALLY POSITIVE NOW CLEARED OF VIRUS",
+      "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, 1 NZ — IN BULLSBROOK QUARANTINE NEAR PERTH WA",
       "url": "https://apnews.com/article/5872e351c6c2bc0f881b4165651e5611"
     },
     {
@@ -40,12 +40,12 @@
       "url": "https://www.ecdc.europa.eu/en/news-events/epidemiological-update-hantavirus-disease-linked-mv-hondius-cruise-ship"
     },
     {
-      "text": "▲ DR. BONNIE HENRY: NO PANDEMIC THREAT; STRICT INFECTION CONTROLS IN PLACE BC",
-      "url": "https://apnews.com/article/880ad45b272c59a96a9fb07bf6425d45"
+      "text": "▲ WHO CONFIRMS ANDES STRAIN; EU/EEA + GLOBAL GENERAL POPULATION RISK VERY LOW",
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
     },
     {
-      "text": "▲ WHO GLOBAL RISK REMAINS LOW; EU/EEA GENERAL POPULATION RISK ASSESSED VERY LOW",
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON601"
+      "text": "▲ CDC: US PUBLIC RISK EXTREMELY LOW; ACTIVE MONITORING ACROSS 6 STATES ONGOING",
+      "url": "https://www.cdc.gov"
     },
     {
       "text": "// ILLINOIS RESIDENT HANTAVIRUS CASE ASSESSED UNRELATED TO MV HONDIUS OUTBREAK",
@@ -64,7 +64,7 @@
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "WHO confirmed 11 total Andes hantavirus cases and 3 deaths as of 13 May; ECDC corroborates same figures with no new cases or deaths since previous update. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
+      "desc": "ECDC confirms 11 total Andes hantavirus cases and 3 deaths as of 13 May; no new cases or deaths since previous update. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
     },
     {
       "id": "ushuaia",
@@ -77,7 +77,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. AP News 16 May confirms Andes strain matches known South American strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
+      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. AP News 17 May confirms Andes strain matches known South American strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
     },
     {
       "id": "sthelena",
@@ -142,7 +142,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "France confirmed first hantavirus case: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News 16 May confirms Andes virus detected matches known South American strains with no new mutations indicating increased transmissibility or severity; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
+      "desc": "France confirmed first hantavirus case: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News 17 May confirms Andes virus detected matches known South American strains with no new mutations indicating increased transmissibility or severity; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
     },
     {
       "id": "ch",
@@ -259,7 +259,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Yukon resident in their 70s hospitalized in Victoria with presumptive positive hantavirus test (AP News, 16 May); if confirmed, would represent 12th ship-linked case and 3rd death-linked national grouping. Confirmatory PCR pending at National Microbiology Lab Winnipeg; partner tested negative. All four Canadian Hondius returnees arrived BC 10 May in isolation; Dr. Bonnie Henry reassured no increased risk to general public."
+      "desc": "Yukon resident in their 70s hospitalized in Victoria with presumptive positive hantavirus test (AP News, 17 May); if confirmed, would represent 12th ship-linked case. Confirmatory PCR pending at National Microbiology Lab Winnipeg; partner tested negative. All four Canadian Hondius returnees arrived BC 10 May in isolation; Dr. Bonnie Henry reassured no increased risk to general public."
     },
     {
       "id": "ca-on",
@@ -324,7 +324,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 4,
-      "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring per AP 13 May; CDC chartered a flight to Hartsfield-Jackson for their transport. Two additional Georgia residents asymptomatic and following CDC guidance at home."
+      "desc": "Two American Hondius passengers transferred to Emory University Hospital SCDU in Atlanta for monitoring per AP News 17 May; CDC chartered a flight to Hartsfield-Jackson for their transport. Health officials emphasize no public risk. Two additional Georgia residents asymptomatic and following CDC guidance at home."
     },
     {
       "id": "us-tx",
