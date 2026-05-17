@@ -1,7 +1,7 @@
 {
   "event_id": "WHO/IHR EVENT 2026-E000227",
   "vessel": "M/V HONDIUS",
-  "updated_at": "2026-05-16T22:33:58+00:00",
+  "updated_at": "2026-05-17T08:37:10+00:00",
   "totals": {
     "confirmed": 23,
     "suspected": 7,
@@ -20,8 +20,8 @@
       "url": "https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak"
     },
     {
-      "text": "▲ CANADA CASE WOULD BE 10TH SHIP-LINKED POSITIVE; CONFIRMATORY PCR PENDING NML WINNIPEG",
-      "url": "https://apnews.com/article/880ad45b272c59a96a9fb07bf6425d45"
+      "text": "▲ FRENCH ANDES VIRUS CONFIRMED NO NEW MUTATIONS; MATCHES KNOWN S. AMERICAN STRAINS",
+      "url": "https://apnews.com/article/ac42357c5c3ae1694a93f1d43ba38bdb"
     },
     {
       "text": "► 6 HONDIUS PAX — 5 AUSTRALIANS, 1 NZ — IN BULLSBROOK QUARANTINE NEAR PERTH WA",
@@ -64,7 +64,7 @@
       "suspected": 0,
       "deaths": 3,
       "monitored": 53,
-      "desc": "ECDC confirmed 11 total Andes hantavirus cases as of 15 May with no new cases or deaths since previous update; three deaths total. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
+      "desc": "WHO confirmed 11 total Andes hantavirus cases and 3 deaths as of 13 May; ECDC corroborates same figures with no new cases or deaths since previous update. Vessel evacuated at Granadilla de Abona; en route Rotterdam with skeleton crew of 30 + Dutch nurse for full disinfection; Arctic schedule uncertain pending health authority clearance."
     },
     {
       "id": "ushuaia",
@@ -77,7 +77,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 0,
-      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. Genetic analysis confirms Andes strain matches known South American strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
+      "desc": "Index case (Dutch male, 70, died 11 Apr) took 4-month road trip 27 Nov 2025–1 Apr 2026 through Chile, Uruguay, Argentina before boarding; Dutch couple believed to have contracted virus during South America visit pre-boarding per AP 13 May. AP News 16 May confirms Andes strain matches known South American strains with no new mutations; Malbrán Institute trapping/testing rodents along route."
     },
     {
       "id": "sthelena",
@@ -142,7 +142,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 5,
-      "desc": "France confirmed first hantavirus case (Le Monde, 11 May): one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News confirms Andes virus detected matches known South American strains with no new mutations; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
+      "desc": "France confirmed first hantavirus case: one of five repatriated Hondius passengers tested PCR-positive; critically ill French woman on ECMO artificial lung at Bichat Hospital Paris. AP News 16 May confirms Andes virus detected matches known South American strains with no new mutations indicating increased transmissibility or severity; French government mandated 42-day quarantine with 22 potential contact cases identified across international flights."
     },
     {
       "id": "ch",
@@ -259,7 +259,7 @@
       "suspected": 1,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Yukon resident in their 70s hospitalized in Victoria with presumptive positive hantavirus test (AP News, 16 May); mild symptoms including fever and headache. Confirmatory PCR pending at National Microbiology Lab Winnipeg; partner tested negative. All four Canadian Hondius returnees arrived BC 10 May and are in isolation; Dr. Bonnie Henry reassured no increased risk to general public."
+      "desc": "Yukon resident in their 70s hospitalized in Victoria with presumptive positive hantavirus test (AP News, 16 May); if confirmed, would represent 12th ship-linked case and 3rd death-linked national grouping. Confirmatory PCR pending at National Microbiology Lab Winnipeg; partner tested negative. All four Canadian Hondius returnees arrived BC 10 May in isolation; Dr. Bonnie Henry reassured no increased risk to general public."
     },
     {
       "id": "ca-on",
@@ -298,7 +298,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 16 May. CDC notified ADHS 05 May; public risk assessed as very low. Part of domestic US monitoring cohort across 6 states."
+      "desc": "ADHS monitoring one returning passenger under 42-day observation. Asymptomatic as of 17 May. CDC notified ADHS 05 May; public risk assessed as very low per CDC Newsroom 08 May. Part of domestic US monitoring cohort across 6 states."
     },
     {
       "id": "us-ca",
@@ -311,7 +311,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 16 May."
+      "desc": "CDPH monitoring one returned Hondius traveler via daily temperature checks and symptom assessment. A second California resident transited Tenerife to Nebraska NQU via CDC/HHS biocontainment charter. No California residents reported ill as of 17 May."
     },
     {
       "id": "us-ga",
@@ -337,7 +337,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 16 May. Part of domestic US monitoring cohort across 6 states."
+      "desc": "Texas DSHS monitoring two returning Hondius passengers. Both asymptomatic as of 17 May. Part of domestic US monitoring cohort across 6 states."
     },
     {
       "id": "us-va",
@@ -363,7 +363,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 2,
-      "desc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 16 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
+      "desc": "NJ DOH monitoring two individuals potentially exposed to a Hondius passenger post-disembarkation during air travel. Neither symptomatic as of 17 May. Exposure occurred during air travel abroad; residents were not Hondius passengers themselves."
     },
     {
       "id": "us-ne",
@@ -376,7 +376,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 18,
-      "desc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units per Daily Beast 11 May; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 16 May."
+      "desc": "Two Americans transported to National Quarantine Center at UNMC in biocontainment units; one who tested mildly positive was cleared of virus per AP 15 May. 15 additional passengers quarantined at NQU including content creator Jake Rosmarin. Dr. Stephen Kornfeld (Oregon) released 14 May after inconclusive swabs resolved negative; CDC confirmed no further US cases as of 17 May and risk to American public remains extremely low per CDC Newsroom 08 May."
     },
     {
       "id": "us-ut",
@@ -389,7 +389,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 1,
-      "desc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 16 May."
+      "desc": "Utah DHHS confirmed at least one Utah resident among the Americans aboard MV Hondius. Person asymptomatic; disembarked Tenerife with federal escort to Nebraska NQU for evaluation. No Utah residents monitored at home as of 17 May."
     },
     {
       "id": "us-il",
@@ -415,7 +415,7 @@
       "suspected": 0,
       "deaths": 0,
       "monitored": 38,
-      "desc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 16 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
+      "desc": "38 Filipino crew members aboard Hondius; Philippines DOH confirmed none currently ill as of 17 May. Skeleton crew of ~30 (predominantly Filipino) will remain aboard to sail vessel to Rotterdam with Dutch nurse. Monitoring continues through incubation window."
     },
     {
       "id": "ie",
